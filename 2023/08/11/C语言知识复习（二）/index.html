@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C语言知识复习 Part 1 基本特性 （二）基本概念 | Sunoarslan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="​    该部分简单介绍C语言的一些基本概念，包括预处理指令、函数、变量和语句。即便最简单的C程序也会用到这些概念。后续还会对这些概念进行更详细的描述。 2.1 一个简单的C语言程序​     pun.c 1234567#include &lt;stdio.h&gt;int main()&amp;#123;   printf(&quot;To C, or not to C: that is the que">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言知识复习 Part 1 基本特性 （二）基本概念">
+<meta property="og:url" content="http://example.com/2023/08/11/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="​    该部分简单介绍C语言的一些基本概念，包括预处理指令、函数、变量和语句。即便最简单的C程序也会用到这些概念。后续还会对这些概念进行更详细的描述。 2.1 一个简单的C语言程序​     pun.c 1234567#include &lt;stdio.h&gt;int main()&amp;#123;   printf(&quot;To C, or not to C: that is the que">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/FH6BqFY8/d45b199f16f621cdf8880f116ce64fe.png">
+<meta property="og:image" content="https://i.postimg.cc/FFDqrrYW/b678c42f6118a6ce1c6ce8530d7b58a.png">
+<meta property="og:image" content="https://i.postimg.cc/NM2rF7YG/671921c9070d0fb1d1b5dadea9dd5be.png">
+<meta property="og:image" content="https://i.postimg.cc/2j19Gtdc/180db71983236ea875b5d50a8ebf8b5.png">
+<meta property="og:image" content="https://i.postimg.cc/MGjbVkJV/24b6d842f52248a5971507b76d1e26b.png">
+<meta property="og:image" content="https://i.postimg.cc/pdbQx03Z/9b71a44a3f06f8daacc19e2a3e72768.png">
+<meta property="og:image" content="https://i.postimg.cc/qvJqKSWq/239ffcf3813b8050cccb74c27cfc15b.png">
+<meta property="og:image" content="https://i.postimg.cc/qvJqKSWq/239ffcf3813b8050cccb74c27cfc15b.png">
+<meta property="og:image" content="https://i.postimg.cc/K8NWvGK9/b75d8eb7c9059cc7661a229d62ca45d.png">
+<meta property="og:image" content="https://i.postimg.cc/J765psfc/d641e7a1741376ea0e6e96d8b9c6b99.png">
+<meta property="article:published_time" content="2023-08-11T00:46:05.000Z">
+<meta property="article:modified_time" content="2023-08-11T08:46:56.109Z">
+<meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/FH6BqFY8/d45b199f16f621cdf8880f116ce64fe.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="https://i.postimg.cc/WbMMsBcy/image.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="https://i.postimg.cc/XYjnpCtb/1.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Sunoarslan's blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="Search" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=https://i.postimg.cc/ncTsLpMC/image.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Sunoarslan </div>
+      <div class="dot"></div>
+      <div class="subtitle">My blog </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/169826675" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199360235414/" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Sunoarslan/" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1584195298&website=www.oicqzone.com" title="QQ"><i class="fa-brands fa-qq"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/C/">
+                C
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Small-Talks/">
+                Small Talks
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Math/">
+                Math
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          August 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/08/11/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="普林斯顿概率论读本学习-Chapter 2 基本概率定律" >
+            <div class="recent-link-text">
+              普林斯顿概率论读本学习-Chapter 2 基本概率定律
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/11/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （二）基本概念" >
+            <div class="recent-link-text">
+              C语言知识复习 Part 1 基本特性 （二）基本概念
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/11/%E6%88%91%E7%9A%84%E5%88%9D%E6%81%8B/" title="我的初恋" >
+            <div class="recent-link-text">
+              我的初恋
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/09/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （一）概述" >
+            <div class="recent-link-text">
+              C语言知识复习 Part 1 基本特性 （一）概述
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/07/%E9%AB%98%E4%B8%AD%E5%90%8C%E5%AD%A6%E4%BB%AC%E7%9A%84%E6%AF%95%E4%B8%9A%E5%8E%BB%E5%90%91%E5%9B%BE/" title="高中同学们的毕业去向图" >
+            <div class="recent-link-text">
+              高中同学们的毕业去向图
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-C语言知识复习（二）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        C语言知识复习 Part 1 基本特性 （二）基本概念
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-11T00:46:05.000Z" itemprop="datePublished">2023-08-11</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/C/">C</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.8k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>​    该部分简单介绍C语言的一些基本概念，包括<strong>预处理指令、函数、变量和语句。</strong>即便最简单的C程序也会用到这些概念。后续还会对这些概念进行更详细的描述。</p>
+<h1 id="2-1-一个简单的C语言程序"><a href="#2-1-一个简单的C语言程序" class="headerlink" title="2.1 一个简单的C语言程序"></a>2.1 一个简单的C语言程序</h1><p>​     <strong>pun.c</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   printf(&quot;To C, or not to C: that is the question.\n&quot;);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   如下图，它的作用是输出引号里的内容并换行，即”To C, or not to C: that is the question.”。我们简要地介绍一下这段程序。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/XrwLBbck"><img src="https://i.postimg.cc/FH6BqFY8/d45b199f16f621cdf8880f116ce64fe.png" alt="d45b199f16f621cdf8880f116ce64fe.png"></a></p>
+<p>   第一行的“#include &lt;stdio.h&gt;”是必不可少的，它的作用是“包含”C语言标准输入\输出库的相关信息。通俗地讲，它是用来提前告诉机器你打算用哪些语句。比如上面用到的printf就是一个标准化语句，它的作用是将引号内的内容格式化以后输出到终端。格式化是指一些约定的记号，比如这里的”\n”就代表的是换行。</p>
+<p>   程序的可执行代码都在main中，它里面的内容代表了“主”程序，即执行的主要部分。main称为主函数，“int”是一个数据类型的名称，代表整数。大部分函数都有返回值，main也是一样的，写在它前面的“int”是代表这个函数的结果会返回一个整数类型。末尾的“return 0”表示向系统返回值0，用来代表程序正常运行结束。</p>
+<h2 id="2-1-1-编译和链接"><a href="#2-1-1-编译和链接" class="headerlink" title="2.1.1 编译和链接"></a>2.1.1 编译和链接</h2><p>​    如（一）中所说，高级语言便于我们的阅读和使用，但不可以被机器直接理解（以”.c”为后缀，代表是C语言程序）。我们还需要将这些语言转换为等价的可被机器执行的文件（以”.exe”为后缀，代表可执行程序）。</p>
+<p>   对C语言程序来说，转换的过程通常包括三步。</p>
+<p>   Step 1：<strong>预处理</strong>：首先程序会被送交给“预处理器”。预处理器会执行以”#”开头的命令，这些以”#”开头的命令又称为指令。预处理器的作用和编辑器有些类似，它可以给程序添加内容，也可以对程序进行修改。预处理后生成的文件一般以“.i”为拓展名。</p>
+<p>   Step 2：<strong>编译和汇编</strong>：修改以后的程序会被递交给“编译器”。编译器会进行词法，语法等等分析并检查是否存在语法错误或者逻辑错误，之后把程序翻译成机器指令（即<strong>目标代码</strong>）。这时候通常是汇编语言，以”.s”为拓展名。然后汇编语言会被进一步翻译成二进制机器码，生成二进制格式的目标文件，通常以”.o”为拓展名。此时的目标文件能够包括程序的机器指令和数据，但还是不能直接执行，因为还可能依赖于其它的库函数或模板。</p>
+<p>   Step 3：<strong>链接</strong>：最后一个步骤中，<strong>链接器</strong>会把由编译器产生的目标代码和所需的其他附加代码整合在一起，形成完整的可执行文件，以“.exe”为拓展名。这些附加代码包括程序中用到的库函数或模板等（如这里的printf函数）。</p>
+<p>   好在，上述过程大多数情况下是自动实现的。在我们使用时预处理器和编译器往往集成在一起。</p>
+<h2 id="2-1-2-集成开发环境"><a href="#2-1-2-集成开发环境" class="headerlink" title="2.1.2 集成开发环境"></a>2.1.2 集成开发环境</h2><p>   虽然我们可以通过操作系统自带的终端来调用“命令行”编译器，但它通常有些复杂。我们还可以使用<strong>集成开发环境</strong>。集成开发环境是一个软件包，通常可以供我们编辑、编译、链接、执行以及调试程序。其中，Vscode是不错的选择。</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eP411j7Gw/?spm_id_from=333.999.0.0&vd_source=00f2a7747b27af067ee913bd4611b326">介绍 Wins 系统中安装 VSCode 并和CLion运行 C 语言程序的方法。</a></p>
+<h2 id="2-2-简单程序的一般形式"><a href="#2-2-简单程序的一般形式" class="headerlink" title="2.2 简单程序的一般形式"></a>2.2 简单程序的一般形式</h2><p>   由上面的介绍，我们可以知道，简单C语言程序一般具有的形式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">指令（以#开头）</span><br><span class="line">int main（）</span><br><span class="line">&#123;</span><br><span class="line"> 具体的语句内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 接下来我们对指令、函数和语句进行详细讨论</p>
+<h2 id="2-2-1-指令"><a href="#2-2-1-指令" class="headerlink" title="2.2.1 指令"></a>2.2.1 指令</h2><p>  指令在第14、15章还会详细讨论，这里我们专注聊聊“#include”指令。</p>
+<p>  我们的pun.c以“#include &lt;stdio.h&gt;”开头。这条指令的含义是在编译前将&lt;stdio.h&gt;中的信息“包含”到程序中。&lt;stdio.h&gt;包含了关于C标准输入&#x2F;输出库的信息，比如这里的scanf就是&lt;stdio.h&gt;中包括的。像&lt;stdio.h&gt;这样的文件我们称为<strong>头文件</strong>（<strong>header</strong>）。头文件可以自己编写，不过C库本身提供的头文件就已经涵盖了许多实用的内容。</p>
+<p>  C语言不同于其他的编程语言，它没有内置的“读“和”写”的命令，输入&#x2F;输出功能需要依靠标准库中的函数来实现。</p>
+<p>  格式方面，指令以#开头，一般只占一行，结尾不需要分号或者其它标记</p>
+<h2 id="2-2-2-函数"><a href="#2-2-2-函数" class="headerlink" title="2.2.2  函数"></a>2.2.2  函数</h2><p>  <strong>函数</strong>的英文为Function。实际上，这里的函数与数学中的函数有所不同，并且或许更接近“功能”的含义。它接受x个参数（x为非负整数），执行内部的代码语句并会返回0或1个返回值。</p>
+<p>  以如下的函数为例，它的函数名叫max，最前面的int规定了它的返回值是一个整数。a和b代表它的两个参数，a和b前的int指明两个参数的类型也均为整数。下面使用了简单的if，else语句来输出两个参数中的较大值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int max（int a，int b）&#123;</span><br><span class="line"> if(a&gt;b)&#123;</span><br><span class="line">      return a;</span><br><span class="line">  &#125;</span><br><span class="line">  else&#123;</span><br><span class="line">      return b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  函数包括两类：由C语言本身提供的一部分函数（称为<strong>库函数</strong>），这类函数一般只需要通过指令包含对应的标准库即可使用。比如用于输出的printf函数包含在&lt;stdio.h&gt;中，用于计算正弦的sin函数包含在&lt;math.h&gt;中。我们不需要知道这些函数实现的过程，但使用时需要研读手册，了解其参数和输出的格式和本身的功能。</p>
+<p>  main函数也是特殊的函数。在执行程序时系统会自动调用main函数。因此，main函数必须有且仅有一个。通常情况下它的返回值为0。表示程序正常终止。</p>
+<p>  在第九章我们还会详细探讨自定义编写的函数，它可以使得编写程序的思路清晰，主程序精简，层次分明。</p>
+<h2 id="2-2-3-语句"><a href="#2-2-3-语句" class="headerlink" title="2.2.3 语句"></a>2.2.3 语句</h2><p>   <strong>语句</strong>是程序运行时执行的命令。关于语句我们会在第五、六章展开详细讨论。在我们的例子中只涉及到了两种语句：一种是返回语句，用来给出函数的返回值。另一种是调用语句，要求某个函数执行分派给它的任务称为调用这个函数。</p>
+<p>   C语言中的每条语句都需要以分号（“;”）结尾。当然也有例外，是复合语句。我们在第五章中会讨论它。编译器在编译时并不以分行作为语句结束的依据，而是需要靠分号来指出。</p>
+<h2 id="2-2-4-显示字符串"><a href="#2-2-4-显示字符串" class="headerlink" title="2.2.4 显示字符串"></a>2.2.4 显示字符串</h2><p>​     printf是一个功能强大的函数，我们在课程期间编写的几乎每一个程序都需要用到它。第三章会进一步介绍它的使用。这里，我们只是用它来展示了一条放在双引号里的确定的字符串字面量。并且容易发现，在使用它时，括号里的双引号并不会被显示。</p>
+<p>​    当printf工作结束时，它并不会自动跳转到下一输出行。我们在语句的末尾加了\n，它是换行符，printf会在遇到它时终止当前行，然后把后续的输出转到下一行。（如下图\n的使用）   <a target="_blank" rel="noopener" href="https://postimg.cc/NL2bbw7m"><img src="https://i.postimg.cc/FFDqrrYW/b678c42f6118a6ce1c6ce8530d7b58a.png" alt="b678c42f6118a6ce1c6ce8530d7b58a.png"></a></p>
+<h1 id="2-3-注释"><a href="#2-3-注释" class="headerlink" title="2.3 注释"></a>2.3 注释</h1><p>   当我们编写的程序较为复杂时，或者使用的思路相对清奇时，单纯呈现出来的C语言代码会让人摸不着头脑，可读性很差。为了在较长周期的编写过程中保持清醒，或者在遇到问题想请求他人帮忙时，我们常常需要添加一些文字说明来标注代码的含义，用途。或者有时候我们需要在源码中添加一些识别信息，例如程序名，作者，编写日期等等。</p>
+<p>   这时我们就需要用到<strong>注释</strong>，它几乎可以出现在程序的任何位置。只需要用 &#x2F;*来标明注释开始，用*&#x2F;来标明注释结束。也可以用两个斜杠 &#x2F;&#x2F; 来标明注释的开始，这种注释会在行末结束。</p>
+<p>   添加注释是一个很好的习惯，在完成编程作业遇到困难时很可能会强烈地认识到这一点。因为自己编写的代码常常由于先入为主而找不到错误，向别人求助时没有注释的话又很难理解程序的思路，含义等。</p>
+<p>  <a target="_blank" rel="noopener" href="https://postimg.cc/HcHLPMVF"><img src="https://i.postimg.cc/NM2rF7YG/671921c9070d0fb1d1b5dadea9dd5be.png" alt="671921c9070d0fb1d1b5dadea9dd5be.png"></a></p>
+<h1 id="2-4-变量和赋值"><a href="#2-4-变量和赋值" class="headerlink" title="2.4 变量和赋值"></a>2.4 变量和赋值</h1><h2 id="2-4-1-类型"><a href="#2-4-1-类型" class="headerlink" title="2.4.1 类型"></a>2.4.1 类型</h2><p>  每个变量都有一个类型。前述中我们已经提到的int就是一种。C语言拥有广泛多样的类型。比如用于代表数字的类型就有代表整数的int类型，代表小数的float，同样代表小数但是精度更高的double。</p>
+<p>  变量的类型决定了变量的存储方式，以及允许对变量进行的操作，所以选择合适的类型是非常关键的。</p>
+<p>  在完成作业时，我们一般使用int和double比较多。float虽然也是小数，但它的精度不如double高，有可能会因为最后一位的舍入而造成误差导致答案有误。</p>
+<p>  除此之外，还有代表字符的Char类型等等。</p>
+<h2 id="2-4-2-声明"><a href="#2-4-2-声明" class="headerlink" title="2.4.2 声明"></a>2.4.2 声明</h2><p>   在使用变量前，需要先对其进行<strong>声明</strong>。没有声明过的变量无法使用。这个过程包括指明变量的类型，说明变量的名字。如下图中展示了对一个int型变量的声明。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/w3dkT0GL"><img src="https://i.postimg.cc/2j19Gtdc/180db71983236ea875b5d50a8ebf8b5.png" alt="180db71983236ea875b5d50a8ebf8b5.png"></a></p>
+<p>  如果我们需要若干个相同类型的变量，也可以将它们的声明合并起来。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/p9RFM6TL"><img src="https://i.postimg.cc/MGjbVkJV/24b6d842f52248a5971507b76d1e26b.png" alt="24b6d842f52248a5971507b76d1e26b.png"></a></p>
+<p>  对一些变量，声明时最好能对其进行初始化，给出一个初始值。以免出现一些不必要的问题。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/yDj3yT1g"><img src="https://i.postimg.cc/pdbQx03Z/9b71a44a3f06f8daacc19e2a3e72768.png" alt="9b71a44a3f06f8daacc19e2a3e72768.png"></a></p>
+<h2 id="2-4-3-赋值"><a href="#2-4-3-赋值" class="headerlink" title="2.4.3 赋值"></a>2.4.3 赋值</h2><p>   变量在声明后可以通过<strong>赋值</strong>的方式来获得值。赋值时可以使用确定的值，也可以变量之间相互赋值。</p>
+<p>   在下面的程序中，我们给长、宽、高分别赋值并用它们来计算得到了体积。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/TpsTM7dv"><img src="https://i.postimg.cc/qvJqKSWq/239ffcf3813b8050cccb74c27cfc15b.png" alt="239ffcf3813b8050cccb74c27cfc15b.png"></a></p>
+<h2 id="2-4-4-显示变量的值"><a href="#2-4-4-显示变量的值" class="headerlink" title="2.4.4 显示变量的值"></a>2.4.4 显示变量的值</h2><p>​    printf函数能用来输出函数的值。编程时我们可以添加若干个printf函数来输出变量的值，通过观察输出的变量值是否符合预期来debug。</p>
+<p>​    上面2.4.3中就使用了printf函数来输出volume的值。会发现我们在printf的引号中使用了%d，而在引号外添加了变量名。这里的%d是占位符，用来代表volume的数值在输出时所处的位置。</p>
+<p>​    不同的数据类型需要使用不同的占位符，上面的volume是int型，对应的占位符为%d，表示输出一个十进制整数。其它的还有float对应的%f和double对应的%lf表示输出一个小数形式的浮点数等等。</p>
+<h2 id="2-4-5-初始化"><a href="#2-4-5-初始化" class="headerlink" title="2.4.5 初始化"></a>2.4.5 初始化</h2><p>   当程序开始执行时，某些变量会被自动赋值为0，而大多数则不会。既没有默认值又没有被赋值的变量是未初始化的。使用这些变量的值（如输出它们）可能会产生一个随机数值，更糟糕的情况下可能会使得程序崩溃。因此，在声明时就给出初始化值是个好习惯。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a = 3; //这样可以初始化a为3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a , b = 3; //这样仅仅初始化b为3而a未被初始化</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a = 3, b = 3; //这样可以将a与b都初始化为3</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-6-显示表达式的值"><a href="#2-4-6-显示表达式的值" class="headerlink" title="2.4.6 显示表达式的值"></a>2.4.6 显示表达式的值</h2><p>  在上面的介绍中，我们先通过对height，length和width分别赋值，计算得volume后再将其输出。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/TpsTM7dv"><img src="https://i.postimg.cc/qvJqKSWq/239ffcf3813b8050cccb74c27cfc15b.png" alt="239ffcf3813b8050cccb74c27cfc15b.png"></a></p>
+<p>  想要达到同样的效果，还可以直接输出表达式的值。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/cvvhFNBY"><img src="https://i.postimg.cc/K8NWvGK9/b75d8eb7c9059cc7661a229d62ca45d.png" alt="b75d8eb7c9059cc7661a229d62ca45d.png"></a></p>
+<p>  也就是说，printf输出的不仅可以是变量的值，还可以是一个表达式的值。</p>
+<h1 id="2-5-读入输入"><a href="#2-5-读入输入" class="headerlink" title="2.5 读入输入"></a>2.5 读入输入</h1><p>​    用上面关于长宽高与体积的程序，我们可以计算得已知长宽高时，长方体的体积。但它仅能计算确定的一个箱子。我们想实现能够自行输出尺寸进行计算的程序就需要对它进行一些改进。</p>
+<p>​    为了读入数据，我们需要用到scanf函数。它和printf函数一样，包含在&lt;stdio.h&gt;头文件中。</p>
+<p>​    scanf函数使用时和printf函数有些相似，都需要使用到格式化字符。</p>
+<p>​    为了读入一个整数并将其储存在变量名为height的int型变量中，我们可以这样写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%d&quot;,&amp;height);</span><br></pre></td></tr></table></figure>
+
+<p>​    %d和其printf中的含义相似，代表希望读入的是一个整数。height为变量名，但使用scanf函数时需要在它前面加上&amp;符号。这涉及关于变量地址的问题，暂时不好解释。因此暂时记住就好。</p>
+<p>​    类似地，想读入一个浮点数并将其储存在变量名为float的double型变量中，我们可以这样写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%f&quot;,&amp;height);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/qgKKRvMz"><img src="https://i.postimg.cc/J765psfc/d641e7a1741376ea0e6e96d8b9c6b99.png" alt="d641e7a1741376ea0e6e96d8b9c6b99.png"></a></p>
+<p> 用scanf改写后，我们就可以按照实际情况输入数据并得到结果。关于scanf函数的使用还有别的一些问题，后面的学习中我们会接着讨论。</p>
+<h1 id="2-6-定义常量的名字"><a href="#2-6-定义常量的名字" class="headerlink" title="2.6 定义常量的名字"></a>2.6 定义常量的名字</h1><p>  指令除了有#include类用于引入头文件的类型，还有#define类型可以进行宏定义。我们可以用宏定义来给一些常量命名。命名后在程序中就可以使用其名字来代替数字，使得程序可读性更好一些。譬如，圆周率的使用较为频繁，我们就可以使用下面的宏定义，来将3.14命名为PI。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3.14</span><br></pre></td></tr></table></figure>
+
+<p>宏定义也可以用来定义表达式，比如</p>
+<h1 id="2-7-标识符"><a href="#2-7-标识符" class="headerlink" title="2.7 标识符"></a>2.7 标识符</h1><p>  前面我们提到了变量的命名，常量的命名。设定给这些实体的名字称为标识符。C语言中，合法的标识符可以含有字母，数字和下划线，但是必须以字母或者下划线开头。</p>
+<p>  合法的标识符有：     weight , Weight , weight1 , _weight , height1</p>
+<p>  不合法的标识符有： 1weight , o*o</p>
+<p>  C语言区分大小写，因此weight和Weight是不同的。</p>
+<p>  并且C语言中有一些已规定好的、具有特殊意义的关键字，它们不能作为标识符来使用。包括if、int、double等等。</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/08/11/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/"
+      title="普林斯顿概率论读本学习-Chapter 2 基本概率定律"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        普林斯顿概率论读本学习-Chapter 2 基本概率定律
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/08/11/%E6%88%91%E7%9A%84%E5%88%9D%E6%81%8B/"
+      title="我的初恋"
+     >
+
+    <p class="title-text">
+      
+        我的初恋
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 Sunoarslan<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
