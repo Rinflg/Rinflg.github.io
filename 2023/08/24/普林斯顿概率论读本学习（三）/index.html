@@ -23,8 +23,9 @@
 <meta property="og:image" content="https://i.postimg.cc/ZRKH4kQb/11ff261461afccd4029cbf56b82f901.png">
 <meta property="og:image" content="https://i.postimg.cc/sf5YqgxY/b59337c58c281a1ab84faa750f5db22.png">
 <meta property="og:image" content="https://i.postimg.cc/0NxRGQzV/bbba715ea1a7ee9cd6fbd62342ddf8d.png">
+<meta property="og:image" content="https://i.postimg.cc/CMDQ6TYQ/a40b02b7cb9265f9b415b0bde0a4c87.png">
 <meta property="article:published_time" content="2023-08-24T03:05:44.000Z">
-<meta property="article:modified_time" content="2023-08-25T09:42:02.886Z">
+<meta property="article:modified_time" content="2023-08-25T13:44:02.470Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
@@ -288,7 +289,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            958 words 
+            1.5k words 
           </div>
         </div>
         
@@ -315,8 +316,20 @@
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/kDXRt9xG"><img src="https://i.postimg.cc/sf5YqgxY/b59337c58c281a1ab84faa750f5db22.png" alt="b59337c58c281a1ab84faa750f5db22.png"></a></p>
 <p>​                它的值为n！&#x2F;（k！（n-k）！），其中n和k都是非负整数，并且k≤n。</p>
 <p>​                推广到一些比较特殊的取值：（1）如果k＞n，则其值为0。这是合理的，因为我们没有任何一种方案可以从4张牌中抽出5张牌。（2）如果k取负整数，我们需要使用<strong>伽马函数</strong>的一些结论，例如：Γ（s+1）&#x3D;sΓ（s）等来帮助我们将二项式系数推广到负值。</p>
-<p>​                 在得出二项式系数的过程中，我们使用的是<strong>故事证明法</strong>。它使用起来很棒，例如，我们可以用它来轻松地证明：</p>
+<hr>
+<h4 id="故事证明法"><a href="#故事证明法" class="headerlink" title="故事证明法"></a>故事证明法</h4><p>​            在得出二项式系数的过程中，我们使用的是<strong>故事证明法</strong>。它使用起来很棒，例如，我们可以用它来轻松地证明：</p>
 <p>​            <a target="_blank" rel="noopener" href="https://postimg.cc/Xr2z4nc5"><img src="https://i.postimg.cc/0NxRGQzV/bbba715ea1a7ee9cd6fbd62342ddf8d.png" alt="bbba715ea1a7ee9cd6fbd62342ddf8d.png"></a></p>
+<p>​                 证明时，我们可以将（n+1）个单位看作全体。我们不妨取出一个特殊元素为x，剩余的n个元素捆绑成整体。加号前的第一部分可以看作将x抛开，在剩余的n个元素中抽取k个元素，由此得到（k+1）个元素。第二部分可以看作在n个元素中抽取（k+1）个元素而不包含x。两者相加，即在（n+1）个元素中抽取（k+1）个元素时包含x的情况总数和不包含x的情况总数。也就是等式右边的，从（n+1）个元素中抽取（k+1）个元素的情况总数。</p>
+<p>​                  举个例子来使得证明更容易理解一些，就是：<strong>在n个同学，1个老师的班级中</strong>，等式左边第一个二项式系数相当于在n个同学中抽取k个同学，再加上一个老师组成小组；等式左边第二个二项式系数相当于在n个同学中抽取（k+1）个同学组成小组，而不考虑老师；等式右边相当于在老师和同学共（n+1）个人中直接抽取（k+1）个人组成小组。</p>
+<p>​              下面是另一个二项式系数的性质，它也可以用故事证明法来证明</p>
+<p>​     <a target="_blank" rel="noopener" href="https://postimg.cc/dDs6Lfh2"><img src="https://i.postimg.cc/CMDQ6TYQ/a40b02b7cb9265f9b415b0bde0a4c87.png" alt="a40b02b7cb9265f9b415b0bde0a4c87.png"></a></p>
+<p>​               证明时，我们可以将等号左边看作是从n个人中选出k个人入围，而将等号右边看作是从n个人中选出（n-k）个人出局。这样也能说明其实质是一样的。</p>
+<p>​              上面的两个等式都可以用二项式的数学原式展开计算再整理来证明，但显然上面的证明会更加高效。</p>
+<hr>
+<h2 id="3-1-3-总结"><a href="#3-1-3-总结" class="headerlink" title="3.1.3 总结"></a>3.1.3 总结</h2><p>​         这一节，我们认识了组合学和概率学中最重要的两个函数。</p>
+<p>​                   · 第一个是<strong>阶乘函数</strong>，它回答了<strong>排列问题</strong>，即：对集合中的元素进行排序，一共有多少种方法。</p>
+<p>​                   · 第二个是<strong>二项式系数</strong>，它可以用来解决<strong>组合问题</strong>，即：在不考虑次序的前提下，从集合中挑选若干元素，一共有多少种方法。</p>
+<p>​        在解决问题时，我们要多多思考情景中<strong>是否需要考虑次序</strong>。</p>
 
         
       </div>
