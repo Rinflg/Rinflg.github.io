@@ -11,15 +11,23 @@
   <meta charset="utf-8">
   
   
-  <title>Category: C | Sunoarslan&#39;s blog</title>
+  <title>普林斯顿概率论读本学习-Chapter 3 计数I：纸牌 | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunoarslan&#39;s blog">
-<meta property="og:url" content="http://example.com/categories/C/index.html">
+  <meta name="description" content="​        回看一下之前的概率论学习，我们在第一章谈论了一些生活中常见的话题，比如生日和篮球；而第二章我们了解了一些定义和公理，它们是很重要的，但的确容易让人感到沮丧和不安。在学习时，我们大概会更喜欢使用知识解决问题而不是坐下来记定义。 ​        因此，我们来尝试考察一些问题，而将独立性和条件概率放到第4章。 ​        我们将探索纸牌游戏，如扑克牌、桥牌。当然，事实上：概率和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="普林斯顿概率论读本学习-Chapter 3 计数I：纸牌">
+<meta property="og:url" content="http://example.com/2023/08/24/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="​        回看一下之前的概率论学习，我们在第一章谈论了一些生活中常见的话题，比如生日和篮球；而第二章我们了解了一些定义和公理，它们是很重要的，但的确容易让人感到沮丧和不安。在学习时，我们大概会更喜欢使用知识解决问题而不是坐下来记定义。 ​        因此，我们来尝试考察一些问题，而将独立性和条件概率放到第4章。 ​        我们将探索纸牌游戏，如扑克牌、桥牌。当然，事实上：概率和">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/SNmqWFrG/11ff261461afccd4029cbf56b82f901.png">
+<meta property="og:image" content="https://i.postimg.cc/sxVM03q4/b59337c58c281a1ab84faa750f5db22.png">
+<meta property="article:published_time" content="2023-08-24T03:05:44.000Z">
+<meta property="article:modified_time" content="2023-08-24T13:55:03.655Z">
 <meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/SNmqWFrG/11ff261461afccd4029cbf56b82f901.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -247,63 +255,105 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archive</h1>
-      </div>    
+<article id="post-普林斯顿概率论读本学习（三）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        普林斯顿概率论读本学习-Chapter 3 计数I：纸牌
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-24T03:05:44.000Z" itemprop="datePublished">2023-08-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Math/">Math</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            969 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>​        回看一下之前的概率论学习，我们在第一章谈论了一些生活中常见的话题，比如生日和篮球；而第二章我们了解了一些定义和公理，它们是很重要的，但的确容易让人感到沮丧和不安。在学习时，我们大概会更喜欢使用知识解决问题而不是坐下来记定义。</p>
+<p>​        因此，我们来尝试考察一些问题，而将独立性和条件概率放到第4章。</p>
+<p>​        我们将探索纸牌游戏，如扑克牌、桥牌。当然，事实上：<strong>概率和计数是不可分割的</strong>。如果可以计数，那么我们就能通过将所需属性的事件个数除以可能事件的总个数来求出概率。因此，当我们在学习本章中所有与计数有关的论述时，请牢记：要想掌握概率，就要掌握计数。</p>
+<h1 id="3-1-阶乘和二项式系数"><a href="#3-1-阶乘和二项式系数" class="headerlink" title="3.1 阶乘和二项式系数"></a>3.1 阶乘和二项式系数</h1><h2 id="3-1-1-阶乘函数"><a href="#3-1-1-阶乘函数" class="headerlink" title="3.1.1 阶乘函数"></a>3.1.1 阶乘函数</h2><p>​               <strong>阶乘函数 n！</strong>我们已经很熟悉了，它的定义为，<em>如果n是一个正整数，那么n！&#x3D;n（n-1）（n-2）……3*2*1</em>。特别地，我们规定<strong>0！&#x3D;1</strong>，它可以为我们后续的工作提供很多方便。</p>
+<p>​               它增长的很快。举例来讲，10！&#x3D;3 628 800 ； 100！接近 10^158 ; 1000！大于10^2500。</p>
+<p>​               我们也可以对它进行<strong>递归定义</strong>，即n！&#x3D;n*（n-1）！</p>
+<p>​               我们在第一次认识阶乘时，是从组合学的角度来理解的：对n个人进行排序，如果考虑先后次序，那么排序方法的总数就是n！。由此我们也能对0！作出一个合理的解释：如果不需要进行任何排序，那么最终方案的总数为1。</p>
+<p>​                阶乘函数可以被推广到<strong>全体实数</strong>，推广后的阶乘函数我们称为<strong>伽马函数</strong>，它的原型为</p>
+<p>​                                     <a target="_blank" rel="noopener" href="https://postimg.cc/PNVBj70L"><img src="https://i.postimg.cc/SNmqWFrG/11ff261461afccd4029cbf56b82f901.png" alt="11ff261461afccd4029cbf56b82f901.png"></a></p>
+<p>​               其中，要求z的实部大于-2. </p>
+<p>​               关于它的具体细节，我们会在第15章中详细讨论。它的转化是十分自然的。</p>
+<h2 id="3-1-2-二项式系数"><a href="#3-1-2-二项式系数" class="headerlink" title="3.1.2 二项式系数"></a>3.1.2 二项式系数</h2><p>​                阶乘函数常用在需要考虑次序的问题中，但很多时候次序并不重要。比如我们在扑克牌游戏中抽到了5张牌，摸到牌的顺序并不关键，重要的是5张牌分别是什么。</p>
+<p>​                使用阶乘函数，我们可以知道取出五张牌的可能方案，列出算式为 52！&#x2F;（52-5）！&#x3D;52！&#x2F;47！&#x3D;52*51*50*49*48。再考虑到牌的次序并不重要，我们可能按照不同的次序取出相同的五张卡。因此每一种组合会重复5！次。最终的结果就为 （52！&#x2F;47！）&#x2F;（5！）</p>
+<p>​                按照先抽出指定数量的目标，再去掉重复次数的思路，我们可以做到不重复不遗漏。但形似n！&#x2F;（k！（n-k）！）这样的记号有些复杂，有些时候也并不好用（比如在编程计算时，出现一些较大数的阶乘可能造成溢出错误）。</p>
+<p>​                故我们将其称为<strong>二项式系数</strong>，记号为.</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/DJMfS32S"><img src="https://i.postimg.cc/sxVM03q4/b59337c58c281a1ab84faa750f5db22.png" alt="b59337c58c281a1ab84faa750f5db22.png"></a></p>
+<p>​                它的值为n！&#x2F;（k！（n-k）！），其中n和k都是非负整数，并且k≤n。</p>
+<p>​                推广到一些比较特殊的取值：（1）如果k＞n，则其值为0。这是合理的，因为我们没有任何一种方案可以从4张牌中抽出5张牌。（2）如果k取负整数，我们需要使用<strong>伽马函数</strong>的一些结论，例如：Γ（s+1）&#x3D;sΓ（s）等来帮助我们将二项式系数推广到负值。</p>
+<p>​                 在得出二项式系数的过程中，我们使用的是<strong>故事证明法</strong>。它使用起来很棒，例如，我们可以用它来轻松地证明：<br>$$<br>\binom{n}{k}+\binom{n}{k+1}&#x3D;\binom{n+1}{k+1}<br>$$</p>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">2 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/08/11/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （二）基本概念">
-        <div class="date">08-11</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    C语言知识复习 Part 1 基本特性 （二）基本概念
-                
-            </div>
-        </div>
-        <div class="tags">
-            #C语言
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/09/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （一）概述">
-        <div class="date">08-09</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    C语言知识复习 Part 1 基本特性 （一）概述
-                
-            </div>
-        </div>
-        <div class="tags">
-            #C语言
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/08/23/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E7%BB%BF%E7%9C%BC%E7%9D%9B%E8%B0%9C%E9%A2%98/"
+      title="奇妙逻辑推理(1)绿眼睛谜题"
+     >
+
+    <p class="title-text">
+      
+        奇妙逻辑推理(1)绿眼睛谜题
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
