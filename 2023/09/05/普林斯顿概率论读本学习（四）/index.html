@@ -20,11 +20,15 @@
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
 <meta property="og:description" content="​        电子版课本 ​        事件不是孤立的，某个事件的发生会对另一个事件发生的概率产生影响。在计算时，我们经常得到额外的信息；在已知其他事件发生的前提下，我们想知道某个事件发生的概率有多大。这就是所谓的条件概率。我们希望利用更多的基本结果来找到条件概率的简单公式，并为此花费了大量时间。这种花费是有充分理由的。     ​     在前期我们大部分的讨论围绕着如何合理地猜测答案，">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/MpHY2wjm/b979010d4305213eb304c37bca48ab2.png">
+<meta property="og:image" content="https://i.postimg.cc/BnYbk8rM/ea0d8ff6199983bf929472998a95174.png">
+<meta property="og:image" content="https://i.postimg.cc/4dVCTgBB/8905bebd85ecc5080bc0e5829c3faa5.png">
 <meta property="article:published_time" content="2023-09-05T06:29:07.000Z">
-<meta property="article:modified_time" content="2023-09-06T01:42:48.506Z">
+<meta property="article:modified_time" content="2023-09-09T08:34:54.097Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/MpHY2wjm/b979010d4305213eb304c37bca48ab2.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -294,7 +298,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2k words 
+            2.6k words 
           </div>
         </div>
         
@@ -325,7 +329,30 @@
 <p>​        也就是说，Pr（A|B）不可以简单地取决于Pr（A），Pr（B）的数值，而应该与A和B的本质有关。或者保守些讲，至少与Pr（A）和Pr（B）以外的东西有关。</p>
 <p>​        我们再想一想Pr（A|B）的定义是已知B发生的情况下A发生的概率，那至少应该有Pr（A∩B）项。还有一些特殊的取值：Pr（B|B）&#x3D;1；Pr（B^c,B）&#x3D;0；0≤Pr（A|B）≤1。这时我们可以猜测一个简单的形式：Pr（A∩B）&#x2F;Pr（B）（需要注意，分母并不一定非0，当Pr（B）&#x3D;0时，Pr（A∩B）也为0，这会让算式成为0&#x2F;0型不定式）。除此之外，A&#x3D;B时，Pr（A|B）&#x3D;1，A+B^c时，Pr（A|B）&#x3D;0。同时，由于A∩B⊆B，也能保证概率始终介于0和1之间。</p>
 <p>​        下面还有一个例子。</p>
-<h2 id="4-1-2-期望计数法"><a href="#4-1-2-期望计数法" class="headerlink" title="4.1.2 期望计数法"></a>4.1.2 期望计数法</h2><p>​        假设某天你出去钓鱼，并制定了以下规则：一旦钓到鱼或者已经等待了4个小时（不论哪个情况先发生），就立即停止钓鱼。另外，假设我们钓到鳟鱼的概率是40%，钓到鲈鱼的概率为25%，而没有钓到鱼的概率为35%。某天你钓到了一条鱼，那么这条鱼是鳟鱼的概率是多少？假设你钓了1000次鱼，那么我们会预测有400次钓到了鳟鱼，250次钓到了鲈鱼，还有350次空手而归。那如果我们已知已经钓上了一条鱼呢？</p>
+<h2 id="4-1-2-期望计数法"><a href="#4-1-2-期望计数法" class="headerlink" title="4.1.2 期望计数法"></a>4.1.2 期望计数法</h2><p>​        假设某天你出去钓鱼，并制定了以下规则：一旦钓到鱼或者已经等待了4个小时（不论哪个情况先发生），就立即停止钓鱼。另外，假设我们钓到鳟鱼的概率是40%，钓到鲈鱼的概率为25%，而没有钓到鱼的概率为35%。某天你钓到了一条鱼，那么这条鱼是鳟鱼的概率是多少？假设你钓了1000次鱼，那么我们会预测有400次钓到了鳟鱼，250次钓到了鲈鱼，还有350次空手而归。那如果我们已知已经钓上了一条鱼呢？这条鱼是鳟鱼的可能性有多大？</p>
+<p>​        我们现在只关注钓到鱼的650次，其中钓到鳟鱼的次数为400次。也就是钓到鳟鱼概率为400&#x2F;650。我们可以验证一下我们猜测的公式：Pr（A）&#x3D;0.40，Pr（B）&#x3D;0.65，Pr（A∩B）&#x3D;0.40。可以知道Pr（A∩B）&#x2F;Pr（B）&#x3D;0.40&#x2F;0.65.</p>
+<p>​        期望计数法的可行性在于，所有的概率都按比例放大了相同的倍数。它能够更直观地解决条件概率问题。</p>
+<p>​        当然，直接计算概率的比值也是可以的。我们可以构造下面这样的表格：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/gx9h8fsx"><img src="https://i.postimg.cc/MpHY2wjm/b979010d4305213eb304c37bca48ab2.png" alt="b979010d4305213eb304c37bca48ab2.png"></a></p>
+<p>​        这样，已知B发生时我们就可以将考察范围限定在B所在行中。条件概率Pr（A|B）由下面的式子给出。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/yDR7SNYZ"><img src="https://i.postimg.cc/BnYbk8rM/ea0d8ff6199983bf929472998a95174.png" alt="ea0d8ff6199983bf929472998a95174.png"></a></p>
+<p>​        由上面的讨论，我们有了初步结果：</p>
+<hr>
+<p><strong>条件概率：</strong>设B时满足条件Pr（B）＞0的事件，那么已知B时A的条件概率就等于</p>
+<p>​       Pr（A|B）&#x3D;Pr（A∩B）&#x2F;Pr（B）</p>
+<hr>
+<h2 id="4-1-3-Veen图法"><a href="#4-1-3-Veen图法" class="headerlink" title="4.1.3 Veen图法"></a>4.1.3 Veen图法</h2><p>​       我们还可以再举一些条件概率的例子。</p>
+<p>​       <strong>例子：</strong>在某个城镇里，一个成年人拥有汽车或房子的概率是90%。如果有70%的成年人拥有汽车，有50%的成年人拥有房子，那么一个拥有房子的成年人也拥有汽车的概率是多少？</p>
+<p>​       <strong>解答：</strong>首先，我们需要考虑我们真正想要找到的是哪个概率。用事件A表示拥有一辆汽车，用事件B表示拥有一套房子，那么我们想求的概率就是Pr（A|B）。我们已知Pr（B），再求出Pr（A∩B）即可。</p>
+<p>​       Pr（A∪B）&#x3D;Pr（A）+Pr（B）-Pr（A∩B）。所以Pr（A∩B）&#x3D;0.3。则Pr（A|B）&#x3D;Pr（A∩B）&#x2F;Pr（B）</p>
+<p>&#x3D;0.3&#x2F;0.5&#x3D;0.6。</p>
+<p>​      我们也可以用一张文氏图来将这个问题形象化。图中，w代表城镇上的全体人员。z代表拥有房子的人，x代表拥有汽车的人，相交部分y代表同时拥有两件东西的人。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Q98YpRLT"><img src="https://i.postimg.cc/4dVCTgBB/8905bebd85ecc5080bc0e5829c3faa5.png" alt="8905bebd85ecc5080bc0e5829c3faa5.png"></a></p>
+<h1 id="4-2-一般乘法法则"><a href="#4-2-一般乘法法则" class="headerlink" title="4.2 一般乘法法则"></a>4.2 一般乘法法则</h1><h2 id="4-2-1-陈述"><a href="#4-2-1-陈述" class="headerlink" title="4.2.1 陈述"></a>4.2.1 陈述</h2><p>我们很容易得到另一个结论，它被称为一般乘法法则：</p>
+<hr>
+<p><strong>一般乘法法则：</strong></p>
+<p>​     Pr（A∩B）&#x3D;Pr（A|B）*Pr（B）</p>
+<hr>
 
         
       </div>
