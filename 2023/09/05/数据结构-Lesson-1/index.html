@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据结构_Lesson 1 | Sunoarslan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Chapter 1 绪论 ·数据结构的基本含义 DS &#x3D; {D，R} ·逻辑结构、存储结构 ·数据、数据元素、数据项 ·数据类型、ADT（抽象数据类型） ·程序 &#x3D; 数据结构 + 算法 ·算法的定义、算法的基本特征 ·算法评价 ·算法性能（时空渐进复杂性）分析——大O表示法  §1.1 数据结构的概念早期：数值计算运算对象： 纯数值性的信息，以整型、浮点型或布尔型为对象的数据类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构_Lesson 1">
+<meta property="og:url" content="http://example.com/2023/09/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-1/index.html">
+<meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="Chapter 1 绪论 ·数据结构的基本含义 DS &#x3D; {D，R} ·逻辑结构、存储结构 ·数据、数据元素、数据项 ·数据类型、ADT（抽象数据类型） ·程序 &#x3D; 数据结构 + 算法 ·算法的定义、算法的基本特征 ·算法评价 ·算法性能（时空渐进复杂性）分析——大O表示法  §1.1 数据结构的概念早期：数值计算运算对象： 纯数值性的信息，以整型、浮点型或布尔型为对象的数据类">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/7ZvGCb23/52260b5b52e0f1a7d5befa4c3ffaffb.png">
+<meta property="og:image" content="https://i.postimg.cc/651szG0Z/1fef634819e6c2c487945559d5851e9.png">
+<meta property="article:published_time" content="2023-09-05T00:58:47.000Z">
+<meta property="article:modified_time" content="2023-09-11T11:14:37.873Z">
+<meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/7ZvGCb23/52260b5b52e0f1a7d5befa4c3ffaffb.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="https://i.postimg.cc/WbMMsBcy/image.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="https://i.postimg.cc/XYjnpCtb/1.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Sunoarslan's blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="Search" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=https://i.postimg.cc/ncTsLpMC/image.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Sunoarslan </div>
+      <div class="dot"></div>
+      <div class="subtitle">又携书剑路茫茫. </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/169826675" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199360235414/" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Sunoarslan/" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1584195298&website=www.oicqzone.com" title="QQ"><i class="fa-brands fa-qq"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Math/">
+                Math
+                <div class="category-count">5</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E8%AE%A8%E8%AE%BA/">
+                零碎知识讨论
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/C/">
+                C
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Small-Talks/">
+                Small Talks
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Logic/">
+                Logic
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Reading-Notes/">
+                Reading Notes
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                数据结构
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          September 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          August 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/10/%E6%80%8E%E6%A0%B7%E6%89%BE%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/" title="怎样找电子书资源" >
+            <div class="recent-link-text">
+              怎样找电子书资源
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/05/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89/" title="普林斯顿概率论读本学习-Chapter 4 条件概率、独立性和贝叶斯定理" >
+            <div class="recent-link-text">
+              普林斯顿概率论读本学习-Chapter 4 条件概率、独立性和贝叶斯定理
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-1/" title="数据结构_Lesson 1" >
+            <div class="recent-link-text">
+              数据结构_Lesson 1
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/04/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6-%E6%B2%89%E9%BB%98%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0/" title="读读好书-沉默的大多数" >
+            <div class="recent-link-text">
+              读读好书-沉默的大多数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/%E5%A4%A7%E5%AD%A6%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%BA%A6%E8%BF%87%E5%91%A2%EF%BC%9F/" title="大学应该如何度过？" >
+            <div class="recent-link-text">
+              大学应该如何度过？
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-数据结构-Lesson-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        数据结构_Lesson 1
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-05T00:58:47.000Z" itemprop="datePublished">2023-09-05</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="Chapter-1-绪论"><a href="#Chapter-1-绪论" class="headerlink" title="Chapter 1 绪论"></a>Chapter 1 绪论</h1><hr>
+<p><strong>·</strong>数据结构的基本含义 DS &#x3D; {D，R}</p>
+<p><strong>·</strong>逻辑结构、存储结构</p>
+<p><strong>·</strong>数据、数据元素、数据项</p>
+<p><strong>·</strong>数据类型、ADT（抽象数据类型）</p>
+<p><strong>·</strong>程序 &#x3D; 数据结构 + 算法</p>
+<p><strong>·</strong>算法的定义、算法的基本特征</p>
+<p><strong>·</strong>算法评价</p>
+<p><strong>·</strong>算法性能（时空渐进复杂性）分析——大O表示法</p>
+<hr>
+<h2 id="§1-1-数据结构的概念"><a href="#§1-1-数据结构的概念" class="headerlink" title="§1.1 数据结构的概念"></a>§1.1 数据结构的概念</h2><h3 id="早期：数值计算"><a href="#早期：数值计算" class="headerlink" title="早期：数值计算"></a>早期：数值计算</h3><p><strong>运算对象：</strong> <em>纯数值性的信息</em>，以整型、浮点型或布尔型为对象的数据类型。</p>
+<p>   这时通常是科学和工程计算需求（解线性方程组、数值积分的计算、微分方程求解等）</p>
+<p>   E.G. 数值计算的程序设计</p>
+<p>   某人的银行存款为10000元，银行的年利率为3.5%，以a0表示最初的存款额，每年账户的存款额的数列为a0，a1，……，an，如何计算n年后的存款额？</p>
+<p><strong>求解：</strong>根据数学模型中的公式进行编程计算。</p>
+<h3 id="中后期：非数值计算"><a href="#中后期：非数值计算" class="headerlink" title="中后期：非数值计算"></a>中后期：非数值计算</h3><p><strong>处理对象：</strong>类型复杂的数据，数据元素之间的相互关系一般不能用数学公式、方程式加以描述。如排序，检索问题。</p>
+<p>  随着现实需求的变化，由定量的问题求解变为<em>定性</em>的问题求解。如何在计算机中组织、存储、传递数据。</p>
+<p><strong>依靠的数学模型：</strong>不再是数学方程，而是<em>表、树、图</em>之类的数据结构</p>
+<p><em>数据结构是一门关注（非数值计算的）程序设计问题中所出现的计算机<strong>操作对象</strong>以及它们之间的<strong>关系</strong>和<strong>操作</strong>的学科</em></p>
+<hr>
+<h3 id="基本概念："><a href="#基本概念：" class="headerlink" title="基本概念："></a>基本概念：</h3><p>  <em>数据：</em>数据是信息的载体，是描述客观事物的数、字符、以及所有能输入到计算机中，被计算机程序识别和处理的符号（数值、字符等）的集合。它可以大致分为两类：a.数值型数据，包括整数、浮点数、复数等。b.非数值型数据，主要包括字符串，以及文字、图形、图像等。</p>
+<p>  <em><strong>1.数据元素（数据成员）：</strong></em>是数据的基本单位。是一个数据整体中相对独立的单位。在不同的条件下，数据元素又可称为元素、结点、顶点、记录等。例如：对于一个学籍管理文件来说，每个学生记录就是它的数据元素；对于一个字符串来说，每个字符就是它的数据元素；对于一个数组来说，每个数组成分就是它的数据元素。</p>
+<p>​     数据元素中的数据项可以分为两种：a&gt;.初等项：指的是在数据处理时不能再分割的数据项的最小单位  b&gt;.组合项：指的是由多个初等项组成的，可以再划分为多个更小项的单位。</p>
+<p>  <em><strong>2.数据对象：</strong></em>具有相同性质的数据元素的集合。</p>
+<p> <strong>数据元素</strong>是<strong>数据项</strong>的集合，<strong>数据对象</strong>是<strong>数据元素</strong>的集合。</p>
+<hr>
+<h3 id="数据结构的形式定义"><a href="#数据结构的形式定义" class="headerlink" title="数据结构的形式定义"></a>数据结构的形式定义</h3><p>   数据结构由<em>某一数据对象</em>以及<em>该对象中所有数据成员之间的关系</em>组成。记为DS&#x3D;{D，R}。其中，D是某一数据对象，R是该对象中所有数据成员之间的关系的有限集合。</p>
+<hr>
+<h3 id="数据结构涉及三个方面"><a href="#数据结构涉及三个方面" class="headerlink" title="数据结构涉及三个方面"></a>数据结构涉及三个方面</h3><h4 id="1-数据的逻辑结构——从用户视图看，是面向问题的"><a href="#1-数据的逻辑结构——从用户视图看，是面向问题的" class="headerlink" title="1.数据的逻辑结构——从用户视图看，是面向问题的"></a>1.数据的<strong>逻辑结构</strong>——从用户视图看，是面向问题的</h4><p>​     是对数据成员之间的逻辑关系的描述，它可以用一个数据成员的集合和定义在此集合上的若干关系来表示；</p>
+<h4 id="2-数据的物理结构——从具体实现视图看，是面向计算机的"><a href="#2-数据的物理结构——从具体实现视图看，是面向计算机的" class="headerlink" title="2.数据的物理结构——从具体实现视图看，是面向计算机的"></a>2.数据的物理结构——从具体实现视图看，是面向计算机的</h4><p>​      是逻辑结构在计算机中的表示和实现，故又称“存储结构”</p>
+<p>逻辑结构最终映像为存储结构。任何一个<em>算法的设计</em>取决于选定的<em>逻辑结构</em>；而<em>算法的最终实现</em>依赖于采用的<em>存储结构</em>。</p>
+<p><strong>如何映像：</strong>1&gt;.任何的数据元素在计算机中最终都是转化成一个二进制的位串。</p>
+<p>​                   2&gt;.关系的映像：  （1）顺序映像：以相对的存储位置表示后继关系（2）链式映像：以附加信息（指针）表示后继关系</p>
+<h4 id="3-相关的操作及其实现。"><a href="#3-相关的操作及其实现。" class="headerlink" title="3.相关的操作及其实现。"></a>3.相关的操作及其实现。</h4><hr>
+<h3 id="求解问题过程"><a href="#求解问题过程" class="headerlink" title="求解问题过程"></a>求解问题过程</h3><p><strong>实际问题</strong>——分析抽象→<strong>问题模型</strong>——数据分析→<strong>数据结构（数据类型、逻辑结构）</strong>——算法分析与设计→<strong>算法（逻辑运算）</strong>——程序设计→<strong>程序（物理结构、运算实现）</strong>——测试通过→<strong>结果输出</strong></p>
+<hr>
+<h3 id="数据结构的分类"><a href="#数据结构的分类" class="headerlink" title="数据结构的分类"></a>数据结构的分类</h3><p>  <strong>·</strong>线性结构：表、栈、队列    特点：一个前驱对应一个后继</p>
+<p>  <strong>·</strong>非线性结构：1&gt;.层次结构：树、二叉树、堆  2&gt;.网状结构：图  3&gt;.其它：集合</p>
+<h2 id="§1-2-数据结构的抽象形式"><a href="#§1-2-数据结构的抽象形式" class="headerlink" title="§1.2 数据结构的抽象形式"></a>§1.2 数据结构的抽象形式</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>定义：一组性质相同的<em>值的集合</em>，以及定义于这个值集合上的<em>一组操作</em>的总称</p>
+<p>不同类型的变量，其所能取的<em>值的范围</em>不同，所能<em>进行的操作</em>不同</p>
+<h4 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h4><p>-由用户定义，用以表示应用问题的<strong>数据模型</strong></p>
+<p>-由<strong>基本的数据类型</strong>组成，并包括<strong>一组相关的服务</strong>（或称操作）</p>
+<p>-支持了<strong>逻辑设计</strong>和<strong>物理实现</strong>的分离，支持封装和信息隐蔽</p>
+<p><em>抽象：抽取反映问题本质的东西，不涉及具体实现细节</em></p>
+<h5 id="关于抽象数据类型的两种视图："><a href="#关于抽象数据类型的两种视图：" class="headerlink" title="关于抽象数据类型的两种视图："></a>关于抽象数据类型的两种视图：</h5><p>  1.设计者角度：根据问题来定义抽象数据类型所包含的信息，给出其相关功能的实现，并提供公共界面的接口。</p>
+<p>  2.用户的角度：使用公共界面的接口对抽象数据类型进行操作，不需要考虑其物理实现。对于外部用户来说，抽象数据类型应该是一个黑盒子。</p>
+<h5 id="抽象数据类型的特点："><a href="#抽象数据类型的特点：" class="headerlink" title="抽象数据类型的特点："></a>抽象数据类型的特点：</h5><p>  降低了软件设计的复杂性，提高了程序的可读性和可维护性并且使得程序的正确性更容易保证。</p>
+<h2 id="§1-3-数据结构的抽象形式"><a href="#§1-3-数据结构的抽象形式" class="headerlink" title="§1.3 数据结构的抽象形式"></a>§1.3 数据结构的抽象形式</h2><p>   <strong>面向对象的概念</strong></p>
+<p>​      面向对象 &#x3D; 对象 + 类 + 继承 + 通信</p>
+<p>​      面向对象方法中，类的定义充分体现了抽象数据类型的思想。</p>
+<h2 id="§1-4-算法定义"><a href="#§1-4-算法定义" class="headerlink" title="§1.4 算法定义"></a>§1.4 算法定义</h2><p>  程序设计 &#x3D; 数据结构 + 算法</p>
+<p>  程序设计的实质是对确定的问题选择一种好的<strong>结构</strong>，加上设计一种好的<strong>算法</strong></p>
+<p><strong>数据结构</strong>是问题的数学模型，<strong>算法</strong>是处理问题的策略，<strong>程序设计</strong>是为计算机处理问题编制的一组指令集。</p>
+<p>  <strong>算法</strong>：是一个有穷的指令集，这些指令为解决某一特定任务规定了一个运算序列。即算法是对特定问题求解步骤的一种描述。</p>
+<p> <strong>算法的描述：</strong> </p>
+<p>  1&gt;.自然语言</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/3dBJV89N"><img src="https://i.postimg.cc/7ZvGCb23/52260b5b52e0f1a7d5befa4c3ffaffb.png" alt="52260b5b52e0f1a7d5befa4c3ffaffb.png"></a></p>
+<p>  2&gt;.流程图  特定的表示算法的图形符号</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/BXDwnbRZ"><img src="https://i.postimg.cc/651szG0Z/1fef634819e6c2c487945559d5851e9.png" alt="1fef634819e6c2c487945559d5851e9.png"></a></p>
+<p>3&gt;.伪语言 包括程序设计语言的三大基本结构及自然语言的一种语言</p>
+<p>4&gt;.类语言  类似高级语言的语言，例如，类C语言</p>
+<h3 id="算法必须满足的五个重要特性"><a href="#算法必须满足的五个重要特性" class="headerlink" title="算法必须满足的五个重要特性"></a>算法必须满足的五个重要特性</h3><p>​    1.<strong>输入</strong> 有0个或多个输入</p>
+<p>​    2.<strong>输出</strong> 有一个或多个输出（即处理结果）</p>
+<p>​    3.<strong>确定性</strong> 每步都是确切、无歧义的。一条语句遇到两次相同输入，应该给出相同的结果。</p>
+<p>​    4.<strong>有穷性</strong> 算法应该在执行有穷步后结束。算法不能陷入无限循环。例如求π的精确解，由于是无穷位的数，所以可以被称为计算方法而不能称为算法。</p>
+<p>​    5.<strong>有效性</strong> 每一条运算应该足够基本。所有操作都应该已经实现或者可以通过已有的基本操作及基本运算在有限次内实现。</p>
+<h4 id="程序-与-算法"><a href="#程序-与-算法" class="headerlink" title="程序 与 算法"></a>程序 与 算法</h4><p>   程序不一定等于算法</p>
+<p>​    <strong>·</strong>程序不一定满足有穷性，即不一定是算法。如操作系统</p>
+<p>​    <strong>·</strong>程序中的指令必须是机器可执行的，而算法中的指令虽要求可以执行，但不一定是“机器可执行”</p>
+<h2 id="§1-5-算法性能分析与度量"><a href="#§1-5-算法性能分析与度量" class="headerlink" title="§1.5 算法性能分析与度量"></a>§1.5 算法性能分析与度量</h2><p>  算法的性能标准： 1&gt;. 正确性 2&gt;. 可使用性 3&gt;. 可读性 4&gt;. 效率 5&gt;. 健壮性</p>
+<h3 id="算法的效率"><a href="#算法的效率" class="headerlink" title="算法的效率"></a><u>算法的效率</u></h3><p>  包括<strong>时间代价</strong>和<strong>空间代价</strong>，前者指的是<strong>算法执行时间</strong>；后者指的是算法执行过程中<strong>所需的最大存储空间</strong>，两者都与问题的规模有关。</p>
+<p>  <strong>衡量方法</strong>：后期测试，事前估计。</p>
+<p>​      1.<em>后期测试</em>：在算法中的某些部位插装时间函数time(); 来测定算法完成某一功能所花费的具体时间</p>
+<p>​      2.<em>事前估计</em>：&lt;算法的复杂性度量属于事前估计&gt; </p>
+<p>​                      <strong>空间复杂度</strong>：算法执行时所占用的存储空间    <strong>时间复杂度</strong>：算法执行时所耗费的时间，只与运行时间有关，而与编译时间无关。</p>
+<p>​    &lt;可以用程序步的方式来衡量一个程序的执行时间&gt;</p>
+<p>​       <u>程序步是指语法上有意义的一段指令。</u>具体来讲，注释&#x2F;声明语句：程序步数为0；赋值语句&#x2F;表达式计算：程序步为1；循环控制语句：每次执行的程序步数为1。</p>
+<p>​      <em>一个语句本身的程序步数可能不等于该语句一次执行所具有的程序步数。（如：自己编写的函数）</em></p>
+<p>​      <u>程序步本身不是一个准确的时间概念，不能确切的反映运行时间。实际场景中，确定程序的准确程序步数也十分困难</u></p>
+<h3 id="算法的渐进分析"><a href="#算法的渐进分析" class="headerlink" title="算法的渐进分析"></a><u>算法的渐进分析</u></h3><p><strong>渐进时间复杂度</strong></p>
+<p>   1&gt;一个算法的运行时间通常是随着<em>问题规模的增长而增长</em>，它是问题规模（用正整数n表示）的函数。</p>
+<p>   2&gt;统计算法中的关键操作，以关键操作重复执行的次数作为算法的时间度量。</p>
+<p>   3&gt;算法中关键操作重复执行的次数是规模n的某个函数T（n），称T（n）为算法的（渐进）时间复杂度。</p>
+<p>   4&gt;T（n）的精确计算通常比较困难。我们可以在数量上估计一个算法的执行时间，也能够达到分析算法的目的。</p>
+<p>   5&gt;我们使用大O表示法，记作T（n）&#x3D;O（f（n））。它并不是表示算法运行所需要的时间，而是表示了算法运行时间的增速，即算法的运行时间以不同的速度增加，也就是渐进时间复杂度。</p>
+<p>   6&gt; 通常有下面几种表达式来描述时间复杂度</p>
+<p>​          ① O（1）：常量时间。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int func(int n)&#123;</span><br><span class="line">   n++;</span><br><span class="line">   return n*2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​          ② O（log n）：对数时间。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int func(int n)&#123;</span><br><span class="line">   int sum = 0;</span><br><span class="line">   for(int i=1;i&lt;=n;i*=2)&#123;</span><br><span class="line">       sum += i;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​          ③ O（n）：线性时间。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int func(int n)&#123;</span><br><span class="line">   int sum = 0;</span><br><span class="line">   for(int i=0;i&lt;=n;i++)&#123;</span><br><span class="line">     sum += i;</span><br><span class="line">   &#125;</span><br><span class="line">   return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​          ④ O （n^2）: 二次方时间（或其它次方时间）。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int func(int n)&#123;</span><br><span class="line">   int sum = 0;</span><br><span class="line">   for(int i=0;i&lt;=n;i++)&#123;</span><br><span class="line">       for(int i=0;i&lt;=i;i++)&#123;</span><br><span class="line">           sum += i;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​          ⑤ O （2^n）：指数时间。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> //幂运算 计算 a^n</span><br><span class="line">double power(double a, int n)</span><br><span class="line">&#123;</span><br><span class="line">    // 如果 n 为 0 ，返回 1</span><br><span class="line">    if (n == 0)</span><br><span class="line">        return 1;</span><br><span class="line">    // 如果 n 为 1 ，返回 a</span><br><span class="line">    if (n == 1)</span><br><span class="line">        return a;</span><br><span class="line">    // 如果 n 为负数，转换为正数，并将 a 变为倒数</span><br><span class="line">    if (n &lt; 0)</span><br><span class="line">        return power(1 / a, -n);</span><br><span class="line">    // 计算 a^(n/2)</span><br><span class="line">    double half = power(a, n / 2);</span><br><span class="line">    // 如果 n 是偶数，返回 half * half</span><br><span class="line">    if (n % 2 == 0)</span><br><span class="line">        return half * half;</span><br><span class="line">    // 如果 n 是奇数，返回 half * half * a</span><br><span class="line">    else</span><br><span class="line">        return half * half * a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​          ⑥ O（n！）：阶乘时间。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 计算全排列</span><br><span class="line">void permute(vector&lt;int&gt; &amp;arr,int start, int end)&#123;</span><br><span class="line">  //如果start==end，说明已经到达最后一个位置，输出当前序列</span><br><span class="line">  if(start==end)&#123;</span><br><span class="line">    print(arr);  //其它地方实现</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  for(int i=start;i&lt;=end;i++)&#123;</span><br><span class="line">    //将第i个元素和第start个元素交换</span><br><span class="line">    swap(arr[i],arr[start]);</span><br><span class="line">    //递归地生成剩余元素的排列</span><br><span class="line">    permute(arr,start+1,end);</span><br><span class="line">    //恢复原来的顺序</span><br><span class="line">    swap(arr[i],arr[start]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>关于大O表示法的一些规则</strong></em></p>
+<p>   1&gt; 加法规则（适用于并列程序段）：T（n，m）&#x3D;T1（n）+T2（m）&#x3D;O（max（f（n），g（m）））</p>
+<p>   2&gt; 乘法规则（适用于嵌套程序段）：T（n，m）&#x3D;T1（n）*T2（m）&#x3D;O（f（n）*g（m））</p>
+<p>   3&gt; 乘法规则中的常数无关项：O（C）→O（1）  T（n）&#x3D;O（c* f（n））&#x3D;O（f（n））</p>
+<p>   4&gt; O（1）表示常数计算时间</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/05/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89/"
+      title="普林斯顿概率论读本学习-Chapter 4 条件概率、独立性和贝叶斯定理"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        普林斯顿概率论读本学习-Chapter 4 条件概率、独立性和贝叶斯定理
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/04/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6-%E6%B2%89%E9%BB%98%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0/"
+      title="读读好书-沉默的大多数"
+     >
+
+    <p class="title-text">
+      
+        读读好书-沉默的大多数
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 Sunoarslan<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
