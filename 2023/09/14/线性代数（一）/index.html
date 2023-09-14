@@ -11,15 +11,24 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2023 | Sunoarslan&#39;s blog</title>
+  <title>线性代数（一） | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunoarslan&#39;s blog">
-<meta property="og:url" content="http://example.com/archives/2023/page/2/index.html">
+  <meta name="description" content="矩阵与方程组  数学中最重要的问题之一是求解线性方程组。超过75%的科学研究和工程应用中的数学问题，在某个阶段都涉及求解线性方程组。我们有许多新的数学方法，可以将较为复杂的问题化为线性方程组。 1.1 线性方程组定义形如 ​            a1x1 + a2x2 + …… + anxn &#x3D; b 的方程称为含有 n 个未知量的线性方程，其中 a1 ， a2 ， …… ， an和b为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数（一）">
+<meta property="og:url" content="http://example.com/2023/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="矩阵与方程组  数学中最重要的问题之一是求解线性方程组。超过75%的科学研究和工程应用中的数学问题，在某个阶段都涉及求解线性方程组。我们有许多新的数学方法，可以将较为复杂的问题化为线性方程组。 1.1 线性方程组定义形如 ​            a1x1 + a2x2 + …… + anxn &#x3D; b 的方程称为含有 n 个未知量的线性方程，其中 a1 ， a2 ， …… ， an和b为">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/Y0fFz8Jz/75b6c9f5edbd1d90ba3bd17fb8c3be2.png">
+<meta property="og:image" content="https://i.postimg.cc/wxcRPfGh/9d6e26cd76e5642b2deca4499523880.png">
+<meta property="og:image" content="https://i.postimg.cc/ydWBPNtQ/7caf3b413b34c46b5f0f0b723d2f8c9.png">
+<meta property="article:published_time" content="2023-09-14T10:39:50.000Z">
+<meta property="article:modified_time" content="2023-09-14T11:57:30.059Z">
 <meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/Y0fFz8Jz/75b6c9f5edbd1d90ba3bd17fb8c3be2.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -267,177 +276,141 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archive</h1>
-      </div>    
+<article id="post-线性代数（一）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        线性代数（一）
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-14T10:39:50.000Z" itemprop="datePublished">2023-09-14</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Math/">Math</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.3k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="矩阵与方程组"><a href="#矩阵与方程组" class="headerlink" title="矩阵与方程组"></a>矩阵与方程组</h1><p>  数学中最重要的问题之一是求解线性方程组。超过75%的科学研究和工程应用中的数学问题，在某个阶段都涉及求解线性方程组。我们有许多新的数学方法，可以将较为复杂的问题化为线性方程组。</p>
+<h2 id="1-1-线性方程组"><a href="#1-1-线性方程组" class="headerlink" title="1.1 线性方程组"></a>1.1 线性方程组</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>形如</p>
+<p>​            a1x1 + a2x2 + …… + anxn &#x3D; b</p>
+<p>的方程称为<strong>含有 n 个未知量的线性方程</strong>，其中 a1 ， a2 ， …… ， an和b为实数，x1，x2，……，xn称为变量。</p>
+<p>  含有 m 个<strong>方程</strong>和 n 个<strong>未知量</strong>的<strong>线性方程组</strong>（又称为 “m*n的线性方程组”）定义为</p>
+<hr>
+<p>​      a11x1 + a12x2 + …… + a1nxn &#x3D; b1</p>
+<p>​      a21x1 + a22x2 + …… + a2nxn &#x3D; b2</p>
+<p>​                 ……</p>
+<p>​      am1x1 + am2x2 + …… + amnxn &#x3D; bm</p>
+<hr>
+<p>  其中 aij 以及 bij 均为实数。</p>
+<h3 id="线性方程组的解"><a href="#线性方程组的解" class="headerlink" title="线性方程组的解"></a>线性方程组的解</h3><ul>
+<li><p>定义：若有序n元组（x1，x2，……，xn）满足方程组中的所有方程，则称其为m*n的方程组的解</p>
+</li>
+<li><p>存在性：有的方程组有解，有的方程组无解。无解的方程组称为是<strong>不相容的</strong>，同时，只要线性方程组存在解，那么就称它是<strong>相容</strong>的。</p>
+</li>
+<li><p>解集：线性方程组的所有解的几何称为方程组的<strong>解集</strong>。相容方程组的解集非空，不相容方程组的解集为空。</p>
+<p>m*n的方程组可能相容，也可能不相容。对于相容的方程组来说，它们解集的情况只可能是 有且仅有一个一个 或者 无穷个 解。关于其原理，我们在之后再进行证明。现在先主要着眼于求所给方程组的所有解。</p>
+</li>
+<li><h4 id="等价方程组"><a href="#等价方程组" class="headerlink" title="等价方程组"></a>等价方程组</h4><p>有这样两个方程组</p>
+<p>（a）3x1 + 2x2 - x3 &#x3D; -2                          （b）3x1 + 2x2 - x3 &#x3D; -2</p>
+<p>​                       x2        &#x3D;  3                                   -3x1 -    x2 + x3 &#x3D; 5</p>
+<p>​                            2x3 &#x3D;  4                                    3x1 + 2x2 + x3 &#x3D; 2</p>
+<p>  我们不难发现，方程组（a）更容易求解。而（b）实际上与（a）有相同的解，这通过三个方程之间进行运算容易得到。但（b）求解过程相对更复杂。</p>
+<p>  <strong>定义：</strong>若两个含有相同变量的方程组具有相同的解集，则称它们是等价的</p>
+<p><strong>下面的三种运算可能得到等价的方程组</strong></p>
+<p>  Ⅰ.交换任意两个方程的顺序</p>
+<p>  Ⅱ.任一方程两边同乘一个非零的实数</p>
+<p>  Ⅲ.任一方程的倍数加到另一方程上</p>
+<p> 因此，对于给定的方程组，我们可以反复利用上面三个运算，来得到一个更加容易求解的等价方程组。</p>
+</li>
+<li><h4 id="n-n-方程组"><a href="#n-n-方程组" class="headerlink" title="n * n 方程组"></a>n * n 方程组</h4><p>接下来我们来讨论 n*n方程组。我们将证明，若n*n的方程组仅有一个解，则我们可以利用上面的运算Ⅰ和Ⅲ来得到一个等价的“严格三角形方程组”。</p>
+<p><strong>严格三角形方程组的定义：</strong>若方程组中，第k个方程的前（k-1）个变量的系数均为零，且xk（k</p>
+<p>&#x3D;1，……，n）的系数不为零，则称该方程组为严格三角形的</p>
+<p><strong>n*n方程组的求解：</strong>只需由靠后的方程依次与前面的方程组做和或差消去未知数即可，较为方便。具体来讲，由第n个方程解得xn，将其代入第（n-1）个方程解得Xn-1，再将xn和xn-1代入第（n-2）个方程，解得xn-2，以此类推，称这种求解严格三角形方程组的方法为<strong>回代法</strong></p>
+<p>  一般地，给定一个n个方程n个未知量的线性方程组，可用运算Ⅰ和Ⅲ尽可能将其转化为等价的严格三角形方程组。事实上，当方程组不是唯一解时，不可能将其化简为严格三角形式。</p>
+<h3 id="方程组的系数矩阵"><a href="#方程组的系数矩阵" class="headerlink" title="方程组的系数矩阵"></a>方程组的系数矩阵</h3><p>  简单地讲，<strong>矩阵</strong>是一个矩形的数字阵列。一个m行n列的矩阵称为m×n矩阵，如果矩阵的行数等于列数，即m&#x3D;n，则称该矩阵为方阵。</p>
+<p>  将方程组的系数作为元，写成m×n的矩阵，这个矩阵就是方程组的<strong>系数矩阵</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/ctC6s71v"><img src="https://i.postimg.cc/Y0fFz8Jz/75b6c9f5edbd1d90ba3bd17fb8c3be2.png" alt="75b6c9f5edbd1d90ba3bd17fb8c3be2.png"></a></p>
+<p>  系数矩阵并不足以完全描述方程组，如果在系数矩阵的右侧添加一列方程组的右端项，又可以得到一个新的矩阵。这个矩阵就称为是方程组的<strong>增广矩阵</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/5jytQ310"><img src="https://i.postimg.cc/wxcRPfGh/9d6e26cd76e5642b2deca4499523880.png" alt="9d6e26cd76e5642b2deca4499523880.png"></a></p>
+<p>  而如果是将一个m×r的矩阵B添加到一个m×n的矩阵A的右端时，相应的增广矩阵记为（A|B）。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/gX9fcGY8"><img src="https://i.postimg.cc/ydWBPNtQ/7caf3b413b34c46b5f0f0b723d2f8c9.png" alt="7caf3b413b34c46b5f0f0b723d2f8c9.png"></a></p>
+</li>
+</ul>
+<p>​         每一个方程组都对应一个增广矩阵。在求解时，我们可以使用对增广矩阵进行运算的方法。之前我们提到的三个用于寻找等价方程组的运算，可以对应于下列增广矩阵的行运算。</p>
+<hr>
+<p>  <strong>初等行运算</strong></p>
+<p>​       Ⅰ.交换任意两行</p>
+<p>​       Ⅱ.以非零实数乘以某行</p>
+<p>​       Ⅲ.将某行乘以某个实数再加到其它行</p>
+<hr>
+<p>​    我们的目标是得到一个严格三角形的矩阵，只需要依次使用每一列中某个选定的数字将同列的行数比它大的其他数字全部消去即可。</p>
+<p>​    在上述过程中，如果出现某一列的所有元素皆为0时，就需要考虑将其化为某种特殊的梯形或者是阶梯形。</p>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">8 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/08/16/%E5%8F%8D%E7%9B%B4%E8%A7%89%E7%9A%84%E6%97%A0%E7%A9%B7%E5%A4%A7/" title="反直觉的无穷大">
-        <div class="date">08-16</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    反直觉的无穷大
-                
-            </div>
-        </div>
-        <div class="tags">
-            
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/15/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" title="数学分析新讲学习（一）">
-        <div class="date">08-15</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    数学分析新讲学习（一）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #数学分析
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/11/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="普林斯顿概率论读本学习-Chapter 2 基本概率定律">
-        <div class="date">08-11</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    普林斯顿概率论读本学习-Chapter 2 基本概率定律
-                
-            </div>
-        </div>
-        <div class="tags">
-            #概率论
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/11/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （二）基本概念">
-        <div class="date">08-11</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    C语言知识复习 Part 1 基本特性 （二）基本概念
-                
-            </div>
-        </div>
-        <div class="tags">
-            #C语言
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/11/%E6%88%91%E7%9A%84%E5%88%9D%E6%81%8B/" title="我的初恋">
-        <div class="date">08-11</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    我的初恋
-                
-            </div>
-        </div>
-        <div class="tags">
-            #闲话杂谈
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/09/C%E8%AF%AD%E8%A8%80%E7%9F%A5%E8%AF%86%E5%A4%8D%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" title="C语言知识复习 Part 1 基本特性 （一）概述">
-        <div class="date">08-09</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    C语言知识复习 Part 1 基本特性 （一）概述
-                
-            </div>
-        </div>
-        <div class="tags">
-            #C语言
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/07/%E9%AB%98%E4%B8%AD%E5%90%8C%E5%AD%A6%E4%BB%AC%E7%9A%84%E6%AF%95%E4%B8%9A%E5%8E%BB%E5%90%91%E5%9B%BE/" title="高中同学们的毕业去向图">
-        <div class="date">08-07</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    高中同学们的毕业去向图
-                
-            </div>
-        </div>
-        <div class="tags">
-            #闲话杂谈
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/02/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" title="普林斯顿概率论读本学习-Chapter 1 引言">
-        <div class="date">08-02</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    普林斯顿概率论读本学习-Chapter 1 引言
-                
-            </div>
-        </div>
-        <div class="tags">
-            #概率论
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89/"
+      title="代码随笔（一）"
+     >
+
+    <p class="title-text">
+      
+        代码随笔（一）
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
