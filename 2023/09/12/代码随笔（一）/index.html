@@ -13,21 +13,18 @@
   
   <title>代码随笔（一） | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="第一次作业的题量较少，难度较低，用来恢复恢复手感很合适。 Question 1：小蓝鲸排队 分析： ​    题目中的“抽出倒数第n个”考察的是线性表的删除。由于其标定了“倒数第n个“，因此我们更倾向于使用能够通过下标直接访问或者有删除目标位置元素的成员函数的容器。 ​    只要我们能够将数据读入并且存储，删除就很简单了。如果对C++的string库比较熟悉，存储每个单元可以使用string类，">
+  <meta name="description" content="第一次作业的题量较少，难度较低，用来恢复恢复手感很合适。 Question 1：小蓝鲸排队题目描述：小蓝鲸们参加活动，每个小蓝鲸都拿着一个随机数字并排成一排，每次主持人会抽出倒数第 n 个小蓝鲸，之后会有若干小蓝鲸补充到队伍末尾并再次抽出倒数第n 个小蓝鲸，如此往复，请你编写程序输出每次抽取后小蓝鲸队伍的数字集合。 输入格式：第一行给出 m 和 n，其中 m 代表接下来有 m 行输入，n 代表每次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随笔（一）">
 <meta property="og:url" content="http://example.com/2023/09/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
-<meta property="og:description" content="第一次作业的题量较少，难度较低，用来恢复恢复手感很合适。 Question 1：小蓝鲸排队 分析： ​    题目中的“抽出倒数第n个”考察的是线性表的删除。由于其标定了“倒数第n个“，因此我们更倾向于使用能够通过下标直接访问或者有删除目标位置元素的成员函数的容器。 ​    只要我们能够将数据读入并且存储，删除就很简单了。如果对C++的string库比较熟悉，存储每个单元可以使用string类，">
+<meta property="og:description" content="第一次作业的题量较少，难度较低，用来恢复恢复手感很合适。 Question 1：小蓝鲸排队题目描述：小蓝鲸们参加活动，每个小蓝鲸都拿着一个随机数字并排成一排，每次主持人会抽出倒数第 n 个小蓝鲸，之后会有若干小蓝鲸补充到队伍末尾并再次抽出倒数第n 个小蓝鲸，如此往复，请你编写程序输出每次抽取后小蓝鲸队伍的数字集合。 输入格式：第一行给出 m 和 n，其中 m 代表接下来有 m 行输入，n 代表每次">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.postimg.cc/66m4bFLR/6cd73b1fe55e6c13ed642af1b18d601.png">
-<meta property="og:image" content="https://i.postimg.cc/CL7H5z1t/6080d008a52d303d0fb33636201c70d.png">
 <meta property="article:published_time" content="2023-09-12T10:55:30.000Z">
-<meta property="article:modified_time" content="2023-09-14T12:30:12.763Z">
+<meta property="article:modified_time" content="2023-09-15T16:45:37.690Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="Code">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.postimg.cc/66m4bFLR/6cd73b1fe55e6c13ed642af1b18d601.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -189,7 +186,7 @@
         
             <a class="category-link" href="/categories/C/">
                 C++
-                <div class="category-count">1</div>
+                <div class="category-count">2</div>
             </a>
         
             <a class="category-link" href="/categories/Algorithm/">
@@ -220,7 +217,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">10 </div>
+          <div class="archive-count">11 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -238,6 +235,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/15/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%BA%8C%EF%BC%89/" title="代码随笔（二）" >
+            <div class="recent-link-text">
+              代码随笔（二）
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/15/%E8%B7%A8%E5%AD%A6%E7%A7%91%E8%A7%86%E9%87%8E%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%BC%88%EF%BC%88%E4%B8%80%EF%BC%89/" title="跨学科视野下的博弈（一）" >
             <div class="recent-link-text">
@@ -260,12 +263,6 @@
           <a class="recent-link" href="/2023/09/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89/" title="代码随笔（一）" >
             <div class="recent-link-text">
               代码随笔（一）
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-2/" title="数据结构_Lesson 2" >
-            <div class="recent-link-text">
-              数据结构_Lesson 2
             </div>
           </a>
         
@@ -312,7 +309,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            542 words 
+            1.2k words 
           </div>
         </div>
         
@@ -322,18 +319,60 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <p>第一次作业的题量较少，难度较低，用来恢复恢复手感很合适。</p>
-<h1 id="Question-1：小蓝鲸排队"><a href="#Question-1：小蓝鲸排队" class="headerlink" title="Question 1：小蓝鲸排队"></a>Question 1：小蓝鲸排队</h1><p><a target="_blank" rel="noopener" href="https://postimg.cc/gr30nS7k"><img src="https://i.postimg.cc/66m4bFLR/6cd73b1fe55e6c13ed642af1b18d601.png" alt="6cd73b1fe55e6c13ed642af1b18d601.png"></a></p>
+<h1 id="Question-1：小蓝鲸排队"><a href="#Question-1：小蓝鲸排队" class="headerlink" title="Question 1：小蓝鲸排队"></a>Question 1：小蓝鲸排队</h1><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>小蓝鲸们参加活动，每个小蓝鲸都拿着一个随机数字并排成一排，每次主持人会抽出倒数第 n 个小蓝鲸，之后会有若干小蓝鲸补充到队伍末尾并再次抽出倒数第n 个小蓝鲸，如此往复，请你编写程序输出每次抽取后小蓝鲸队伍的数字集合。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>第一行给出 m 和 n，其中 m 代表接下来有 m 行输入，n 代表每次抽出倒数第 n 个节点，</p>
+<p>接下来的 m 行依次输入一个数字集合，每行内数字用空格分隔开，并以”#”作为每行的结束标志。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每次输出处理后的数字集合，共 m 行，每行内数字用空格分隔开，并以”#”作为每行的结束标志。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">1 2 3 4 5 #</span><br><span class="line">6 7 #</span><br><span class="line">1 #</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 2 4 5 #</span><br><span class="line">1 2 4 6 7 #</span><br><span class="line">1 2 4 7 1 #</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>第一次输入为[1,2,3,4,5,#], 那么删除倒数第3个节点[3]后输出为[1,2,4,5,#],</p>
+<p>第二次输入为[6,7,#], 先接到第一次输出后面变成[1,2,4,5,6,7,#], 再删除倒数第3个节点[5]后输出为[1,2,4,6,7,#],</p>
+<p>最后一次输入为[1,#], 接在第二次输出后面变成[1,2,4,6,7,1,#], 再删除倒数第3个节点[6]后输出为[1,2,4,7,1,#]。</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 1</span><br><span class="line">1 2 #</span><br><span class="line">3 #</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 #</span><br><span class="line">1 #</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据规模："><a href="#数据规模：" class="headerlink" title="数据规模："></a>数据规模：</h3><p>1≤m≤100</p>
+<p>每行结点的数目num 满足 1≤num≤100</p>
+<p>每个节点值 val 满足 0 ≤ val ≤ 10000</p>
+<p> 1≤ n ≤ 第一行的num</p>
+<h3 id="限制："><a href="#限制：" class="headerlink" title="限制："></a>限制：</h3><ul>
+<li>时间限制：<strong>1s</strong></li>
+<li>内存限制：<strong>256MB</strong></li>
+</ul>
+<hr>
 <p><strong>分析：</strong></p>
 <p>​    题目中的“抽出倒数第n个”考察的是线性表的删除。由于其标定了“倒数第n个“，因此我们更倾向于使用能够通过下标直接访问或者有删除目标位置元素的成员函数的容器。</p>
 <p>​    只要我们能够将数据读入并且存储，删除就很简单了。如果对C++的string库比较熟悉，存储每个单元可以使用string类，既能够方便读入时跳过空格，重载的‘&#x3D;’也能够方便判断读入的是否为‘#’。</p>
 <p>​    由于需要删除元素，所以数组并不是首选，因为在删除线性表中的元素时需要对很多元素进行移动。我们可以选用vector库来存储，它的成员函数erase（）；能方便我们删除某一项，也方便我们在换行时将队列拼接。</p>
-<p>​    总体来说不难，一个AC代码为：</p>
+<p><strong>总体来说不难，一个AC代码为：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//C++</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">        int m, n;</span><br><span class="line">        cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">        vector&lt;string&gt; a;</span><br><span class="line">        string tmp;</span><br><span class="line">        for (int i = 1; i &lt;= m;i++)&#123;</span><br><span class="line">            while(cin &gt;&gt; tmp)&#123;</span><br><span class="line">                if(tmp==&quot;#&quot;)&#123;</span><br><span class="line">                        a.erase(a.begin() + a.size() - n);</span><br><span class="line">                        break;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                        a.push_back(tmp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            int size = a.size();</span><br><span class="line">            for (int i = 0; i &lt; size;i++)&#123;</span><br><span class="line">                cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            putchar(&#x27;#&#x27;);</span><br><span class="line">            putchar(&#x27;\n&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="Question-2：小蓝鲸找位置"><a href="#Question-2：小蓝鲸找位置" class="headerlink" title="Question 2：小蓝鲸找位置"></a>Question 2：小蓝鲸找位置</h1><p>  <a target="_blank" rel="noopener" href="https://postimg.cc/xckbFjLy"><img src="https://i.postimg.cc/CL7H5z1t/6080d008a52d303d0fb33636201c70d.png" alt="6080d008a52d303d0fb33636201c70d.png"></a></p>
+<h1 id="Question-2：小蓝鲸找位置"><a href="#Question-2：小蓝鲸找位置" class="headerlink" title="Question 2：小蓝鲸找位置"></a>Question 2：小蓝鲸找位置</h1><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小蓝鲸们在中秋节来到博物馆参观。一开始小蓝鲸们分成两列，每列的同学都按照身高顺序排好（<strong>递增序列</strong>）。但是博物馆的门太窄了，大家需要合并为一列依次进入。此外，老师在两列变为一列的同时要求还要按照身高顺序排好，而且要变为从高到低的顺序（<strong>递减序列</strong>）。现在请你为每个小蓝鲸找好在新队列的位置吧！</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行给出了初始两列的人数 m、n，</p>
+<p>接下来的两行（如果均存在）分别给出两列中每个小蓝鲸的身高 h 。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出合并后的数组，一共 1 行，共 m+n 个数字，数字用空格分隔开。</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例 1"></a>输入样例 1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">1 2 3</span><br><span class="line">2 5 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例 1"></a>输出样例 1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 5 3 2 2 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例 2"></a>输入样例 2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 0</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例 2"></a>输出样例 2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据规模：-1"><a href="#数据规模：-1" class="headerlink" title="数据规模："></a>数据规模：</h4><p>0≤m,n≤106</p>
+<p>0&lt;h&lt;109</p>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h3><ul>
+<li>时间限制：<strong>1s</strong></li>
+<li>内存限制：<strong>256MB</strong></li>
+</ul>
+<hr>
 <p><strong>分析：</strong></p>
 <p>​    同样比较简单，我们找一个合适的容器来承装即可。题目里也有暗示，最简单的数组即可。从两队队尾开始，选出比较大的那个放入新数组并且将下标前移一位即可。当两个下标都移动到0时停止。</p>
-<p>​    同样不难，一个AC代码为：</p>
+<p><strong>同样不难，一个AC代码为：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//C++</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int m, n;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    int* line1;</span><br><span class="line">    line1 = new int[m * sizeof(int)];</span><br><span class="line">    int* line2;</span><br><span class="line">    line2 = new int[n * sizeof(int)];</span><br><span class="line">    for (int i = 0; i &lt; m;i++)&#123;</span><br><span class="line">        cin &gt;&gt; *(line1+i);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; *(line2+i);</span><br><span class="line">    &#125;</span><br><span class="line">    int total = m + n, temto = 0;</span><br><span class="line">    int temm = m - 1, temn = n - 1;</span><br><span class="line">    int* result;</span><br><span class="line">    result = new int[total*sizeof(int)];</span><br><span class="line">    for (; temto &lt; total;temto++)&#123;</span><br><span class="line">        if (line1[temm] &gt;= line2[temn])</span><br><span class="line">        &#123;</span><br><span class="line">            result[temto] = line1[temm];</span><br><span class="line">            temm -= 1;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">        result[temto] = line2[temn];</span><br><span class="line">        temn -= 1;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; total;i++)&#123;</span><br><span class="line">        cout &lt;&lt; result[i];</span><br><span class="line">        printf(&quot; &quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
