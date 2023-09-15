@@ -11,20 +11,25 @@
   <meta charset="utf-8">
   
   
-  <title>搜索（一）无信息搜索 | Sunoarslan&#39;s blog</title>
+  <title>搜索算法（一）无信息搜索 | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="搜索问题  在人工智能的学习中，我们的研究对象大多是属于结构不良或非结构化的问题。对于这些问题，一般很难获得全部信息，也没有现成的算法可供求解使用。因此，只能依靠经验，利用已有知识逐步摸索求解。这种根据问题的实际情况，不断寻求可用知识，从而构建一条代价最小的推理路线，使得问题得以解决的过程称为搜索。  分类：  无信息搜索 又称盲目搜索，按照预订的控制策略进行搜索，在搜索过程中获得的中间信息并不改">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜索（一）无信息搜索">
+<meta property="og:title" content="搜索算法（一）无信息搜索">
 <meta property="og:url" content="http://example.com/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
 <meta property="og:description" content="搜索问题  在人工智能的学习中，我们的研究对象大多是属于结构不良或非结构化的问题。对于这些问题，一般很难获得全部信息，也没有现成的算法可供求解使用。因此，只能依靠经验，利用已有知识逐步摸索求解。这种根据问题的实际情况，不断寻求可用知识，从而构建一条代价最小的推理路线，使得问题得以解决的过程称为搜索。  分类：  无信息搜索 又称盲目搜索，按照预订的控制策略进行搜索，在搜索过程中获得的中间信息并不改">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/FFpP8TQ2/e60e68ce41578314b0bf068e97688e6.png">
+<meta property="og:image" content="https://i.postimg.cc/DwqkWRD8/09df408a4ce7cb12a4faf575ca2630a.png">
+<meta property="og:image" content="https://i.postimg.cc/hGvY8jPZ/c4cc6ed678cb7a3f70d65c027bc592a.png">
+<meta property="og:image" content="https://i.postimg.cc/YCtcPXVm/b8b5dc4a612e3131dd370e296d60a97.png">
 <meta property="article:published_time" content="2023-09-14T12:32:14.000Z">
-<meta property="article:modified_time" content="2023-09-14T13:20:12.899Z">
+<meta property="article:modified_time" content="2023-09-14T15:08:00.355Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/FFpP8TQ2/e60e68ce41578314b0bf068e97688e6.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -151,7 +156,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/Math/">
                 Math
-                <div class="category-count">6</div>
+                <div class="category-count">7</div>
             </a>
         
             <a class="category-link" href="/categories/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E8%AE%A8%E8%AE%BA/">
@@ -203,7 +208,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
     </div>
   </div>
 
@@ -217,7 +222,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">9 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -236,9 +241,15 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（一）无信息搜索" >
+          <a class="recent-link" href="/2023/09/15/%E8%B7%A8%E5%AD%A6%E7%A7%91%E8%A7%86%E9%87%8E%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%BC%88%EF%BC%88%E4%B8%80%EF%BC%89/" title="跨学科视野下的博弈（一）" >
             <div class="recent-link-text">
-              搜索（一）无信息搜索
+              跨学科视野下的博弈（一）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索" >
+            <div class="recent-link-text">
+              搜索算法（一）无信息搜索
             </div>
           </a>
         
@@ -257,12 +268,6 @@
           <a class="recent-link" href="/2023/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-2/" title="数据结构_Lesson 2" >
             <div class="recent-link-text">
               数据结构_Lesson 2
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/10/%E6%80%8E%E6%A0%B7%E6%89%BE%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/" title="怎样找电子书资源" >
-            <div class="recent-link-text">
-              怎样找电子书资源
             </div>
           </a>
         
@@ -290,7 +295,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        搜索（一）无信息搜索
+        搜索算法（一）无信息搜索
       </h1>
     
   
@@ -309,7 +314,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            277 words 
+            573 words 
           </div>
         </div>
         
@@ -329,8 +334,34 @@
 </li>
 </ul>
 </li>
+<li><p><strong>一个搜索问题可以用5个组成部分形式化描述</strong></p>
+<ul>
+<li>状态空间</li>
+<li>初始状态</li>
+<li>动作</li>
+<li>状态转移</li>
+<li>目标测试</li>
+<li>路径&#x2F;代价</li>
 </ul>
-<h1 id="无信息搜索"><a href="#无信息搜索" class="headerlink" title="无信息搜索"></a>无信息搜索</h1><ul>
+</li>
+<li><p><strong>搜索问题的解</strong></p>
+<p>  问题的解就是从初始状态到目标状态的一组行动序列，所有解里面代价最小的解即为最优解</p>
+<p><strong>E.G. 八数码问题</strong></p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/xqkyby8R"><img src="https://i.postimg.cc/FFpP8TQ2/e60e68ce41578314b0bf068e97688e6.png" alt="e60e68ce41578314b0bf068e97688e6.png"></a></p>
+<ul>
+<li>状态：8个数字方块和空格在棋盘上的分布</li>
+<li>初始状态：当前情况，任何一种情况都可能是</li>
+<li>动作：将空格与某个相邻格交换</li>
+<li>目标检测：检测是否达到目标状态</li>
+<li>路径代价：总的移动步数</li>
+</ul>
+</li>
+<li><p><strong>其它的搜索问题举例</strong></p>
+<p>   游戏、旅行规划问题、旅行商问题、芯片布线问题、机器人导航问题、蛋白质设计问题……</p>
+</li>
+</ul>
+<h1 id="无信息搜索"><a href="#无信息搜索" class="headerlink" title="无信息搜索"></a>无信息搜索</h1><hr>
+<ul>
 <li><p>搜索问题</p>
 </li>
 <li><p>无信息搜索</p>
@@ -342,6 +373,19 @@
 </ul>
 </li>
 <li><p>总结</p>
+<hr>
+</li>
+<li><p><strong>搜索图：</strong></p>
+<p>每个节点都是一个状态，图中的边体现了状态的转移</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/NKfPSCQc"><img src="https://i.postimg.cc/DwqkWRD8/09df408a4ce7cb12a4faf575ca2630a.png" alt="09df408a4ce7cb12a4faf575ca2630a.png"></a></p>
+</li>
+<li><p><strong>搜索树</strong></p>
+<p>对于大多数问题，很难构建完整的搜索树</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Z9kj4JN6"><img src="https://i.postimg.cc/hGvY8jPZ/c4cc6ed678cb7a3f70d65c027bc592a.png" alt="c4cc6ed678cb7a3f70d65c027bc592a.png"></a></p>
+</li>
+<li><p>搜索图和搜索树</p>
+<p>一个解是一个行动序列，搜索算法的工作就是考虑各种可能的行动序列</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/nCSwj1nH"><img src="https://i.postimg.cc/YCtcPXVm/b8b5dc4a612e3131dd370e296d60a97.png" alt="b8b5dc4a612e3131dd370e296d60a97.png"></a></p>
 </li>
 </ul>
 
@@ -356,10 +400,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/15/%E8%B7%A8%E5%AD%A6%E7%A7%91%E8%A7%86%E9%87%8E%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%BC%88%EF%BC%88%E4%B8%80%EF%BC%89/"
+      title="跨学科视野下的博弈（一）"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        跨学科视野下的博弈（一）
         
     </p>
   </a>
