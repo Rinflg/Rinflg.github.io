@@ -11,15 +11,22 @@
   <meta charset="utf-8">
   
   
-  <title>Category: Logic | Sunoarslan&#39;s blog</title>
+  <title>搜索（二）有信息搜索 | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunoarslan&#39;s blog">
-<meta property="og:url" content="http://example.com/categories/Logic/index.html">
+  <meta name="description" content="启发式搜索：&amp;emsp;&amp;emsp;启发式搜索是一种利用问题的启发信息来引导搜索过程的算法。启发信息是指与问题求解相关的一些辅助信息。我们利用它们可以减少搜索范围，提高搜索效率，找到最优解或近似最优解。 启发式信息： 估计离目标状态有多远的信息 不同的问题需要设计不同的启发式信息 例如：曼哈顿距离、欧式距离  基本思想：&amp;emsp;&amp;emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索（二）有信息搜索">
+<meta property="og:url" content="http://example.com/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="启发式搜索：&amp;emsp;&amp;emsp;启发式搜索是一种利用问题的启发信息来引导搜索过程的算法。启发信息是指与问题求解相关的一些辅助信息。我们利用它们可以减少搜索范围，提高搜索效率，找到最优解或近似最优解。 启发式信息： 估计离目标状态有多远的信息 不同的问题需要设计不同的启发式信息 例如：曼哈顿距离、欧式距离  基本思想：&amp;emsp;&amp;emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/Yqxr4cb2/a2ed5c0cb223225889870f445a0e829.png">
+<meta property="article:published_time" content="2023-09-19T13:24:11.000Z">
+<meta property="article:modified_time" content="2023-09-19T15:15:25.489Z">
 <meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/Yqxr4cb2/a2ed5c0cb223225889870f445a0e829.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -272,63 +279,117 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archive</h1>
-      </div>    
+<article id="post-搜索（二）有信息搜索" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        搜索（二）有信息搜索
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-19T13:24:11.000Z" itemprop="datePublished">2023-09-19</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Algorithm/">Algorithm</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="启发式搜索："><a href="#启发式搜索：" class="headerlink" title="启发式搜索："></a>启发式搜索：</h1><p>&emsp;&emsp;启发式搜索是一种利用问题的启发信息来引导搜索过程的算法。启发信息是指与问题求解相关的一些辅助信息。我们利用它们可以减少搜索范围，提高搜索效率，找到最优解或近似最优解。</p>
+<h6 id="启发式信息："><a href="#启发式信息：" class="headerlink" title="启发式信息："></a>启发式信息：</h6><ul>
+<li>估计离目标状态有多远的信息</li>
+<li>不同的问题需要设计不同的启发式信息</li>
+<li>例如：曼哈顿距离、欧式距离</li>
+</ul>
+<h6 id="基本思想："><a href="#基本思想：" class="headerlink" title="基本思想："></a>基本思想：</h6><p>&emsp;&emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程度，并按照评价函数的值来选择下一个要扩展的节点。评价函数通常由两部分组成：当前代价函数（CCF）和后续代价函数（FCF）。当前代价函数表示从初始状态到当前状态的已知代价，后续代价函数表示从当前状态到目标状态的估计代价。</p>
+<p>&emsp;&emsp;启发式搜索的优点是，它可以利用问题本身的特性或搜索过程中产生的一些信息来不断地改变或调整搜索方向，使搜索朝着最有希望的方向前进，避免无效或冗余的搜索，节约时间和空间资源。</p>
+<p>&emsp;&emsp;而缺点是，它需要设计合适的启发信息和评价函数，这可能需要对问题有一定的先验知识或经验。并且，启发式搜索并不保证一定能找到最优解，有时候可能会陷入局部最优或无解的情况。</p>
+<h2 id="贪婪搜索："><a href="#贪婪搜索：" class="headerlink" title="贪婪搜索："></a>贪婪搜索：</h2><p>&emsp;&emsp;又称<strong>贪心算法</strong>，是一种在每一步选择中都采取在<strong>当前状态下最好或最优的选择</strong>，从而希望导致结果是最好或最优的算法。</p>
+<p>​       它的优点显而易见：时间复杂度低，容易实现和理解，但不能保证得到的是全局最优解。</p>
+<ul>
+<li>时间复杂度：O（b^m）（当有较好的启发函数时，复杂度可以有效降低）</li>
+<li>空间复杂度：O（b^m）</li>
+<li>完备性：No</li>
+<li>最优性：No</li>
+</ul>
+<h2 id="A-搜索"><a href="#A-搜索" class="headerlink" title="A*搜索"></a>A*搜索</h2><h6 id="基本思想：-1"><a href="#基本思想：-1" class="headerlink" title="基本思想："></a>基本思想：</h6><p>&emsp;&emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程度，并按照评价函数的值来选择下一个要扩展的节点。与启发式搜索的评价函数类似，A*搜索的评价函数通常由两部分组成：当前代价函数和后续代价函数。</p>
+<h6 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h6><p>&emsp;&emsp;A*算法使用两个集合来表示待遍历到节点和已经遍历过的节点，通常称为开放列表和关闭列表。算法从初始状态开始，每次从开放列表中选取评价函数值最小的节点作为当前节点，并将其移动到关闭列表中。然后遍历当前节点的所有邻近节点，如果邻近节点不在关闭列表中，则计算其评价函数值，并将其加入到开放列表中。这个过程重复直到找到目标状态或者开放列表为空为止。</p>
+<h6 id="算法关键："><a href="#算法关键：" class="headerlink" title="算法关键："></a>算法关键：</h6><p>&emsp;&emsp;选择合适的后续代价函数，也就是启发函数。</p>
+<p>&emsp;&emsp;启发函数的选择会影响A*算法的性能和精确度。如果启发函数为零，则A*算法退化为Dijkstra算法；如果启发函数小于等于实际代价，那么A*算法就可以保证找到最优解。当启发函数等于实际代价，A*函数的性能达到最好，很快能找到最优解。而如果启发函数大于实际代价，就无法保证能找到最优解，但是搜索速度还是会加快。</p>
+<p>&emsp;&emsp;启发函数 f（n）&#x3D; g（n）+ h（n）</p>
+<p>&emsp;&emsp;其中，g（n）表示从起始节点到节点n的开销代价值，h（n）表示从节点n到目标节点路径中所估算的最小开销代价值。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/bsscMB74"><img src="https://i.postimg.cc/Yqxr4cb2/a2ed5c0cb223225889870f445a0e829.png" alt="a2ed5c0cb223225889870f445a0e829.png"></a></p>
+<h6 id="算法的完备性："><a href="#算法的完备性：" class="headerlink" title="算法的完备性："></a>算法的完备性：</h6><p>&emsp;&emsp;常见的问题中，状态数量常常是有限的，此时图或树A*算法都是完备的，也就是一定能找到一个解。</p>
+<p>&emsp;&emsp;而更普遍的情况中，要保证A*算法是完备的需要满足以下条件：</p>
+<ul>
+<li>搜索树的分支数量是有限的，即每个节点的后继结点数量是有限的</li>
+<li>单步代价的下界是一个正数</li>
+<li>启发函数有下界</li>
+</ul>
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6>
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">2 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理-黑白帽子谜题">
-        <div class="date">09-17</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    奇妙逻辑推理-黑白帽子谜题
-                
-            </div>
-        </div>
-        <div class="tags">
-            #逻辑推理
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/08/23/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E7%BB%BF%E7%9C%BC%E7%9D%9B%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理(1)绿眼睛谜题">
-        <div class="date">08-23</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    奇妙逻辑推理(1)绿眼睛谜题
-                
-            </div>
-        </div>
-        <div class="tags">
-            #逻辑推理
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/"
+      title="奇妙逻辑推理-黑白帽子谜题"
+     >
+
+    <p class="title-text">
+      
+        奇妙逻辑推理-黑白帽子谜题
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">

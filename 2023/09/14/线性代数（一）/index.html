@@ -23,8 +23,9 @@
 <meta property="og:image" content="https://i.postimg.cc/Y0fFz8Jz/75b6c9f5edbd1d90ba3bd17fb8c3be2.png">
 <meta property="og:image" content="https://i.postimg.cc/wxcRPfGh/9d6e26cd76e5642b2deca4499523880.png">
 <meta property="og:image" content="https://i.postimg.cc/ydWBPNtQ/7caf3b413b34c46b5f0f0b723d2f8c9.png">
+<meta property="og:image" content="https://i.postimg.cc/5Nkjggkn/759de7ae386704c59f3a59c8c5231b0.png">
 <meta property="article:published_time" content="2023-09-14T10:39:50.000Z">
-<meta property="article:modified_time" content="2023-09-17T08:03:26.969Z">
+<meta property="article:modified_time" content="2023-09-18T02:02:42.616Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
@@ -195,7 +196,7 @@
         
             <a class="category-link" href="/categories/Algorithm/">
                 Algorithm
-                <div class="category-count">1</div>
+                <div class="category-count">2</div>
             </a>
         </div>
     </div>
@@ -221,7 +222,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">12 </div>
+          <div class="archive-count">13 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -239,6 +240,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（二）有信息搜索" >
+            <div class="recent-link-text">
+              搜索（二）有信息搜索
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理-黑白帽子谜题" >
             <div class="recent-link-text">
@@ -261,12 +268,6 @@
           <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索" >
             <div class="recent-link-text">
               搜索算法（一）无信息搜索
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="线性代数（一）" >
-            <div class="recent-link-text">
-              线性代数（一）
             </div>
           </a>
         
@@ -313,7 +314,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.4k words 
+            2.2k words 
           </div>
         </div>
         
@@ -377,7 +378,36 @@
 <hr>
 <p>  &emsp;&emsp;  我们的目标是得到一个严格三角形的矩阵，只需要依次使用每一列中某个选定的数字将同列的行数比它大的其他数字全部消去即可。</p>
 <p>   &emsp;&emsp; 在上述过程中，如果出现某一列的所有元素皆为0时，就需要考虑将其化为某种特殊的梯形或者是阶梯形。</p>
-<h2 id="1-2-行阶梯形"><a href="#1-2-行阶梯形" class="headerlink" title="1.2 行阶梯形"></a>1.2 行阶梯形</h2>
+<h2 id="1-2-行阶梯形"><a href="#1-2-行阶梯形" class="headerlink" title="1.2 行阶梯形"></a>1.2 行阶梯形</h2><p>&emsp;&emsp;我们已经提到过，在将矩阵化为严格三角形的过程中，需要多次使用行初等变换。但如果在某一步中可供选择的元素全为0，这个方法就无法进行了。此时的办法只能是跳过当前列并继续后续的过程，而处理完所有列以后所得到的矩阵我们称为阶梯形增广矩阵。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/3dmKJXhv"><img src="https://i.postimg.cc/5Nkjggkn/759de7ae386704c59f3a59c8c5231b0.png" alt="759de7ae386704c59f3a59c8c5231b0.png"></a></p>
+<p><strong>定义：</strong></p>
+<p>若一个矩阵满足</p>
+<ol>
+<li>每一非零行中的第一个非零元为1；</li>
+<li>第k行的元素不全为0时，第 k+1 行首变量之前零的个数多于第k行首变量之前零的个数；</li>
+<li>所有元素均为0的行必定在不全为0的行之后，</li>
+</ol>
+<p>则将其称为<strong>行阶梯形矩阵</strong>。</p>
+<p>利用行运算Ⅰ、Ⅱ和Ⅲ，将线性方程组的增广矩阵化为行阶梯形的过程称为<strong>高斯消元法</strong>。</p>
+<h4 id="方程组解的情况："><a href="#方程组解的情况：" class="headerlink" title="方程组解的情况："></a>方程组解的情况：</h4><ol>
+<li>若方程组相容并且行阶梯形矩阵的非零行构成了严格的三角形，则这个方程组有唯一解。</li>
+<li>若一个线性方程组中方程的个数多于未知量的个数，则称其为<strong>超定的</strong>，超定方程组通常是（但不总是）不相容的。</li>
+<li>若化简后的方程组中出现系数全为零而常数项不为0的行，则说明其为不相容的。</li>
+</ol>
+<h4 id="超定方程组、亚定方程组："><a href="#超定方程组、亚定方程组：" class="headerlink" title="超定方程组、亚定方程组："></a>超定方程组、亚定方程组：</h4><ol>
+<li>超定方程组：若一个线性方程组中方程的个数多于未知量的个数，则称其为<strong>超定的</strong>，超定方程组通常是（但不总是）不相容的。</li>
+<li>亚定方程组：若一个线性方程组中未知量的个数多于方程的个数，则称其为<strong>亚定的</strong>，亚丁方程组有可能不相容，但大部分情况下都是相容的且解的个数无穷。它不可能有唯一解；用上面的结论来说，这是因为它行数和列数的限制，系数矩阵不可能构成严格的三角形。</li>
+</ol>
+<h4 id="行最简形："><a href="#行最简形：" class="headerlink" title="行最简形："></a>行最简形：</h4><p><strong>定义：</strong>若一个矩阵满足：</p>
+<ol>
+<li>矩阵是行阶梯形的</li>
+<li>每一行的第一个非零元是该列唯一的非零元</li>
+</ol>
+<p>&emsp;&emsp;则称该矩阵为<strong>行最简形</strong></p>
+<h4 id="齐次方程组："><a href="#齐次方程组：" class="headerlink" title="齐次方程组："></a>齐次方程组：</h4><p>如果线性方程组的右端项全部为零，则称其为<strong>齐次的</strong>。齐次方程组总是相容的，并且容易发现有一个解为零向量。因此，如果一个线性方程组有唯一解，那这个解必然是平凡解（0,0,0，……，0）</p>
+<p><strong>定理：若n&gt;m，则m×n的齐次线性方程组有非平凡解。</strong></p>
+<p>&emsp;&emsp;齐次方程组总是相容的。因为其增广矩阵的行阶梯形最多有m个非零行，也就是最多有m个首变量。因为总变量个数n满足n＞m，则必然存在自由变量。而自由变量可以任意取值，且自由变量的任意一组取值都可以得到方程组的一组解。</p>
+
         
       </div>
 

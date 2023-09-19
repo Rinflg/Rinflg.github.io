@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://i.postimg.cc/T2psDjRQ/055f6b4100ea726e02c25b13185a690.png">
 <meta property="og:image" content="https://i.postimg.cc/KcTsvGc8/898cf0f7fbb4d7ca5d8b1e389f681f9.png">
 <meta property="article:published_time" content="2023-09-14T12:32:14.000Z">
-<meta property="article:modified_time" content="2023-09-17T11:02:09.853Z">
+<meta property="article:modified_time" content="2023-09-19T13:24:39.033Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
@@ -200,7 +200,7 @@
         
             <a class="category-link" href="/categories/Algorithm/">
                 Algorithm
-                <div class="category-count">1</div>
+                <div class="category-count">2</div>
             </a>
         </div>
     </div>
@@ -226,7 +226,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">12 </div>
+          <div class="archive-count">13 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -244,6 +244,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（二）有信息搜索" >
+            <div class="recent-link-text">
+              搜索（二）有信息搜索
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理-黑白帽子谜题" >
             <div class="recent-link-text">
@@ -266,12 +272,6 @@
           <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索" >
             <div class="recent-link-text">
               搜索算法（一）无信息搜索
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="线性代数（一）" >
-            <div class="recent-link-text">
-              线性代数（一）
             </div>
           </a>
         
@@ -318,7 +318,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            982 words 
+            1.8k words 
           </div>
         </div>
         
@@ -449,7 +449,35 @@
 </li>
 </ul>
 <p>​        O（bm）。只需要存储一条从根节点到叶节点的路径，以及该路径上每个节点的所有未被拓展的兄弟节点</p>
+<ul>
+<li>完备性：否，当存在节点深度无穷时可能找不到解</li>
+<li>最优性：否，找到的不一定是最优解</li>
+</ul>
 </li>
+</ul>
+<h3 id="深度优先DFS和广度优先BFS的对比"><a href="#深度优先DFS和广度优先BFS的对比" class="headerlink" title="深度优先DFS和广度优先BFS的对比"></a>深度优先DFS和广度优先BFS的对比</h3><p>&emsp;&emsp;深度优先搜索一般使用栈（Stack）这种数据结构来保存当前的状态和候选节点。它的优点是占用内存空间少，适合目标明确，深度有限的情况。它的缺点是可能陷入死循环，不能保证找到最优解。</p>
+<p>&emsp;&emsp;广度优先搜索的特点是逐层拓展，一次性探索所有分支。它一般使用队列（Queue）这种数据结构来保存当前的状态或者候选节点。优点是可以保证找到最优解（如果存在），适合大范围的寻找。而缺点是占用的内存空间很多。</p>
+<p><strong>（三）迭代加深的深度优先搜索</strong></p>
+<p>&emsp;&emsp;DFS和BFS各有优势，能否兼顾它们的优点呢？</p>
+<p>&emsp;&emsp;迭代加深的深度优先搜索树一种结合了深度优先搜索和广度优先搜索的算法。它的基本思想是，首先对搜索树进行有限深度的深度优先搜索，如果没有找到目标状态，就增加深度限制，重复这个过程，直到找到目标状态或达到最大深度为止。</p>
+<p>&emsp;&emsp;这种算法的优点是，它可以避免深度优先搜索在无限分支的树中陷入死循环，也可以避免广度优先搜索在大规模的树中占用过多的内存空间。它可以保证在有解的情况下找到最浅层的解，也就是最优解。</p>
+<p>&emsp;&emsp;这种算法也有缺点，它会重复地搜索浅层的节点，导致一些不必要的计算。但绝大多数重复的节点都在上层，上层节点的重复生成影响不大。</p>
+<ul>
+<li>时间复杂度：O（b^d）</li>
+<li>空间复杂度：O（bd）</li>
+<li>完备性：Yes</li>
+<li>最优性：Yes（当每次拓展的代价相同时）</li>
+</ul>
+<p><strong>（四）一致代价搜索</strong></p>
+<p> &emsp;&emsp;一致代价搜索总是扩展未扩展节点中路径消耗g（n）最小的结点，直到找到目标状态或队列为空为止。</p>
+<p>&emsp;&emsp;路径消耗g（n）是指从初始状态到当前状态的累积代价，它可以根据不同的问题而定义，比如在地图搜索中，它可以表示距离或时间等。</p>
+<p>&emsp;&emsp;一致代价搜索的优点是，它可以保证找到最优解，即路径消耗最小的解，而且它不需要任何启发式信息。</p>
+<p>&emsp;&emsp;一致代价搜索的缺点是，它可能会扩展很多不必要的结点，导致时间和空间的开销很大。</p>
+<ul>
+<li>时间复杂度：O（b^（C*&#x2F;ε）），其中b是分支因子，C*是最优解的路径消耗，ε是每一步都最小代价</li>
+<li>空间复杂度：O（b^（C*&#x2F;ε））。</li>
+<li>完备性：如果问题有解，并且每一步都代价都大于等于某个小的正值常数ε，那么一致代价搜索就是完备的。</li>
+<li>最优性：一致代价搜索是最优的，即保证能找到最小路径消耗的解。</li>
 </ul>
 
         

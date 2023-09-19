@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.postimg.cc/BnYbk8rM/ea0d8ff6199983bf929472998a95174.png">
 <meta property="og:image" content="https://i.postimg.cc/4dVCTgBB/8905bebd85ecc5080bc0e5829c3faa5.png">
 <meta property="article:published_time" content="2023-09-05T06:29:07.000Z">
-<meta property="article:modified_time" content="2023-09-17T08:17:31.319Z">
+<meta property="article:modified_time" content="2023-09-18T07:32:42.743Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
@@ -195,7 +195,7 @@
         
             <a class="category-link" href="/categories/Algorithm/">
                 Algorithm
-                <div class="category-count">1</div>
+                <div class="category-count">2</div>
             </a>
         </div>
     </div>
@@ -221,7 +221,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">12 </div>
+          <div class="archive-count">13 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -239,6 +239,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（二）有信息搜索" >
+            <div class="recent-link-text">
+              搜索（二）有信息搜索
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理-黑白帽子谜题" >
             <div class="recent-link-text">
@@ -261,12 +267,6 @@
           <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索" >
             <div class="recent-link-text">
               搜索算法（一）无信息搜索
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="线性代数（一）" >
-            <div class="recent-link-text">
-              线性代数（一）
             </div>
           </a>
         
@@ -313,7 +313,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.8k words 
+            4.5k words 
           </div>
         </div>
         
@@ -403,6 +403,24 @@
 <p>​          Pr（A∩C）&#x3D;Pr（A）*Pr（C）&#x3D;1&#x2F;4</p>
 <p>​          Pr（B∩C）&#x3D;Pr（B）*Pr（C）&#x3D;1&#x2F;4；</p>
 <p>&emsp;&emsp;但是，Pr（A∩B∩C）≠ Pr（A）*Pr（B）*Pr（C），这是因为当A、B同时发生时，C必然发生，也就是Pr（A∩B∩C）&#x3D; Pr（A）*Pr（B）</p>
+<p>&emsp;&emsp;在这里，尽管三个事件中的任意两个是相互独立的，但它们三个事件间存在依赖关系，即当A和B发生时，C就<strong>必然</strong>会发生</p>
+<h1 id="4-4-贝叶斯定理"><a href="#4-4-贝叶斯定理" class="headerlink" title="4.4 贝叶斯定理"></a>4.4 贝叶斯定理</h1><p>&emsp;&emsp;我们已经知道了一般乘法法则，即  Pr（A∩B）&#x3D;Pr（A|B）*Pr（B），由于这里的A和B是等价的，我们还可以知道：Pr（A∩B）&#x3D;Pr（B|A）*Pr（A）。而A ∩ B和B ∩ A又是同一件事，我们就可以得到：</p>
+<hr>
+<p><strong>贝叶斯定理：</strong></p>
+<p>&emsp;&emsp;由一般乘法法则可以推出：对于事件 A 和 B，有</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pr（B|A）*Pr（A）&#x3D;Pr（A|B）*Pr（B）</p>
+<p>&emsp;&emsp;也就是说，只要有Pr（B）≠0，我们就会有：</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Pr（A|B）&#x3D;Pr（B|A）*Pr（A）&#x2F;Pr（B）</p>
+<hr>
+<p>我们可以来看一些例子：</p>
+<p>&emsp;&emsp;<strong>Example 1：</strong></p>
+<p>&emsp;&emsp;&emsp;<strong>题面：</strong>假设有40%的成年人养狗，而每年有20%的养狗人会得流感。如果每年有15%的成年人会得流感，那么已经得流感的某个人养狗的概率是多少？</p>
+<p>&emsp;&emsp;&emsp;<strong>解：</strong>用D表示某人养狗，P（D）&#x3D;0.4；用F表示某人得了流感，P（F）&#x3D;0.15；且P（F|D）&#x3D;0.2；代入公式知Pr（D|F）&#x3D;Pr（F|D）*Pr（D）&#x2F;Pr（F）&#x3D;0.2*0.4 &#x2F; 0.15&#x3D; 8&#x2F;15.</p>
+<p>&emsp;&emsp;<strong>Example 2：</strong></p>
+<p>&emsp;&emsp;&emsp;<strong>题面：</strong>在全国范围内，每 15000 个人中就有一个人感染结核病。假设你所在的城镇出现了一次结核病恐慌；为了简单起见，我们假设该城镇的结核病发病率与全国平均水平相同。为了安全起见，你去医院检查是否感染了这种疾病。医生告诉你，这个测试出现假阳性的概率为1%，也就是说，每100个健康人中会有一个人的测试结果显示为阳性。医生还说，这个测试的假阴性率为0.1%，也就是说，每1000个得病的人中只有一个人的检测会显示为阴性。假设你检测的结果为阳性，那么得病的概率是多少？</p>
+<p>&emsp;&emsp;&emsp;<strong>解：</strong>设D表示得结核病，P（D）&#x3D;1&#x2F;15000，设P表示检测结果为阳性。则P（P|D）&#x3D;999&#x2F;1000.我们还需要求出P（P）.事实上，只有得病和健康两种情况，并且这两个事件的交集为空。阳性的检测结果分别来自他们。即：P（P）&#x3D;（1-P（D））*（1&#x2F;100）+P（D）*（999&#x2F;1000）。</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;由此，我们可以代入贝叶斯定理：P（D|P）&#x3D;P（P|D）*P（D）&#x2F;P（P）≈0.0066.</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;这个概率大概比大部分人的料想都会小很多。事实上，由于得病的几率较小，虽然健康人中出现假阳性的概率很小，但是与发生的概率相乘后，大小也会与得病的几率相差不多甚至超过得病的几率。</p>
 
         
       </div>
