@@ -11,14 +11,19 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Sunoarslan&#39;s blog</title>
+  <title>搜索（三）对抗搜索 | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunoarslan&#39;s blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="对抗搜索&amp;emsp;&amp;emsp;对抗搜索也成为博弈搜索。前面提到的无信息搜索以及启发式搜索都是只有一个主体进行搜索。而有时我们需要处理多个主体同时搜索的情况。 &amp;emsp;&amp;emsp;博弈的种类： 确定性&#x2F;有随机性 是否有完整信息（如斗地主中，无法得到其余玩家的手牌，即信息不完整） 几个玩家（1v1 &#x2F; 5v5 &#x2F; 2v2）有无队友间交互&#x2F;对手间交互 是否为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索（三）对抗搜索">
+<meta property="og:url" content="http://example.com/2023/09/20/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%89%EF%BC%89%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="对抗搜索&amp;emsp;&amp;emsp;对抗搜索也成为博弈搜索。前面提到的无信息搜索以及启发式搜索都是只有一个主体进行搜索。而有时我们需要处理多个主体同时搜索的情况。 &amp;emsp;&amp;emsp;博弈的种类： 确定性&#x2F;有随机性 是否有完整信息（如斗地主中，无法得到其余玩家的手牌，即信息不完整） 几个玩家（1v1 &#x2F; 5v5 &#x2F; 2v2）有无队友间交互&#x2F;对手间交互 是否为">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-20T06:03:36.000Z">
+<meta property="article:modified_time" content="2023-09-20T11:43:07.851Z">
 <meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
@@ -272,215 +277,95 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archive</h1>
-      </div>    
+<article id="post-搜索（三）对抗搜索" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        搜索（三）对抗搜索
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-20T06:03:36.000Z" itemprop="datePublished">2023-09-20</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Algorithm/">Algorithm</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            174 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="对抗搜索"><a href="#对抗搜索" class="headerlink" title="对抗搜索"></a>对抗搜索</h1><p>&emsp;&emsp;对抗搜索也成为博弈搜索。前面提到的无信息搜索以及启发式搜索都是只有一个主体进行搜索。而有时我们需要处理多个主体同时搜索的情况。</p>
+<h6 id="emsp-emsp-博弈的种类："><a href="#emsp-emsp-博弈的种类：" class="headerlink" title="&emsp;&emsp;博弈的种类："></a>&emsp;&emsp;博弈的种类：</h6><ul>
+<li>确定性&#x2F;有随机性</li>
+<li>是否有完整信息（如斗地主中，无法得到其余玩家的手牌，即信息不完整）</li>
+<li>几个玩家（1v1 &#x2F; 5v5 &#x2F; 2v2）有无队友间交互&#x2F;对手间交互</li>
+<li>是否为零和博弈</li>
+</ul>
+<p>&emsp;我们考虑<strong>信息确定、全局可观察、竞争对手轮流行动、输赢收益零和</strong>假设下的双人博弈问题。</p>
+<p>&emsp;</p>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">10 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/09/20/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%89%EF%BC%89%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/" title="搜索（三）对抗搜索">
-        <div class="date">09-20</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    搜索（三）对抗搜索
-                
-            </div>
-        </div>
-        <div class="tags">
-            #搜索算法
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（二）有信息搜索">
-        <div class="date">09-19</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    搜索（二）有信息搜索
-                
-            </div>
-        </div>
-        <div class="tags">
-            #搜索算法
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/17/%E5%A5%87%E5%A6%99%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86-%E9%BB%91%E7%99%BD%E5%B8%BD%E5%AD%90%E8%B0%9C%E9%A2%98/" title="奇妙逻辑推理-黑白帽子谜题">
-        <div class="date">09-17</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    奇妙逻辑推理-黑白帽子谜题
-                
-            </div>
-        </div>
-        <div class="tags">
-            #逻辑推理
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/15/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%BA%8C%EF%BC%89/" title="代码随笔（二）">
-        <div class="date">09-15</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    代码随笔（二）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #Code
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/15/%E8%B7%A8%E5%AD%A6%E7%A7%91%E8%A7%86%E9%87%8E%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%BC%88%EF%BC%88%E4%B8%80%EF%BC%89/" title="跨学科视野下的博弈（一）">
-        <div class="date">09-15</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    跨学科视野下的博弈（一）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #博弈论
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索">
-        <div class="date">09-14</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    搜索算法（一）无信息搜索
-                
-            </div>
-        </div>
-        <div class="tags">
-            #搜索算法
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="线性代数（一）">
-        <div class="date">09-14</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    线性代数（一）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #线性代数
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/12/%E4%BB%A3%E7%A0%81%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89/" title="代码随笔（一）">
-        <div class="date">09-12</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    代码随笔（一）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #Code
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-2/" title="数据结构_Lesson 2">
-        <div class="date">09-11</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    数据结构_Lesson 2
-                
-            </div>
-        </div>
-        <div class="tags">
-            #数据结构
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/10/%E6%80%8E%E6%A0%B7%E6%89%BE%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/" title="怎样找电子书资源">
-        <div class="date">09-10</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    怎样找电子书资源
-                
-            </div>
-        </div>
-        <div class="tags">
-            #闲话杂谈
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/"
+      title="搜索（二）有信息搜索"
+     >
+
+    <p class="title-text">
+      
+        搜索（二）有信息搜索
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">

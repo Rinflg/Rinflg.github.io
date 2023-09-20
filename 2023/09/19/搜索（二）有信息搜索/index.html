@@ -21,8 +21,9 @@
 <meta property="og:description" content="启发式搜索：&amp;emsp;&amp;emsp;启发式搜索是一种利用问题的启发信息来引导搜索过程的算法。启发信息是指与问题求解相关的一些辅助信息。我们利用它们可以减少搜索范围，提高搜索效率，找到最优解或近似最优解。 启发式信息： 估计离目标状态有多远的信息 不同的问题需要设计不同的启发式信息 例如：曼哈顿距离、欧式距离  基本思想：&amp;emsp;&amp;emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.postimg.cc/Yqxr4cb2/a2ed5c0cb223225889870f445a0e829.png">
+<meta property="og:image" content="https://i.postimg.cc/Nf8W030t/18d6f4240f8c879feb3bcd724975eaa.png">
 <meta property="article:published_time" content="2023-09-19T13:24:11.000Z">
-<meta property="article:modified_time" content="2023-09-19T15:15:25.489Z">
+<meta property="article:modified_time" content="2023-09-20T11:41:42.924Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
@@ -193,7 +194,7 @@
         
             <a class="category-link" href="/categories/Algorithm/">
                 Algorithm
-                <div class="category-count">2</div>
+                <div class="category-count">3</div>
             </a>
         </div>
     </div>
@@ -219,7 +220,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">13 </div>
+          <div class="archive-count">14 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -237,6 +238,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/20/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%89%EF%BC%89%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/" title="搜索（三）对抗搜索" >
+            <div class="recent-link-text">
+              搜索（三）对抗搜索
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索（二）有信息搜索" >
             <div class="recent-link-text">
@@ -259,12 +266,6 @@
           <a class="recent-link" href="/2023/09/15/%E8%B7%A8%E5%AD%A6%E7%A7%91%E8%A7%86%E9%87%8E%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%BC%88%EF%BC%88%E4%B8%80%EF%BC%89/" title="跨学科视野下的博弈（一）" >
             <div class="recent-link-text">
               跨学科视野下的博弈（一）
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/14/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%80%EF%BC%89%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（一）无信息搜索" >
-            <div class="recent-link-text">
-              搜索算法（一）无信息搜索
             </div>
           </a>
         
@@ -311,7 +312,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.2k words 
+            1.8k words 
           </div>
         </div>
         
@@ -340,7 +341,7 @@
 <h2 id="A-搜索"><a href="#A-搜索" class="headerlink" title="A*搜索"></a>A*搜索</h2><h6 id="基本思想：-1"><a href="#基本思想：-1" class="headerlink" title="基本思想："></a>基本思想：</h6><p>&emsp;&emsp;对于每一个待扩展的节点，使用一个评价函数来估计其优劣程度，并按照评价函数的值来选择下一个要扩展的节点。与启发式搜索的评价函数类似，A*搜索的评价函数通常由两部分组成：当前代价函数和后续代价函数。</p>
 <h6 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h6><p>&emsp;&emsp;A*算法使用两个集合来表示待遍历到节点和已经遍历过的节点，通常称为开放列表和关闭列表。算法从初始状态开始，每次从开放列表中选取评价函数值最小的节点作为当前节点，并将其移动到关闭列表中。然后遍历当前节点的所有邻近节点，如果邻近节点不在关闭列表中，则计算其评价函数值，并将其加入到开放列表中。这个过程重复直到找到目标状态或者开放列表为空为止。</p>
 <h6 id="算法关键："><a href="#算法关键：" class="headerlink" title="算法关键："></a>算法关键：</h6><p>&emsp;&emsp;选择合适的后续代价函数，也就是启发函数。</p>
-<p>&emsp;&emsp;启发函数的选择会影响A*算法的性能和精确度。如果启发函数为零，则A*算法退化为Dijkstra算法；如果启发函数小于等于实际代价，那么A*算法就可以保证找到最优解。当启发函数等于实际代价，A*函数的性能达到最好，很快能找到最优解。而如果启发函数大于实际代价，就无法保证能找到最优解，但是搜索速度还是会加快。</p>
+<p>&emsp;&emsp;启发函数的选择会影响A*算法的性能和精确度。如果启发函数为零，则A*算法等价于一致性代价搜索；如果启发函数小于等于实际代价，那么A*算法就可以保证找到最优解。当启发函数等于实际代价，A*函数的性能达到最好，很快能找到最优解。而如果启发函数大于实际代价，就无法保证能找到最优解，但是搜索速度还是会加快。</p>
 <p>&emsp;&emsp;启发函数 f（n）&#x3D; g（n）+ h（n）</p>
 <p>&emsp;&emsp;其中，g（n）表示从起始节点到节点n的开销代价值，h（n）表示从节点n到目标节点路径中所估算的最小开销代价值。</p>
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/bsscMB74"><img src="https://i.postimg.cc/Yqxr4cb2/a2ed5c0cb223225889870f445a0e829.png" alt="a2ed5c0cb223225889870f445a0e829.png"></a></p>
@@ -351,7 +352,36 @@
 <li>单步代价的下界是一个正数</li>
 <li>启发函数有下界</li>
 </ul>
-<h6 id=""><a href="#" class="headerlink" title=""></a></h6>
+<h6 id="A-算法的最优性"><a href="#A-算法的最优性" class="headerlink" title="A*算法的最优性"></a>A*算法的最优性</h6><p><strong>A*算法能够保证找到一条最优路径。树优先搜索需要满足条件：一致性。</strong></p>
+<p>&emsp;&emsp;<strong>可采纳性</strong>是指启发式函数从不会高估到达目标的代价，也就是说，启发式函数的值不大于实际的最优代价。公式化地表达为：对于任意结点n，有h（n）≤h*（n）。</p>
+<p>&emsp;&emsp;若h（n）的估计值太高，可能会导致好的节点被忽略，无法找到理想的路径。</p>
+<p><strong>定理：</strong>如果启发函数是可采纳的，那么树搜索的A*算法满足最优性。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/bsJ6CFbV"><img src="https://i.postimg.cc/Nf8W030t/18d6f4240f8c879feb3bcd724975eaa.png" alt="18d6f4240f8c879feb3bcd724975eaa.png"></a></p>
+<p><strong>Proof：</strong>假设B位于边缘集，A的某个父节点n也在边缘集。</p>
+<p>&emsp;&emsp;&emsp;&emsp;那么，n比B更早被扩展，这是因为 </p>
+<hr>
+<p>1.f(n)≤f(A)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(n) = g(n) + h(n)</span><br><span class="line">g(n) ≤ g(A)</span><br><span class="line">g(A) = f(A)</span><br><span class="line">∴f(n) ≤ f(A)</span><br></pre></td></tr></table></figure>
+
+<p>2.f(A)≤f(B)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(A) = g(A)</span><br><span class="line">g(A) ≤ g(B)</span><br><span class="line">f(B) = g(B) + h(B)</span><br><span class="line">f(A) ≤ f(B)</span><br></pre></td></tr></table></figure>
+
+<p>3.f(n)≤f（B）</p>
+<hr>
+<p>&emsp;&emsp;&emsp;&emsp;也就是A的所有父节点以及A本身都将早于B被拓展。</p>
+<p><strong>要保证图搜索算法的最优性，需要满足的条件：一致性。</strong></p>
+<p>&emsp;&emsp;&emsp;一致性条件：对于任意两个相邻的节点n和n’，从节点n到达目标的代价不大于从n到n’的单步代价加上从n’到达目标的代价。也就是说，对于每个节点n和通过任一行动a生成的n的每个后继节点n’，有h（n）≤cost（n，a，n’）+h(n’)。</p>
+<p>&emsp;&emsp;&emsp;由一致性条件可以推导出可采纳性。它存在的意义是，不会将从当前节点到终点的代价预估得比从当前节点到相邻节点再到终点的代价更高，也就是说，启发函数会是单调递减的。这样，每次选择的节点都是到达终点的最优路径上的节点，不会重复搜索已经访问过的节点，也不会走弯路。</p>
+<h6 id="UCS-与-A"><a href="#UCS-与-A" class="headerlink" title="UCS 与 A*"></a>UCS 与 A*</h6><p> UCS在所有的方向上搜索，A*利用关于目标的信息，但是依赖信息的准确性。</p>
+<h2 id="启发式函数设计"><a href="#启发式函数设计" class="headerlink" title="启发式函数设计"></a>启发式函数设计</h2><h4 id="启发式搜索的关键在于如何设计启发式函数"><a href="#启发式搜索的关键在于如何设计启发式函数" class="headerlink" title="启发式搜索的关键在于如何设计启发式函数"></a>启发式搜索的关键在于如何设计启发式函数</h4><h6 id="E-G-八数码问题"><a href="#E-G-八数码问题" class="headerlink" title="E.G. 八数码问题"></a>E.G. 八数码问题</h6><ul>
+<li>状态空间是什么：所有可能的方格布局的集合</li>
+<li>多少种状态：9！种</li>
+<li>动作和代价：每将空格块与邻近块交换一次即为一个动作，代价记为步数1</li>
+</ul>
+<p><strong>启发函数应该如何设计呢？</strong></p>
+<p>（1）不在正确位置的棋子数</p>
+<p>（2）所有棋子到目标位置的距离和（距离指曼哈顿距离）</p>
+
         
       </div>
 
@@ -363,10 +393,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/20/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%89%EF%BC%89%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/"
+      title="搜索（三）对抗搜索"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        搜索（三）对抗搜索
         
     </p>
   </a>
