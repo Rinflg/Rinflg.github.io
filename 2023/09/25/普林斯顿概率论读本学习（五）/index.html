@@ -13,16 +13,25 @@
   
   <title>普林斯顿概率论读本学习（五） | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="计数Ⅱ：容斥原理5.1 阶乘和二项式问题&amp;emsp;&amp;emsp;日常生活中的很多问题都可以用到阶乘函数和二项式系数。它们可能是计算总方案数的计数问题，也可能是计算概率的概率问题。当然，在所有基本事件等可能的情况下，这两种问题之间可以相互转换。 5.1.1 “有多少个”与“概率是什么”&amp;emsp;&amp;emsp;问题：现在，有20个人申请担任人工智能导论课程助教。假设他们中有10个人没有经验，7个人恰好">
+<meta property="og:type" content="article">
 <meta property="og:title" content="普林斯顿概率论读本学习（五）">
 <meta property="og:url" content="http://example.com/2023/09/25/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="计数Ⅱ：容斥原理5.1 阶乘和二项式问题&amp;emsp;&amp;emsp;日常生活中的很多问题都可以用到阶乘函数和二项式系数。它们可能是计算总方案数的计数问题，也可能是计算概率的概率问题。当然，在所有基本事件等可能的情况下，这两种问题之间可以相互转换。 5.1.1 “有多少个”与“概率是什么”&amp;emsp;&amp;emsp;问题：现在，有20个人申请担任人工智能导论课程助教。假设他们中有10个人没有经验，7个人恰好">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/43ybmMLX/3abdbb601c05dea60b4eb6699ac1396.png">
+<meta property="og:image" content="https://i.postimg.cc/Kj5hRRjk/10b02daa74a7a599273cea062fb00d7.png">
+<meta property="og:image" content="https://i.postimg.cc/2jTfLK8J/6c5d2bba405465ca5c861ba4c9429b5.png">
+<meta property="og:image" content="https://i.postimg.cc/jqn6Hgt4/a6d4e0e7cd8faf17d43bf324bf3221e.png">
+<meta property="og:image" content="https://i.postimg.cc/527Pnsk9/e34418a0b538e27b81d562b78327438.png">
+<meta property="og:image" content="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png">
 <meta property="article:published_time" content="2023-09-25T09:20:31.000Z">
-<meta property="article:modified_time" content="2023-09-25T09:25:48.134Z">
+<meta property="article:modified_time" content="2023-09-28T02:51:33.563Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/43ybmMLX/3abdbb601c05dea60b4eb6699ac1396.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -186,6 +195,11 @@
                 Algorithm
                 <div class="category-count">4</div>
             </a>
+        
+            <a class="category-link" href="/categories/Machine-Learning/">
+                Machine Learning
+                <div class="category-count">1</div>
+            </a>
         </div>
     </div>
   </div>
@@ -196,7 +210,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%9B%BE%E7%AE%97%E6%B3%95/" rel="tag">图算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96/" rel="tag">最优化</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%9B%BE%E7%AE%97%E6%B3%95/" rel="tag">图算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96/" rel="tag">最优化</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
     </div>
   </div>
 
@@ -210,7 +224,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           September 2023 
-          <div class="archive-count">19 </div>
+          <div class="archive-count">20 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -228,6 +242,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/" title="机器学习概览" >
+            <div class="recent-link-text">
+              机器学习概览
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/09/25/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/" title="普林斯顿概率论读本学习（五）" >
             <div class="recent-link-text">
@@ -250,12 +270,6 @@
           <a class="recent-link" href="/2023/09/21/Dijkstra-s-%E7%AE%97%E6%B3%95/" title="Dijkstra's 算法" >
             <div class="recent-link-text">
               Dijkstra&#39;s 算法
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/20/%E6%9C%80%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89%E6%95%B0%E5%AD%A6%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/" title="最优化（一）数学预备知识" >
-            <div class="recent-link-text">
-              最优化（一）数学预备知识
             </div>
           </a>
         
@@ -302,7 +316,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 words 
+            2.2k words 
           </div>
         </div>
         
@@ -311,7 +325,67 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          
+          <h1 id="计数Ⅱ：容斥原理"><a href="#计数Ⅱ：容斥原理" class="headerlink" title="计数Ⅱ：容斥原理"></a>计数Ⅱ：容斥原理</h1><h1 id="5-1-阶乘和二项式问题"><a href="#5-1-阶乘和二项式问题" class="headerlink" title="5.1 阶乘和二项式问题"></a>5.1 阶乘和二项式问题</h1><p>&emsp;&emsp;日常生活中的很多问题都可以用到阶乘函数和二项式系数。它们可能是计算总方案数的计数问题，也可能是计算概率的概率问题。当然，在所有基本事件等可能的情况下，这两种问题之间可以相互转换。</p>
+<h2 id="5-1-1-“有多少个”与“概率是什么”"><a href="#5-1-1-“有多少个”与“概率是什么”" class="headerlink" title="5.1.1 “有多少个”与“概率是什么”"></a>5.1.1 “有多少个”与“概率是什么”</h2><p>&emsp;&emsp;<strong>问题：</strong>现在，有20个人申请担任人工智能导论课程助教。假设他们中有10个人没有经验，7个人恰好有一个学期的经验、3个人恰好两个学期的经验，而且每个人都等可能地被选中。</p>
+<ol>
+<li>从中选出 6 个人担任工作的方法有多少种？</li>
+<li>选出6个特定的人的概率是多少？</li>
+<li>选出的6名员工都没有经验的概率是多少？</li>
+</ol>
+<p>&emsp;&emsp;我们先来详细讨论一下“每个人等可能地被选中”。大部分情况下，我们会自动补充<strong>“任意两个人是否被选中之间相互独立”</strong>。但事实上，如果不强调这个假设，还可能出现一些糟糕的情况。例如，我们考虑四个人，他们的名字分别是 HUAWEI，Apple，莓果，酥莲。从中取出两个人组成小组参加活动。HUAWEI和Apple有仇，莓果和酥莲对立，他们都不想和彼此在同一个组。我们先考虑全部的可能组合。{HUAWEI，Apple}，{HUAWEI，莓果}，{HUAWEI，酥莲}，{Apple，莓果}，{Apple，酥莲}，{莓果，酥莲}，共6种。其中，{HUAWEI，Apple}和{莓果，酥莲}概率为0，而其余的组合概率均为1&#x2F;4。这时，每个人被取出的概率依然是 2*1&#x2F;4&#x3D;1&#x2F;2。依然满足每个人都等可能地被选中，但选出某个特定组合的取值就可能是0或1&#x2F;4，而不是用组合数算出的1&#x2F;6.</p>
+<p>&emsp;&emsp;为了保证精确性，我们需要在描述问题时格外注意。</p>
+<h2 id="5-1-2-选组"><a href="#5-1-2-选组" class="headerlink" title="5.1.2 选组"></a>5.1.2 选组</h2><p>&emsp;&emsp;经过上面的讨论，我们意识到在介绍问题时需要更多严谨的描述。这里我们补充任意两个人是否被选中相互独立的条件。</p>
+<p>（1）</p>
+<p>&emsp;&emsp;在这个问题中，不需要考虑次序。所以答案为</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/v1R6KPwK"><img src="https://i.postimg.cc/43ybmMLX/3abdbb601c05dea60b4eb6699ac1396.png" alt="3abdbb601c05dea60b4eb6699ac1396.png"></a></p>
+<p>（2）</p>
+<p>&emsp;&emsp;由第一问知，答案为 1&#x2F;38760</p>
+<p>（3）</p>
+<p>&emsp;&emsp;六名员工皆没有工作经验的可能情况总数共有：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/SYjvPQWk"><img src="https://i.postimg.cc/Kj5hRRjk/10b02daa74a7a599273cea062fb00d7.png" alt="10b02daa74a7a599273cea062fb00d7.png"></a></p>
+<p>&emsp;&emsp;概率为 P &#x3D; 210 &#x2F; 38760 &#x3D; 7 &#x2F; 1292</p>
+<hr>
+<p>&emsp;&emsp;<strong>问题：</strong>假设学生会中有12个人</p>
+<ul>
+<li>从中选出4个人，有多少种选法？</li>
+<li>如果没人可以担任两种或以上职务，那么从这些人中选出一名主席、一名副主席、一名财务主管和一名秘书共有多少种选择方法？</li>
+<li>如果每个人都可以担任多个职务，那么从中选出一名主席、一名副主席、一名财务主管和一名秘书共有多少种选择方法？</li>
+</ul>
+<p>&emsp;&emsp;<strong>答：</strong> （1）只需要从12个人中选出四个即可<a target="_blank" rel="noopener" href="https://postimg.cc/s1BLtKW9"><img src="https://i.postimg.cc/2jTfLK8J/6c5d2bba405465ca5c861ba4c9429b5.png" alt="6c5d2bba405465ca5c861ba4c9429b5.png"></a></p>
+<p>&emsp;&emsp;&emsp;&emsp;（2）这时，我们要考虑次序。答案也就是 12*11*10*9 &#x3D; 11880。这是因为依次选举时，主席有12种选择方法，副主席有11种选法等。</p>
+<p>&emsp;&emsp;&emsp;&emsp;（3）这时，四个职务的选择成了相互独立事件，结果为 12^4</p>
+<h2 id="5-1-3-循环次序"><a href="#5-1-3-循环次序" class="headerlink" title="5.1.3 循环次序"></a>5.1.3 循环次序</h2><p>&emsp;&emsp;如果考虑棋盘次序，那么9个方格中的每个方格都与其他方格不同，这样第一步就有9种可能的选择。但是，如果允许旋转和翻转，那么第一步只有3种不同的走法。</p>
+<p><strong>例 5.1.2</strong> </p>
+<p>（1） 5个人依次排成一列，有多少种排法？</p>
+<p>&emsp;&emsp;&emsp;此时，次序很重要，用全排列即可：5！</p>
+<p>（2）5个人围坐在一张<strong>圆桌</strong>旁，有多少种坐法？</p>
+<p>&emsp;&emsp;&emsp;同样的环形坐次，在全排列中可以指定每个人当一次排头，也就是每种情况会在全排列中重复5次。结果为5！&#x2F;5</p>
+<p>&emsp;&emsp;&emsp;上面的两个例子分别是正常的排列和<strong>循环排序</strong>问题。循环排序中，只关心成员们的<strong>相对次序</strong>。一般来说，n个人有序地围坐在一张圆桌旁有（n-1）！种不同的坐法。</p>
+<h2 id="5-1-4-选择套装"><a href="#5-1-4-选择套装" class="headerlink" title="5.1.4 选择套装"></a>5.1.4 选择套装</h2><p>&emsp;&emsp;<strong>问题：</strong>你正在穿衣服，有5双不同的袜子、3条不同的裤子和4件不同的衬衫可供选择。假设恰好有2双袜子是红色的，所有裤子都不是红色的，而且只有1件红色的衬衫。现在你必须选择1双袜子、1条裤子和1件衬衫</p>
+<p>（1）你<strong>有多少种</strong>不同的套装组合？</p>
+<p>&emsp;&emsp;不同部位衣物的选择相互独立，总情况数为：5*4*3&#x3D;60种</p>
+<p>（2）今天是学校的“自豪日”，并且学校的主色调是红色；那么，<strong>至少有一件</strong>红色衣物的套装组合有多少种？</p>
+<hr>
+<h4 id="Solution-1-容斥原理"><a href="#Solution-1-容斥原理" class="headerlink" title="Solution 1 容斥原理"></a>Solution 1 容斥原理</h4><p>&emsp;&emsp;这里，我们会发现衬衫、袜子均有红色的。我们会发现，满足条件的可以是有红色袜子或者红色衬衫。这种两种或以上情况有交集的内容很容易让我们联想到容斥原理，即最后答案的组成应该是 选择红色袜子时的情况数 + 选择红色衬衫时的情况数 - 同时穿红色袜子与衬衫时的情况数。</p>
+<p>&emsp;&emsp;计算是容易的，包含1双红色袜子的套装总共有：2*3*4 &#x3D; 24种，包含1件红色衬衫的套装共有 5*3*1 &#x3D; 15种。而同时包含红色袜子和红色衬衫的套装有：2*3*1 &#x3D; 6种。</p>
+<p>&emsp;&emsp;因而最后的结果应为：24 + 15 - 6 &#x3D;33种。在总情况有60种时，随机选择能满足条件的概率为 33&#x2F;60 &#x3D; 11&#x2F;20。</p>
+<h4 id="Solution-2-对立事件"><a href="#Solution-2-对立事件" class="headerlink" title="Solution 2 对立事件"></a>Solution 2 对立事件</h4><p>&emsp;&emsp;另外，我们会发现虽然有红色衣物的部分情况比较复杂，需要考虑多种情况。但没有红色衣物的部分却比较简单好求。非红色衬衫共3件，非红色袜子共3双，非红色裤子共3条，则不带红色的组合就为3^3 &#x3D; 27种。符合题意的就为 60 - 27 &#x3D; 33种</p>
+<h5 id="定义：对立事件"><a href="#定义：对立事件" class="headerlink" title="定义：对立事件"></a>定义：对立事件</h5><p>若两个事件的概率和为1，并且交集为空，则称它们为对立事件。</p>
+<p>很多时候，想求A发生的概率，最简单的方法是求出A不发生的概率，再由 Pr（A）&#x3D;1 - Pr（A^c）来得出答案。</p>
+<hr>
+<h1 id="5-2-容斥方法"><a href="#5-2-容斥方法" class="headerlink" title="5.2 容斥方法"></a>5.2 容斥方法</h1><p>&emsp;&emsp;我们记得在讨论桥牌时，很难找到一种好的计数方法使得所有情况都被考虑到，又保证不会导致重复计数。而<strong>容斥原理</strong>一定程度上可以避免这个问题，并且它的代数运算也会相对更加简单。事实上，简化代数运算是一个很重要的目标，很多规律会在算式更为简单时变得更容易被察觉。</p>
+<h3 id="5-2-1-容斥原理的特例"><a href="#5-2-1-容斥原理的特例" class="headerlink" title="5.2.1 容斥原理的特例"></a>5.2.1 容斥原理的特例</h3><p>&emsp;&emsp;我们先考虑一些特殊的情况来了解容斥原理是什么，用处在哪里。对于任意一组给定的集合，我们有两种自然运算：交和并。当我们想要讨论<strong>至少有一个</strong>事件发生的概率时，会使用并运算；当想要求出<strong>所有事件同时发生</strong>的概率时，我们会使用交运算。通常情况下，计算“所有事件同时发生的概率”要比计算“至少有一个事件发生的概率”简单得多。</p>
+<blockquote>
+<p>&emsp;&emsp;在涉及容斥原理的很多问题中，一个集合的概率就是该集合所包含的元素个数除以空间中元素的总数。为了强调这种特殊情形，我们有时会把一个集合的元素个数记作|A|，而不是Pr（A）；但是，更一般的情况是，不同元素的概率是不一样的。如果想要得到最一般的公式，就应该使用集合的概率而不是集合的基数</p>
+</blockquote>
+<p>&emsp;&emsp;容斥原理采用的方法是用交的概率表示并的概率，其中包含了大量的交。这是<strong>解决许多简单问题而不是一个困难问题</strong>的另一个例子。这里的思路是，用交的概率和与差来表示并的概率。</p>
+<p>&emsp;&emsp;在两个集合的并的概率公式中，我们已经看到过了</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/dDvTv97h"><img src="https://i.postimg.cc/jqn6Hgt4/a6d4e0e7cd8faf17d43bf324bf3221e.png" alt="a6d4e0e7cd8faf17d43bf324bf3221e.png"></a></p>
+<p>&emsp;&emsp;当有三个集合时</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/zyhSfFr4"><img src="https://i.postimg.cc/527Pnsk9/e34418a0b538e27b81d562b78327438.png" alt="e34418a0b538e27b81d562b78327438.png"></a></p>
+<p>&emsp;&emsp;也可以写成</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/KkBdrMBW"><img src="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png" alt="ef28262c9cc03a95eb40cc334b56bcf.png"></a></p>
+
         
       </div>
 
@@ -323,10 +397,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/"
+      title="机器学习概览"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        机器学习概览
         
     </p>
   </a>
