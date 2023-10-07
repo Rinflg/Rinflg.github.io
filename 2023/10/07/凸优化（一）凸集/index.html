@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>凸优化（一）凸集 | Sunoarslan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="2.1 仿射集合和凸集2.1.1 直线与线段&amp;emsp;&amp;emsp;设 x1 ≠ x2 是 R^n空间中的两个点。那么一条穿越 x1 和 x2的点可以表示为 y &#x3D; θ x1 + （1-θ）x2，θ∈R。参数 θ &#x3D; 0对应 y &#x3D; x2，而 θ &#x3D; 1表明 y&#x3D;x1。参数的值在 0 和 1 之间变动时，表示的是 x1 与 x2 两点之间的线段。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="凸优化（一）凸集">
+<meta property="og:url" content="http://example.com/2023/10/07/%E5%87%B8%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89%E5%87%B8%E9%9B%86/index.html">
+<meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="2.1 仿射集合和凸集2.1.1 直线与线段&amp;emsp;&amp;emsp;设 x1 ≠ x2 是 R^n空间中的两个点。那么一条穿越 x1 和 x2的点可以表示为 y &#x3D; θ x1 + （1-θ）x2，θ∈R。参数 θ &#x3D; 0对应 y &#x3D; x2，而 θ &#x3D; 1表明 y&#x3D;x1。参数的值在 0 和 1 之间变动时，表示的是 x1 与 x2 两点之间的线段。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/65K9zvYs/5fd0a8f66b1b63590a4415f8208b202.png">
+<meta property="og:image" content="https://i.postimg.cc/RhVgVGv5/497f2200a43f546db648b7993bc60ba.png">
+<meta property="og:image" content="https://i.postimg.cc/HLg4k3tZ/07f5b4ab2e7c256e92426b4fbde40c6.png">
+<meta property="og:image" content="https://i.postimg.cc/BvSLzzp0/2d2e4be55307a972cecc294372c6b6e.png">
+<meta property="og:image" content="https://i.postimg.cc/DZsWD4D9/54c44a66db5c1062f9a825d2fa3fd05.png">
+<meta property="og:image" content="https://i.postimg.cc/9MjXD88k/7ac91f8bf5ab33ba7ae553f5fe81d90.png">
+<meta property="og:image" content="https://i.postimg.cc/KjP0ZzKV/87a384dc724862a00321689b9584def.png">
+<meta property="og:image" content="https://i.postimg.cc/fTpmyZsT/de8863079ceb71dff4d53088e0697be.png">
+<meta property="og:image" content="https://i.postimg.cc/gk8tGM95/c98a371d5bf5cde52a15b708403c350.png">
+<meta property="og:image" content="https://i.postimg.cc/bwQ5Rqq3/7168974df35997ddb5aed5ef632be6c.png">
+<meta property="og:image" content="https://i.postimg.cc/Qxmk1rdZ/b41503f00e2de02f7ae4ca840b3bbb4.png">
+<meta property="og:image" content="https://i.postimg.cc/N07n89yf/d102c47f76c7dcd2f731f433e076f9b.png">
+<meta property="og:image" content="https://i.postimg.cc/vBnt7C27/bef6c012c62cdfc0916e17036b235a7.png">
+<meta property="og:image" content="https://i.postimg.cc/fyhj851G/8a2794069b6048b1fae4844cdaec55a.png">
+<meta property="og:image" content="https://i.postimg.cc/QCyYFTf4/af89dfb8c0d159f7763a101f5e2efd3.png">
+<meta property="og:image" content="https://i.postimg.cc/tg5C6qFQ/81b24a3f4c53d501152413cd6be93e3.png">
+<meta property="og:image" content="https://i.postimg.cc/W4CFzbVN/7f8994e64862b1939d4653eb3b775c0.png">
+<meta property="og:image" content="https://i.postimg.cc/jSdWRq21/477e3fe5673f902407494662d56e8c2.png">
+<meta property="og:image" content="https://i.postimg.cc/4Ns9LRCW/b65f553ed0015323b23f76c64afafa5.png">
+<meta property="og:image" content="https://i.postimg.cc/3NjHxJT6/c67d0fca916ecc0cba4c4041a89ba18.png">
+<meta property="og:image" content="https://i.postimg.cc/rFsFVxb2/9c66edb6bc33b1a82fcb664a322f9e5.png">
+<meta property="og:image" content="https://i.postimg.cc/QC98brcx/85b8eae05364bdfe0437a0927d16a0a.png">
+<meta property="og:image" content="https://i.postimg.cc/yYKcLVLb/0419a990103be12da75e2ff4e916798.png">
+<meta property="og:image" content="https://i.postimg.cc/zXJQh1Yn/abb3261cd34d86de730ca95d3ba2a1e.png">
+<meta property="article:published_time" content="2023-10-07T05:56:26.000Z">
+<meta property="article:modified_time" content="2023-10-07T15:39:31.975Z">
+<meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="凸优化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/65K9zvYs/5fd0a8f66b1b63590a4415f8208b202.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="https://i.postimg.cc/WbMMsBcy/image.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="https://i.postimg.cc/XYjnpCtb/1.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Sunoarslan's blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="Search" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=https://i.postimg.cc/ncTsLpMC/image.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Sunoarslan </div>
+      <div class="dot"></div>
+      <div class="subtitle">又携书剑路茫茫. </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/169826675" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199360235414/" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Sunoarslan/" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1584195298&website=www.oicqzone.com" title="QQ"><i class="fa-brands fa-qq"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Math/">
+                Math
+                <div class="category-count">9</div>
+            </a>
+        
+            <a class="category-link" href="/categories/C/">
+                C
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Small-Talks/">
+                Small Talks
+                <div class="category-count">5</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Logic/">
+                Logic
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Reading-Notes/">
+                Reading Notes
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                数据结构
+                <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/C/">
+                C++
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Algorithm/">
+                Algorithm
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Machine-Learning/">
+                Machine Learning
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Code/" rel="tag">Code</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%87%B8%E4%BC%98%E5%8C%96/" rel="tag">凸优化</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%9B%BE%E7%AE%97%E6%B3%95/" rel="tag">图算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%BB%E8%AF%BB%E5%A5%BD%E4%B9%A6/" rel="tag">读读好书</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag">逻辑推理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%97%B2%E8%AF%9D%E6%9D%82%E8%B0%88/" rel="tag">闲话杂谈</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          October 2023 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          September 2023 
+          <div class="archive-count">19 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          August 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/10/07/%E5%87%B8%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89%E5%87%B8%E9%9B%86/" title="凸优化（一）凸集" >
+            <div class="recent-link-text">
+              凸优化（一）凸集
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/" title="机器学习概览" >
+            <div class="recent-link-text">
+              机器学习概览
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/25/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/" title="普林斯顿概率论读本学习（五）" >
+            <div class="recent-link-text">
+              普林斯顿概率论读本学习（五）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/22/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" title="知识表示" >
+            <div class="recent-link-text">
+              知识表示
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-3/" title="数据结构-Lesson 3" >
+            <div class="recent-link-text">
+              数据结构-Lesson 3
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-凸优化（一）凸集" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        凸优化（一）凸集
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-07T05:56:26.000Z" itemprop="datePublished">2023-10-07</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Math/">Math</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.5k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%87%B8%E4%BC%98%E5%8C%96/" rel="tag">凸优化</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h2 id="2-1-仿射集合和凸集"><a href="#2-1-仿射集合和凸集" class="headerlink" title="2.1 仿射集合和凸集"></a>2.1 仿射集合和凸集</h2><h3 id="2-1-1-直线与线段"><a href="#2-1-1-直线与线段" class="headerlink" title="2.1.1 直线与线段"></a>2.1.1 直线与线段</h3><p>&emsp;&emsp;设 x1 ≠ x2 是 <strong>R</strong>^n空间中的两个点。那么一条穿越 x1 和 x2的点可以表示为 y &#x3D; θ x1 + （1-θ）x2，θ∈R。参数 θ &#x3D; 0对应 y &#x3D; x2，而 θ &#x3D; 1表明 y&#x3D;x1。参数的值在 0 和 1 之间变动时，表示的是 x1 与 x2 两点之间的线段。</p>
+<h3 id="2-1-2-仿射集合"><a href="#2-1-2-仿射集合" class="headerlink" title="2.1.2 仿射集合"></a>2.1.2 仿射集合</h3><p>&emsp;&emsp;如果通过集合C ⊆ <strong>R</strong>^n 中任意两个不同点确定的直线仍在集合C中，那么称集合C是仿射的。也就是说，C ⊆ <strong>R</strong>^n 是仿射的 等价于：对于任意的x1 、 x2∈<strong>R</strong>^n，θ∈R，y &#x3D; θ x1 + （1-θ）x2 ∈C。再换句话讲，C应该能够包括C中任意两个点的系数之和为 1 的线性组合。</p>
+<p>&emsp;&emsp;这个概念可以拓展到多个点的情况。如果 θ1+θ2+……+θk&#x3D;1，那么 θ1x1 + θ2x2 + …… + θnxn 称为x1，……xn的<strong>仿射组合</strong>。也就是一组点的系数之和为1的线性组合。</p>
+<p>&emsp;&emsp;利用归纳法，容易知道：一个仿射集合包含其中任意点的仿射组合。即如果C是一个仿射集合，x1，……，xk∈C，并且θ1+θ2+……+θk&#x3D;1，那么 θ1x1 + θ2x2 + …… + θnxn 仍然在C中。</p>
+<p>&emsp;&emsp;如果C是一个仿射集合并且 x0∈C，则集合</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/F1P5H1MG"><img src="https://i.postimg.cc/65K9zvYs/5fd0a8f66b1b63590a4415f8208b202.png" alt="5fd0a8f66b1b63590a4415f8208b202.png"></a></p>
+<p>是一个子空间，也就是对于加法和数乘是封闭的。</p>
+<p>&emsp;&emsp;为了说明这一点，设v1，v2∈V，α，β∈R，则有v1+x0∈C，v2+v0∈C。因为C是仿射的，而（α+β）+（1-α-β）&#x3D;1。所以</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/JDvNpNyP"><img src="https://i.postimg.cc/RhVgVGv5/497f2200a43f546db648b7993bc60ba.png" alt="497f2200a43f546db648b7993bc60ba.png"></a></p>
+<p>即:</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/cvF8DR2w"><img src="https://i.postimg.cc/HLg4k3tZ/07f5b4ab2e7c256e92426b4fbde40c6.png" alt="07f5b4ab2e7c256e92426b4fbde40c6.png"></a></p>
+<p>&emsp;仿射集合C可以表示为：C &#x3D; V + x0 &#x3D; { v + x0| v∈V }，也就是一个子空间加上一个偏移。与仿射集合C相关联的子空间V与x0的选取无关，也就是说，x0可以是C中的任意一点。</p>
+<h4 id="仿射集合的维数"><a href="#仿射集合的维数" class="headerlink" title="仿射集合的维数"></a>仿射集合的维数</h4><p>&emsp;&emsp;我们定义仿射集合C的<strong>维数</strong>为子空间V &#x3D; C-x0的维数，其中x0可以是C中的任意元素。</p>
+<hr>
+<h5 id="线性方程组的解集。"><a href="#线性方程组的解集。" class="headerlink" title="线性方程组的解集。"></a>线性方程组的解集。</h5><p>&emsp;&emsp;线性方程组的解集C&#x3D;{x|Ax&#x3D;b}，其中，A∈R^(m*n)，b∈R^m，是一个仿射组合。</p>
+<p>Proof：设X1，X2∈C，对于任意的θ，有：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/bZ5wD34C"><img src="https://i.postimg.cc/BvSLzzp0/2d2e4be55307a972cecc294372c6b6e.png" alt="2d2e4be55307a972cecc294372c6b6e.png"></a></p>
+<p>&emsp;&emsp;也就是 θx1 +（1-θ）x2也在C中。这表明任意线性方程组的解集是一个仿射集合。并且与仿射集合C相关联的子空间就是A的零空间。</p>
+<p>&emsp;&emsp;反之，任意仿射集合可以表示为一个线性方程组的解集。</p>
+<hr>
+<p>&emsp;&emsp;我们称由集合C ⊆ <strong>R</strong>^n中的点的所有仿射组合组成的集合称为C的仿射包，记为<strong>aff</strong>C：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/KkGv3jmf"><img src="https://i.postimg.cc/DZsWD4D9/54c44a66db5c1062f9a825d2fa3fd05.png" alt="54c44a66db5c1062f9a825d2fa3fd05.png"></a></p>
+<p>仿射包是包含C的最小的仿射组合，也就是说，如果S是满足C ⊆ S的仿射组合，那么<strong>aff</strong>C ⊆ S。</p>
+<h3 id="2-1-3-仿射维数、相对内部与相对边界"><a href="#2-1-3-仿射维数、相对内部与相对边界" class="headerlink" title="2.1.3 仿射维数、相对内部与相对边界"></a>2.1.3 仿射维数、相对内部与相对边界</h3><p>&emsp;&emsp;我们定义集合C的<strong>仿射维数</strong>为其仿射包的维数。仿射维数的定义很有用，但常常与其他维数的定义不相同。譬如，<strong>R</strong>^2上的单位圆环{x∈R^2|x^2+y^2&#x3D;1}。它的仿射包是全空间R^2，所以仿射维数为2。但在其他大多数维数的定义下，R^2上的单位圆环的维数为1.</p>
+<p>&emsp;&emsp;如果集合C⊆ <strong>R</strong>^n的仿射维数小于n，那么这个集合在仿射集合<strong>aff</strong>C ≠ <strong>R</strong>^n中。我们定义集合C的相对内部为<strong>aff</strong>C的内部，记为<strong>relint</strong>C，即：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/7CmrcVy1"><img src="https://i.postimg.cc/9MjXD88k/7ac91f8bf5ab33ba7ae553f5fe81d90.png" alt="7ac91f8bf5ab33ba7ae553f5fe81d90.png"></a></p>
+<p>其中，B（x，r）&#x3D;{y| ||y-x||≤r}，即为半径为r，中心为x并由范数||·||定义的球（这里可以是任何范数，并且所有范数定义了相同的相对内部）。我们于是可以定义集合C的<strong>相对边界</strong>为<strong>cl</strong>C \ <strong>relint</strong>C，此处 <strong>cl</strong>C表示C的闭包。</p>
+<hr>
+<p>考虑<strong>R</strong>^3中处于（x1，x2）平面的一个正方形，定义</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/dZ026Jjm"><img src="https://i.postimg.cc/KjP0ZzKV/87a384dc724862a00321689b9584def.png" alt="87a384dc724862a00321689b9584def.png"></a></p>
+<p>其仿射包是（x1，x2）所在的平面，即<strong>aff</strong>C&#x3D;{x∈R^3|x3&#x3D;0}。C的内部为空，但其相对内部为</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/N585C3LW"><img src="https://i.postimg.cc/fTpmyZsT/de8863079ceb71dff4d53088e0697be.png" alt="de8863079ceb71dff4d53088e0697be.png"></a></p>
+<p>C（在<strong>R</strong>^3中）的边界是其自身，而相对边界是其边框，</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/qzBxLxvX"><img src="https://i.postimg.cc/gk8tGM95/c98a371d5bf5cde52a15b708403c350.png" alt="c98a371d5bf5cde52a15b708403c350.png"></a></p>
+<h3 id="2-1-4-凸集"><a href="#2-1-4-凸集" class="headerlink" title="2.1.4 凸集"></a>2.1.4 凸集</h3><p>&emsp;&emsp;集合被称为凸集，如果C中任意两点间的线段仍在C中。即对于任意x1，x2∈C和满足0≤ θ ≤1的θ都有：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/jDSvx0w7"><img src="https://i.postimg.cc/bwQ5Rqq3/7168974df35997ddb5aed5ef632be6c.png" alt="7168974df35997ddb5aed5ef632be6c.png"></a></p>
+<p>&emsp;&emsp;粗略地讲，如果集合中的每一点都可以被其他点沿着它们之间一条无阻碍的路径看见，那么这个集合就是凸集。所谓无阻碍，是指整条路径都在集合中。</p>
+<p>&emsp;&emsp;仿射集显然是凸集。</p>
+<p>&emsp;&emsp;若 θ1+θ2+……+θk&#x3D;1，且θi≥0，那么 θ1x1 + θ2x2 + …… + θnxn 称为x1，……xn的<strong>凸组合</strong>。与仿射集合类似，一个集合是凸集等价于集合包含其中所有点的凸组合。点的凸组合可以看作是它们的<strong>混合</strong>或者说是<strong>加权平均</strong>，θi代表混合时xi所占的份数。</p>
+<p>&emsp;&emsp;集合C中所有点的凸组合的集合称为集合C的凸包，记为<strong>conv</strong>C。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/xckzVhm6"><img src="https://i.postimg.cc/Qxmk1rdZ/b41503f00e2de02f7ae4ca840b3bbb4.png" alt="b41503f00e2de02f7ae4ca840b3bbb4.png"></a></p>
+<p>&emsp;&emsp;容易知道，凸包总是凸的，它是包含C的最小的凸集。即：如果B是包含C的凸集，则convC⊆B。</p>
+<p>&emsp;&emsp;凸组合的概念可以扩展到无穷级数、积分以及大多数形式的概率分布。假设θ1，θ2，…满足</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/yJxnsNXw"><img src="https://i.postimg.cc/N07n89yf/d102c47f76c7dcd2f731f433e076f9b.png" alt="d102c47f76c7dcd2f731f433e076f9b.png"></a></p>
+<p>&emsp;并且x1，x2，…∈C，其中 C⊆ <strong>R</strong>^n为凸集。那么，如果</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/YGpFMDHj"><img src="https://i.postimg.cc/vBnt7C27/bef6c012c62cdfc0916e17036b235a7.png" alt="bef6c012c62cdfc0916e17036b235a7.png"></a></p>
+<p>&emsp;收敛，我们就有</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/nj0DzKF2"><img src="https://i.postimg.cc/fyhj851G/8a2794069b6048b1fae4844cdaec55a.png" alt="8a2794069b6048b1fae4844cdaec55a.png"></a></p>
+<p>&emsp;更一般地，假设p：<strong>R</strong>^n→<strong>R</strong>对所有 x ∈C满足p(x)≥0，并且</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/xNL37cDM"><img src="https://i.postimg.cc/QCyYFTf4/af89dfb8c0d159f7763a101f5e2efd3.png" alt="af89dfb8c0d159f7763a101f5e2efd3.png"></a></p>
+<p>&emsp;最一般的情况，设C⊆ <strong>R</strong>^n是凸集，x是随机变量，并且x∈C的概率为1，那么<strong>E</strong>x∈C。事实上，这一形式包含了前述的特殊情况。事实上，这一形式包含了前述的特殊情况。例如，假设随机变量x只在x1和x2中取值，其概率分别为 <strong>prob</strong>（x&#x3D;x1）&#x3D;θ和<strong>prob</strong>（x&#x3D;x2）&#x3D;1-θ，其中0≤θ≤1。于是，<strong>E</strong>x&#x3D;θx1+（1-θ）x2，即回到了两个点的简单凸组合。</p>
+<h3 id="2-1-5-锥"><a href="#2-1-5-锥" class="headerlink" title="2.1.5 锥"></a>2.1.5 锥</h3><p>&emsp;&emsp;如果对于任意 x∈C 和 θ≥0 都有 θx∈C ，我们称集合C是<strong>锥</strong>或者<strong>非负齐次</strong>。如果集合C是锥，并且是凸的，则C是<strong>凸锥</strong>，即对于任意x1，x2∈C和θ1，θ2≥0，都有</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/p9mHbt0q"><img src="https://i.postimg.cc/tg5C6qFQ/81b24a3f4c53d501152413cd6be93e3.png" alt="81b24a3f4c53d501152413cd6be93e3.png"></a></p>
+<p>在几何上，具有此类形式的点构成了二维的扇形。这个扇形以0为顶点，边通过x1和x2.</p>
+<p>&emsp;&emsp;具有 θ1x1 + θ2x2 + …… + θnxn，θ1、 θ2  …… 、θn≥0形式的点称为x1，…，xk的<strong>锥组合</strong>（或<strong>非负线性组合</strong>）。如果xi均属于凸锥C，那么，xi的每一个锥组合都在C中。</p>
+<p>&emsp;&emsp;反过来说，集合C是凸锥的充要条件是它包含其中元素的所有锥组合。凸组合的概念同样可以扩展到无穷级数和积分中。</p>
+<p>&emsp;&emsp;集合C的<strong>锥包</strong>是C中元素的所有锥组合的集合，即</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Y4Nqy7jZ"><img src="https://i.postimg.cc/W4CFzbVN/7f8994e64862b1939d4653eb3b775c0.png" alt="7f8994e64862b1939d4653eb3b775c0.png"></a></p>
+<p>&emsp;它是包含C的最小的凸锥。</p>
+<h2 id="2-2-重要的例子"><a href="#2-2-重要的例子" class="headerlink" title="2.2 重要的例子"></a>2.2 重要的例子</h2><ul>
+<li>空集∅，任意一个单点集{x0}，全空间<strong>R</strong>^n都是<strong>R</strong>^n的仿射（自然也是凸的）子集</li>
+<li>任意直线是仿射的。如果直线通过零点，则是子空间，因此，也是凸锥。</li>
+<li>一条线段是凸的，但不是仿射的（除非退化为一个点）</li>
+<li>一条<strong>射线</strong>，即具有形式{x0+θv|θ≥0}，v≠0的集合，是凸的，但不是仿射的。如果射线的基点x0是0，那么它是凸锥。</li>
+<li>任意子空间是仿射的，凸的，也是凸锥。</li>
+</ul>
+<h3 id="2-2-1-超平面与半空间"><a href="#2-2-1-超平面与半空间" class="headerlink" title="2.2.1 超平面与半空间"></a>2.2.1 超平面与半空间</h3><p>&emsp;&emsp;<strong>超平面</strong>是具有下面形式的集合</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/nCgVkJvK"><img src="https://i.postimg.cc/jSdWRq21/477e3fe5673f902407494662d56e8c2.png" alt="477e3fe5673f902407494662d56e8c2.png"></a></p>
+<p>&emsp;&emsp;其中a∈<strong>R</strong>^n,a≠0且b∈<strong>R</strong>。解析地，超平面是关于x的非平凡线性方程的解空间（由此，它一定是仿射的）。几何上，超平面{x|a^Tx&#x3D;b}可以解释为与给定向量a的内积为常数的点的集合；也可以看成<strong>法线方向</strong>为a的超平面，而常数b∈<strong>R</strong>决定了这个平面从原点的偏移。为了更好地理解这个几何解释，可以将超平面表示成下面的形式</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/t7vJJf46"><img src="https://i.postimg.cc/4Ns9LRCW/b65f553ed0015323b23f76c64afafa5.png" alt="b65f553ed0015323b23f76c64afafa5.png"></a></p>
+<p>其中，x0是超平面上的任意一点（即任意满足a^Tx0&#x3D;b的点）。进一步，可以表示为</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/y3NGfKWX"><img src="https://i.postimg.cc/3NjHxJT6/c67d0fca916ecc0cba4c4041a89ba18.png" alt="c67d0fca916ecc0cba4c4041a89ba18.png"></a></p>
+<p>这里的最后一个向量表示a的正交补，也就是与a正交的向量的集合：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/QHLrS9hf"><img src="https://i.postimg.cc/rFsFVxb2/9c66edb6bc33b1a82fcb664a322f9e5.png" alt="9c66edb6bc33b1a82fcb664a322f9e5.png"></a></p>
+<p>&emsp;&emsp;由此，也就是说，超平面由偏移x0加上所有正交于（法）向量a的向量构成。</p>
+<p>&emsp;&emsp;一个超平面将<strong>R</strong>^n划分为两个半空间。（闭的）半空间是具有下列形式的集合，</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/RJmxSyPj"><img src="https://i.postimg.cc/QC98brcx/85b8eae05364bdfe0437a0927d16a0a.png" alt="85b8eae05364bdfe0437a0927d16a0a.png"></a></p>
+<p>即非平凡的线性不等式的解空间。其中a≠0。半空间是凸的，但不是仿射的。</p>
+<p>&emsp;&emsp;半空间也可表示为，</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/jC8D5r0H"><img src="https://i.postimg.cc/yYKcLVLb/0419a990103be12da75e2ff4e916798.png" alt="0419a990103be12da75e2ff4e916798.png"></a></p>
+<p>&emsp;&emsp;其中，x0是相应超平面上的任意一点，即x0满足a^Tx0&#x3D;b。它有一个比较简单的集合解释，也就是半空间是由x0加上任意与（向外的法）向量a呈钝角（或直角）的向量组成。</p>
+<p>&emsp;&emsp;半空间的边界是超平面{x|a^Tx&#x3D;b}。集合{x|a^Tx＜b}是半空间{x|a^Tx≤b}的内部，称为<strong>开半空间</strong>。</p>
+<h3 id="2-2-2-Euclid球和椭球"><a href="#2-2-2-Euclid球和椭球" class="headerlink" title="2.2.2 Euclid球和椭球"></a>2.2.2 Euclid球和椭球</h3><p>&emsp;&emsp;<strong>R</strong>^n中的空间Euclid球具有如下的形式</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/G95z0V22"><img src="https://i.postimg.cc/zXJQh1Yn/abb3261cd34d86de730ca95d3ba2a1e.png" alt="abb3261cd34d86de730ca95d3ba2a1e.png"></a></p>
+<p>&emsp;&emsp;其中，r＞0，||·||2表示Euclid范数。即||u||2&#x3D;（u^T u）^(1&#x2F;2)。向量xc是<strong>球心</strong>，标量r为<strong>半径</strong>。B（xc，r）由距离球心xc距离不超过r的所有点组成。Euclid球的另一个常见表达式为，<br>$$<br>B(x_c,r)&#x3D;{x_c+ru|\space||u||_2≤1}<br>$$</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/"
+      title="机器学习概览"
+     >
+
+    <p class="title-text">
+      
+        机器学习概览
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 Sunoarslan<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
