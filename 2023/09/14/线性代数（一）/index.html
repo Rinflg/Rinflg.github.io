@@ -52,8 +52,10 @@
 <meta property="og:image" content="https://i.postimg.cc/gJvDn5GZ/3aa8c2f7e76a6fe2d5fdb5d5fce69fb.png">
 <meta property="og:image" content="https://i.postimg.cc/gjg3hbQn/765e8cf5e838d5293e92a89247499ae.png">
 <meta property="og:image" content="https://i.postimg.cc/7L1G7yTw/4c7c3ea7068d7be5a353624fea4355f.png">
+<meta property="og:image" content="https://i.postimg.cc/BbgNpK01/b9902d4b4b8f6e2179ecefb154b0a44.png">
+<meta property="og:image" content="https://i.postimg.cc/XNRjF1N5/2e2fe0d38f7c8897a126d639f614d43.png">
 <meta property="article:published_time" content="2023-09-14T10:39:50.000Z">
-<meta property="article:modified_time" content="2023-10-06T11:03:05.577Z">
+<meta property="article:modified_time" content="2023-10-09T03:56:44.346Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
@@ -347,7 +349,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            6.5k words 
+            6.8k words 
           </div>
         </div>
         
@@ -614,6 +616,22 @@
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/fS034pwN"><img src="https://i.postimg.cc/gjg3hbQn/765e8cf5e838d5293e92a89247499ae.png" alt="765e8cf5e838d5293e92a89247499ae.png"></a></p>
 <p>&emsp;&emsp;假设我们给定一个有三列的矩阵A，则乘积AB可以看成一个分块乘法。矩阵B的每一块均乘以A，并且结果矩阵也有三块，即 A<strong>b</strong>1，A<strong>b</strong>2，A<strong>b</strong>3；也就是说</p>
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/wtvj8ZVG"><img src="https://i.postimg.cc/7L1G7yTw/4c7c3ea7068d7be5a353624fea4355f.png" alt="4c7c3ea7068d7be5a353624fea4355f.png"></a></p>
+<p>&emsp;&emsp;更一般地，如果A为一 m×n矩阵，而B为一按列划分的n×r矩阵（b1，…，br），那么，AB的分块乘法可以由下面的式子给出</p>
+<p>&emsp;&emsp;AB &#x3D; { Ab1，Ab2，…，Abr }</p>
+<p>特别地，</p>
+<p>&emsp;&emsp;&emsp;&emsp;（a1，…，an）&#x3D; A &#x3D; AI &#x3D; （Ae1，…，Aen）</p>
+<p>&emsp;&emsp;令A为一 m×n矩阵。如果将A按行分块，那么</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/ZvWrK00T"><img src="https://i.postimg.cc/BbgNpK01/b9902d4b4b8f6e2179ecefb154b0a44.png" alt="b9902d4b4b8f6e2179ecefb154b0a44.png"></a></p>
+<p>&emsp;&emsp;如果B为一 n×r 矩阵，乘积 AB的第i行是由A的第i行乘以B得到的。因此，AB的第i行为 \vec{a_i}B.一般地，乘积AB可以写成如下的分块行的形式：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Cd4ppNqM"><img src="https://i.postimg.cc/XNRjF1N5/2e2fe0d38f7c8897a126d639f614d43.png" alt="2e2fe0d38f7c8897a126d639f614d43.png"></a></p>
+<h3 id="分块乘法"><a href="#分块乘法" class="headerlink" title="分块乘法"></a>分块乘法</h3><p>&emsp;&emsp;令A为一 m×n矩阵，且B为一 n×r矩阵。我们可以将A和B进行分块，并且将A和B的乘积表示为它们的子矩阵乘积的形式。考虑如下四种情形：</p>
+<p><strong>情形1</strong>：<br>$$<br>B &#x3D;\begin{bmatrix}B_1\space B_2\\end{bmatrix},其中 B_1 为一 n×t 矩阵，且 B_2 为一 n×（r-t）矩阵<br>$$</p>
+<p>$$<br>AB &#x3D; A（b_1，…，b_t，b_{t+1}，…，b_r）<br>$$</p>
+<p>$$<br>&#x3D;（Ab_1，…，Ab_t，Ab_{t+1}，…，Ab_r）<br>$$</p>
+<p>$$<br>&#x3D;(A（b_1，…，b_t），A（b_{t+1}，…，b_r）)<br>$$</p>
+<p>$$<br>&#x3D;\begin{bmatrix}AB_1\space AB_2\\end{bmatrix}<br>$$</p>
+<p>$$<br>因此，AB&#x3D;A\begin{bmatrix}B_1\space B_2\\end{bmatrix}&#x3D;\begin{bmatrix}AB_1\space AB_2\\end{bmatrix}<br>$$</p>
+<p><strong>情形2</strong>：<br>$$<br>A &#x3D;\begin{bmatrix}A_1\A_2\\end{bmatrix}<br>$$</p>
 
         
       </div>

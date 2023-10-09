@@ -26,8 +26,9 @@
 <meta property="og:image" content="https://i.postimg.cc/jqn6Hgt4/a6d4e0e7cd8faf17d43bf324bf3221e.png">
 <meta property="og:image" content="https://i.postimg.cc/527Pnsk9/e34418a0b538e27b81d562b78327438.png">
 <meta property="og:image" content="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png">
+<meta property="og:image" content="https://i.postimg.cc/nz4kh9rP/2bbeb55ff2bb20f1cdf7f6b4cab3db7.png">
 <meta property="article:published_time" content="2023-09-25T09:20:31.000Z">
-<meta property="article:modified_time" content="2023-09-28T02:51:33.563Z">
+<meta property="article:modified_time" content="2023-10-09T07:51:02.442Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
@@ -321,7 +322,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.2k words 
+            2.7k words 
           </div>
         </div>
         
@@ -390,6 +391,15 @@
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/zyhSfFr4"><img src="https://i.postimg.cc/527Pnsk9/e34418a0b538e27b81d562b78327438.png" alt="e34418a0b538e27b81d562b78327438.png"></a></p>
 <p>&emsp;&emsp;也可以写成</p>
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/KkBdrMBW"><img src="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png" alt="ef28262c9cc03a95eb40cc334b56bcf.png"></a></p>
+<p>&emsp;&emsp;虽然最后的符号显得很繁琐，但在实际运用时还不错，并且会让后面的事情变得简单一些。如果考察的是二维或三维空间，那么我们常用x，y，z来表示变量，并用\vec{i},\vec{j},\vec{k}来表示方向；但有任意多个方向时，用不同的字母来表示就行不通了。需要用x_1,…,x_n和\vec{e_1},…,\vec{e_n}来表示变量和方向。</p>
+<blockquote>
+<p>&emsp;值得注意的是，关于集合下标的条件中，我们没有说i1和i2的取值都介于1和3之间，而是注明了1≤i_1＜i_2≤3。原因是我们需要避免对集合的重复计算，因为 A_1∩A_2和 A_2∩A_1是一样的。</p>
+</blockquote>
+<h3 id="5-2-2-一般的容斥原理"><a href="#5-2-2-一般的容斥原理" class="headerlink" title="5.2.2 一般的容斥原理"></a>5.2.2 一般的容斥原理</h3><h4 id="定义：容斥原理"><a href="#定义：容斥原理" class="headerlink" title="定义：容斥原理"></a>定义：容斥原理</h4><p><a target="_blank" rel="noopener" href="https://postimg.cc/phd80TDf"><img src="https://i.postimg.cc/nz4kh9rP/2bbeb55ff2bb20f1cdf7f6b4cab3db7.png" alt="2bbeb55ff2bb20f1cdf7f6b4cab3db7.png"></a></p>
+<p>将上面集合的大小全都换成它们对应的概率，这个式子同样成立。</p>
+<p>&emsp;&emsp;从长度上来讲，这个公式很复杂。我们可以梳理一下。左边仅有一项，表示了在一组事件中至少有一个会发生。而在右侧，表示了任意两个事件同时发生，任意三个事件同时发生等等。关键就在于将事件的并简化为事件的交。虽然转化为交会使得项数增多，但让计算变得有计可施。</p>
+<p>&emsp;&emsp;对于只有两个事件的简单情形，证明是容易的。依照同样的思路，也可以递推地理解事件数更多时的情形。</p>
+<h3 id="5-2-3-容斥原理的证明"><a href="#5-2-3-容斥原理的证明" class="headerlink" title="5.2.3 容斥原理的证明"></a>5.2.3 容斥原理的证明</h3><p>&emsp;&emsp;我们的证明以<strong>二项式定理</strong>为基础。也就是<br>$$<br>(x+y)^n&#x3D;\sum_{k&#x3D;0}^{n}\begin{pmatrix}n\k\end{pmatrix}x^ky^{n-k}<br>$$</p>
 
         
       </div>
