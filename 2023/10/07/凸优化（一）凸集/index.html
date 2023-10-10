@@ -90,8 +90,17 @@
 <meta property="og:image" content="https://i.postimg.cc/PJ6KFkGy/c3b20dafc17b8ce8396ba06bb27611d.png">
 <meta property="og:image" content="https://i.postimg.cc/X7wLwBxj/99e4ad2c77fe90c63f284fac5ff7163.png">
 <meta property="og:image" content="https://i.postimg.cc/XNt1Kbb8/829e9366b2262aa632a27c1c9ebad47.png">
+<meta property="og:image" content="https://i.postimg.cc/dtYmBkVJ/925627bb80c036be40c164828623aa1.png">
+<meta property="og:image" content="https://i.postimg.cc/pLNrw7Sv/ddd344df32dd80f2f6c82e2e7f8b35f.png">
+<meta property="og:image" content="https://i.postimg.cc/CLSwnDfk/e71fce9c8dce6b18a7ae6311c5ac65c.png">
+<meta property="og:image" content="https://i.postimg.cc/GpVM8Zqt/3e919b746b7185b77aa2e5a459091f3.png">
+<meta property="og:image" content="https://i.postimg.cc/P50gBt7f/644542fb223031d5a0764c208c7c188.png">
+<meta property="og:image" content="https://i.postimg.cc/cC7KzRNR/2c5e2808718b227826035c1d61cac0d.png">
+<meta property="og:image" content="https://i.postimg.cc/VkrXmHng/29656a09baf5a696a2ada6385ee35ca.png">
+<meta property="og:image" content="https://i.postimg.cc/CxZwdQG6/6e525360feeb4b3e8c3470b8092ca7f.png">
+<meta property="og:image" content="https://i.postimg.cc/SsmsXGN2/1918d6b10f8ca778b50b15eaa1d8e50.png">
 <meta property="article:published_time" content="2023-10-07T05:56:26.000Z">
-<meta property="article:modified_time" content="2023-10-09T15:46:34.954Z">
+<meta property="article:modified_time" content="2023-10-10T16:26:17.874Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="凸优化">
 <meta name="twitter:card" content="summary">
@@ -385,7 +394,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.9k words 
+            7.3k words 
           </div>
         </div>
         
@@ -653,6 +662,55 @@
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/w7jDzvSZ"><img src="https://i.postimg.cc/X7wLwBxj/99e4ad2c77fe90c63f284fac5ff7163.png" alt="99e4ad2c77fe90c63f284fac5ff7163.png"></a></p>
 <p>其中，</p>
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/DmdcFRmJ"><img src="https://i.postimg.cc/XNt1Kbb8/829e9366b2262aa632a27c1c9ebad47.png" alt="829e9366b2262aa632a27c1c9ebad47.png"></a></p>
+<h4 id="线性分式函数"><a href="#线性分式函数" class="headerlink" title="线性分式函数"></a>线性分式函数</h4><p>&emsp;&emsp;<strong>线性分式函数</strong>由透视函数和仿射函数复合而成。设 g：R^n→R^{m+1}是仿射的，即：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/QVfTNM7z"><img src="https://i.postimg.cc/dtYmBkVJ/925627bb80c036be40c164828623aa1.png" alt="925627bb80c036be40c164828623aa1.png"></a></p>
+<p>其中 A ∈R^{m×n}，b∈R^{m}，c∈R^{n}并且d∈R。则由f&#x3D;P o g给出的函数f：R^n→R^m</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/qzLpnm0D"><img src="https://i.postimg.cc/pLNrw7Sv/ddd344df32dd80f2f6c82e2e7f8b35f.png" alt="ddd344df32dd80f2f6c82e2e7f8b35f.png"></a></p>
+<p>称为<strong>线性分式</strong>（或<strong>投射</strong>）函数。如果 c&#x3D;0，d＞0，则f的定义域为R^n，并且fs仿射函数。因此，我们可以将仿射和线性函数视为特殊的线性分式函数。</p>
+<hr>
+<p><strong>投射解释</strong>  可以很方便地将一个线性分式函数表示为：将矩阵</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/qgbP9Nwv"><img src="https://i.postimg.cc/CLSwnDfk/e71fce9c8dce6b18a7ae6311c5ac65c.png" alt="e71fce9c8dce6b18a7ae6311c5ac65c.png"></a></p>
+<p>&emsp;&emsp;作用于（左乘）点（x，1），得到（Ax+b,c^Tx+d）；然后将所得结果做伸缩变换或归一化，以使得其最后一个分量为一，得到（f（x），1）</p>
+<p>&emsp;&emsp;也可以从几何上进行解释，即这个表达式将R^n与R^{n+1}空间上的一组射线联系了起来。也就是说，对于R^n空间的一个点z，我们可以构造一个R^{n+1}空间的（开）射线P（z）&#x3D;{t（z，1）|t&gt;0}。这条射线上每个点的最后一个分量均是正值。反之，R^{n+1}空间中每条以原点为顶点并且最后一个分量为正值的射线均可以由一些v∈R^{n}表示为P（v）&#x3D;{t（v，1）|t≥0}。P表示了R^n与最后一个分量为正的是按之间的（投射）关系，这种关系是一一对应和满的。</p>
+<p>&emsp;&emsp;线性分式函数可以表示为，</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Ny88ZPhv"><img src="https://i.postimg.cc/GpVM8Zqt/3e919b746b7185b77aa2e5a459091f3.png" alt="3e919b746b7185b77aa2e5a459091f3.png"></a></p>
+<p>&emsp;&emsp;因此，从x∈dom f出发，即由一个满足c^T x+d＞0的点，我们可以得到R^{n+1}空间的一条射线P（x）。将线性变换矩阵Q作用于这条射线，就可以得到另一条射线 QP（x）。因为 x∈dom f，这条射线最后一个分量为正。最后，我们也可以通过逆投射变换恢复出 f（x）。</p>
+<hr>
+<p>&emsp;&emsp;类似于透视函数，线性分式函数也是保凸的。如果C是凸集并且在f的定义域中（即任意x∈C满足c^Tx + d＞0），那么C的象f（C）也是凸集。根据前述的结构可以直接得到这个结论：C在仿射映射下的象是凸的，并且在透视函数P下的映射（即f（c））是凸的。类似地，如果C⊆R^m是凸集，那么其原象 f^{-1}（C）也是凸的。</p>
+<hr>
+<p><strong>条件概率</strong> 设 u 和 v 是分别在{1，…，n}和{1，…，m}中取值都随机变量，并且pij表示概率prob（u&#x3D;i，v&#x3D;j）。那么条件概率 fij &#x3D; prob（u&#x3D;i|v&#x3D;j）由下式给出</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/v4L2ndMC"><img src="https://i.postimg.cc/P50gBt7f/644542fb223031d5a0764c208c7c188.png" alt="644542fb223031d5a0764c208c7c188.png"></a></p>
+<p>因此，f可以通过一个线性分式映射从p得到。</p>
+<p>可以知道，如果C是一个关于（u，v）的联合密度的凸集，那么相应的u的条件密度（给定v）的集合也是凸集。</p>
+<hr>
+<h2 id="2-4-广义不等式"><a href="#2-4-广义不等式" class="headerlink" title="2.4 广义不等式"></a>2.4 广义不等式</h2><h3 id="2-4-1-正常锥与广义不等式"><a href="#2-4-1-正常锥与广义不等式" class="headerlink" title="2.4.1 正常锥与广义不等式"></a>2.4.1 正常锥与广义不等式</h3><p>&emsp;&emsp;称锥 K  ⊆R^n是<strong>正常锥</strong>，如果它满足下列条件</p>
+<ul>
+<li>K 是凸的</li>
+<li>K 是闭的</li>
+<li>K 是实的，即具有非空内部</li>
+<li>K是尖的，即不包含直线（或者等价地，x∈K ∩ -x∈K →x&#x3D;0）</li>
+</ul>
+<p>&emsp;&emsp;正常锥K可以用来定义<strong>广义不等式</strong>，即R^n上的偏序关系。这种偏序关系和R上的标准序有很多相同的性质。用正常锥K可以定义R^n上的偏序关系如下</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/JHn4DB00"><img src="https://i.postimg.cc/cC7KzRNR/2c5e2808718b227826035c1d61cac0d.png" alt="2c5e2808718b227826035c1d61cac0d.png"></a></p>
+<p>y≤_k x也可以写为 x≥_K y。类似地，我们定义相应的严格偏序关系为</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/7545N9BJ"><img src="https://i.postimg.cc/VkrXmHng/29656a09baf5a696a2ada6385ee35ca.png" alt="29656a09baf5a696a2ada6385ee35ca.png"></a></p>
+<p>&emsp;&emsp;并且可以同样地定义 x ＞_k y。（为将广义不等式 ≤_k与严格的广义不等式分开，我们有时也称 ≤_k为不严格的广义不等式）</p>
+<p>&emsp;&emsp;当K&#x3D;R_+时，偏序关系 ≤ _k 就是通常意义上R中的序≤，相应地，严格偏序关系 ＜_k与R上的严格序 ＜相同。因此，广义不等式包含了R上的（不严格和严格）不等式，它是广义不等式的一种特殊情况</p>
+<hr>
+<p><strong>非负象限及分量不等式</strong>。非负象限K&#x3D;R_+^n是一个正常锥。相应的广义不等式 ≤_k对应于向量间的分量不等式，即x≤_k y等价于 x_i≤y_i，i&#x3D;1，…，n。相应地，其严格不等式对应于严格的分量不等式，即 x＜_k y 等价于 x_i&lt;y_i，i&#x3D;1，…，n。</p>
+<p>&emsp;&emsp;我们将常常使用对应于非负象限的不严格和严格的偏序关系，因此省略下标R^n_+。当≤或＜出现在向量间的时候，该符号应该被理解为分量不等式。</p>
+<hr>
+<hr>
+<p><strong>半正定锥和矩阵不等式</strong>。半正定锥是S^n空间中的正常锥，相应的广义不等式≤_k就是通常的矩阵不等式，即X≤_kY等价于 Y-X为半正定矩阵。（在S^n中）S^n_+的内部由正定矩阵组成，因此严格广义不等式也等同于通常的对称矩阵的严格不等式，即X&lt;_k Y等价于Y-X为正定矩阵。</p>
+<p>&emsp;&emsp;这里，也是由于经常使用这种偏序关系，因此省略其下标，即对于对称矩阵，我们将广义不等式简写为 X≤Y或X＜Y，它们表示关于半正定锥的广义不等式</p>
+<hr>
+<hr>
+<p><strong>[0,1]上非负的多项式锥</strong>。K定义如下</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Mn8CFtry"><img src="https://i.postimg.cc/CxZwdQG6/6e525360feeb4b3e8c3470b8092ca7f.png" alt="6e525360feeb4b3e8c3470b8092ca7f.png"></a></p>
+<p>即K是[0,1]上最高 n-1阶的非负多项式（系数）锥。可以看出K是一个正常锥，其内部是[0,1]上为正的多项式的系数集合。</p>
+<p>两个向量c，d∈R^n满足c≤_k d的充要条件是，对于所有t∈[0,1]，有</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Ffnm83SN"><img src="https://i.postimg.cc/SsmsXGN2/1918d6b10f8ca778b50b15eaa1d8e50.png" alt="1918d6b10f8ca778b50b15eaa1d8e50.png"></a></p>
+<hr>
 
         
       </div>
