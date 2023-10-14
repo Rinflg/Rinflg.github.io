@@ -27,8 +27,16 @@
 <meta property="og:image" content="https://i.postimg.cc/527Pnsk9/e34418a0b538e27b81d562b78327438.png">
 <meta property="og:image" content="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png">
 <meta property="og:image" content="https://i.postimg.cc/nz4kh9rP/2bbeb55ff2bb20f1cdf7f6b4cab3db7.png">
+<meta property="og:image" content="https://i.postimg.cc/sgJZ7G2H/3e337432b1270f361f1f773a07d0442.png">
+<meta property="og:image" content="https://i.postimg.cc/XJ9ZNrtg/9c0babc4877d534fece80d91f95c38d.png">
+<meta property="og:image" content="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png">
+<meta property="og:image" content="https://i.postimg.cc/nhHxpPqX/4c502076b16964fe3a17df3c27efcdb.png">
+<meta property="og:image" content="https://i.postimg.cc/R0Y2cGhd/8f49ee971aa405ea1879ae325fd7ec4.png">
+<meta property="og:image" content="https://i.postimg.cc/NFzRfN4h/143e0a5324fb7bac7a5a0f98517ab68.png">
+<meta property="og:image" content="https://i.postimg.cc/h43k6rsq/8927e690816a1b3ea00a432b425ef4f.png">
+<meta property="og:image" content="https://i.postimg.cc/5yvy47Ls/dcfb66ff025884d2e08f02c34a3b3e8.png">
 <meta property="article:published_time" content="2023-09-25T09:20:31.000Z">
-<meta property="article:modified_time" content="2023-10-09T07:51:02.442Z">
+<meta property="article:modified_time" content="2023-10-12T09:36:47.825Z">
 <meta property="article:author" content="Sunoarslan">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
@@ -322,7 +330,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.7k words 
+            5.3k words 
           </div>
         </div>
         
@@ -399,7 +407,81 @@
 <p>将上面集合的大小全都换成它们对应的概率，这个式子同样成立。</p>
 <p>&emsp;&emsp;从长度上来讲，这个公式很复杂。我们可以梳理一下。左边仅有一项，表示了在一组事件中至少有一个会发生。而在右侧，表示了任意两个事件同时发生，任意三个事件同时发生等等。关键就在于将事件的并简化为事件的交。虽然转化为交会使得项数增多，但让计算变得有计可施。</p>
 <p>&emsp;&emsp;对于只有两个事件的简单情形，证明是容易的。依照同样的思路，也可以递推地理解事件数更多时的情形。</p>
-<h3 id="5-2-3-容斥原理的证明"><a href="#5-2-3-容斥原理的证明" class="headerlink" title="5.2.3 容斥原理的证明"></a>5.2.3 容斥原理的证明</h3><p>&emsp;&emsp;我们的证明以<strong>二项式定理</strong>为基础。也就是<br>$$<br>(x+y)^n&#x3D;\sum_{k&#x3D;0}^{n}\begin{pmatrix}n\k\end{pmatrix}x^ky^{n-k}<br>$$</p>
+<h3 id="5-2-3-容斥原理的证明"><a href="#5-2-3-容斥原理的证明" class="headerlink" title="5.2.3 容斥原理的证明"></a>5.2.3 容斥原理的证明</h3><p>&emsp;&emsp;我们的证明以<strong>二项式定理</strong>为基础。也就是</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/gxnJPJ83"><img src="https://i.postimg.cc/sgJZ7G2H/3e337432b1270f361f1f773a07d0442.png" alt="3e337432b1270f361f1f773a07d0442.png"></a></p>
+<p>在二项式定理中，令 x &#x3D; -1，y&#x3D;1；</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/sQDfwgjB"><img src="https://i.postimg.cc/XJ9ZNrtg/9c0babc4877d534fece80d91f95c38d.png" alt="9c0babc4877d534fece80d91f95c38d.png"></a></p>
+<p>现在我们来证明容斥原理，即</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/KkBdrMBW"><img src="https://i.postimg.cc/Y9sM7N9t/ef28262c9cc03a95eb40cc334b56bcf.png" alt="ef28262c9cc03a95eb40cc334b56bcf.png"></a></p>
+<p>我们要计算元素x在等式每一侧出现的次数。</p>
+<ul>
+<li><p><strong>情形 0：元素x不属于任何A_i</strong>。因为不属于任何A_i，所以x不属于并集，它对左侧的和也没有任何贡献。另外，由x不属于任何Ai可知，它也不可能属于任何交集，所有x也不会对右侧的和有任何贡献。</p>
+</li>
+<li><p><strong>情形 1：元素x恰好属于一个A_i。</strong>这样的x属于并集，它对左侧的贡献为“1”。在右侧，x仅仅属于一个Ai，因此不会在任何交集中，而只能出现在A_i中。假设x只属于A_3，那么x在左侧的并集中被计算了一次，并且只在右侧的A_3中被计算了一次。</p>
+</li>
+<li><p><strong>情形 2：元素x恰好属于两个A_i。</strong>在左侧的并集中，x依旧被计算了一次。而在右侧，不妨设x∈A_3，x∈A_7；同样地，对于任意两个下标都会有类似，在 A_3中被计算了一次，在A_7中被计算了一次，在A_3∩A_7中被计算了一次。这样以来，有：在右侧，元素x被计算了 1 + 1 - 1 &#x3D; 1次，而这恰好是它在左侧的计数。x不属于其它任何的集合，因而不能出现在任何交集中。它只能出现在那些以A_3∩A_7为子集的集合中。这样的集合有3个：A_3、A_7和A_3∩A_7</p>
+</li>
+<li><p><strong>情形 3：元素x恰好属于三个A_i</strong>。和之前一样，x属于左侧的并集，所以它在左侧被计算了一次。为了更加准确，不妨设x属于A_3,A_7和A_8。同样地，它需要出现在以 A_3 ∩ A_7 ∩ A_8 为子集的集合中，这样的集合有7个。单个集合的符号为正，两个集合交的符号为负，三个集合交的符号为正，因此 x 在右侧被计算了  3 - 3 + 1&#x3D;1次。</p>
+<p>我们或许已经意识到了这个算式的规律所在，用二项式定理来改写一下。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/rKY39gnT"><img src="https://i.postimg.cc/nhHxpPqX/4c502076b16964fe3a17df3c27efcdb.png" alt="4c502076b16964fe3a17df3c27efcdb.png"></a></p>
+</li>
+<li><p><strong>情形 k：元素 x 恰好属于 k 个 A_i，其中 k ≥ 3</strong>。这里的论证与前面类似。左侧依旧会被计算一次。右边，从k个集合中选择一个，从k个集合中选择两个，…，从k个下标中选出j个，…。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/SXWZ46WY"><img src="https://i.postimg.cc/R0Y2cGhd/8f49ee971aa405ea1879ae325fd7ec4.png" alt="8f49ee971aa405ea1879ae325fd7ec4.png"></a></p>
+<p>为了化简这个算式，我们尝试加上 - 1 + 1</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/T5nKtJFQ"><img src="https://i.postimg.cc/NFzRfN4h/143e0a5324fb7bac7a5a0f98517ab68.png" alt="143e0a5324fb7bac7a5a0f98517ab68.png"></a></p>
+<p>这样，就完成了公式的证明。</p>
+</li>
+</ul>
+<h3 id="5-2-4-应用容斥原理：同花色牌型"><a href="#5-2-4-应用容斥原理：同花色牌型" class="headerlink" title="5.2.4 应用容斥原理：同花色牌型"></a>5.2.4 应用容斥原理：同花色牌型</h3><p>&emsp;&emsp;我们尝试用容斥原理来计算一下至少一个人拿到一手同花色牌的概率。也就是为4个人中的每一个分配13张牌，并且要使得至少有一个人拿到了一手相同花色的牌。</p>
+<p>&emsp;&emsp;我们知道，容斥远离的思想是：通常情况下，做较多的简单计算要比处理一个复杂计算容易得多。</p>
+<p>&emsp;&emsp;选择事件，用A_1表示第一个人拿到了一手相同花色的牌，并且不考虑另外3个人都拿到了什么。</p>
+<p>&emsp;&emsp;在这个问题中，我们会发现|A_1|&#x3D;|A_2|&#x3D;|A_3|&#x3D;|A_4|，以及|A_{12}|&#x3D;|A_{13}|&#x3D;…&#x3D;|A_{34}|等，这是容易知道的，我们可以由四位玩家在这个问题中的等价性可以知道。</p>
+<p>&emsp;&emsp;试求|A_1|时，先考虑为他选择花色：C_4^1。将剩下的牌分给其他人：C_39^13 *C_26^13 * C_13^13。总情况数也就是：C_4^1*C_39^13*C_26^13*C_13^13。</p>
+<blockquote>
+<p>这里的计算中也包含了其他人拿到一手相同花色的牌的情况。这符合我们对符号的定义，也更为简单直接。</p>
+</blockquote>
+<p>&emsp;&emsp;再求|A_{ij}|，为这两个人分配花色：共有4*3种方法。将剩下的牌分给其他人：C_26^13*C_13^13。总情况数也就是：4*3*C_39^13 *C_26^13 * C_13^13。</p>
+<p>&emsp;&emsp;至于三个人同时拿到一手相同花色的牌，也就等同于了四个人同时拿到一手相同的牌。|A_{ijk}|&#x3D;|A_{1234}|&#x3D;4*3*2*1&#x3D;24种。</p>
+<p>&emsp;&emsp;现在，我们可以使用容斥原理了。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/K4BpgtC9"><img src="https://i.postimg.cc/h43k6rsq/8927e690816a1b3ea00a432b425ef4f.png" alt="8927e690816a1b3ea00a432b425ef4f.png"></a></p>
+<p>&emsp;&emsp;容斥原理还有其它的例子。如：对方程x+y&#x3D;12，可以利用容斥原理来计算。当x和y是正整数时，把12分配给这两个变量共有多少种不同的方法。我们可以限定这些值大于或小于某个数字，也可以规定它们不相等。如，假如限制x≤4且y≥6，我们可以先算出一共有多少个解，然后减去满足x≥5或满足y≤5的那些解。当然，同时满足两个条件的解会被减两次，需要将它们重新加回去。虽然容斥原理不总是最好的方法，但通常情况下可以奏效。</p>
+<p>&emsp;&emsp;容斥原理的一个重要部分是正确地选择集合。恰当地选择A_i会使得问题更容易解决。上面的例子中，如果我们没发现可以减去所有不满足约束条件的解，而是尝试求出所有符合条件的解，那么情况就会更加复杂。下面的例子可以说明这一点。</p>
+<p>&emsp;&emsp;有四个同学A、B、C和D要做演讲。A不想第一个演讲而D不想最后一个演讲，那么我们有多少种不同的演讲次序呢？不考虑限制条件时，有4！&#x3D;24种不同的演讲次序。A在第一个的次序有3！种，D在最后一个的次序有3！种，A在第一个并且D在最后一个的次序有2种。则符合条件的次序有：24-6-6+2&#x3D;14种。</p>
+<h3 id="5-2-5-从“至少”到“恰好”的方法"><a href="#5-2-5-从“至少”到“恰好”的方法" class="headerlink" title="5.2.5 从“至少”到“恰好”的方法"></a>5.2.5 从“至少”到“恰好”的方法</h3><p>&emsp;&emsp;容斥原理使得我们能够轻松地计算出“至少”型的概率，但当我们想要计算“恰好”型时，就需要进行一些改进。</p>
+<hr>
+<p>N(K)表示<strong>至少</strong>有k个事件发生的方法数；E(K)表示<strong>恰好</strong>有K个事件发生的方法数。那么E（K）&#x3D;N（K）-N（K+1）。等价的说法是，</p>
+<p>&emsp;&emsp;&emsp;Pr（恰好有k个事情发生）</p>
+<p>&emsp;&emsp;&#x3D;Pr（至少有k个发生）-Pr（至少有k+1个发生）</p>
+<hr>
+<p>&emsp;&emsp;这个想法能够让我们比较轻松地从“至少”事件过渡到“恰好”事件。它也可以作为累积分布方法的基础，在后面会再次被使用到。</p>
+<p>&emsp;&emsp;我们可以用这个方法来计算恰好有一个人拿到一手同花色牌的牌局数。先求出至少有两个人拿到一手同花色牌的方法数，然后再用至少有一个人拿到一手同花色牌的方法中减去这个数字。</p>
+<p>&emsp;&emsp;两个人拿到一手同花色牌，人员的选择上有：C_4^2种可能。在每种可能中，对应的情况我们在上面已经算过，是4*3*C_{39}^{13} *C_{26}^{13} * C_{13}^{13}。我们可以使用A_{1,2}来代表这两个人是1,2，这样的记号可以在下面的讨论中给我们带来一些方便。</p>
+<p>&emsp; &emsp;交集的计算要稍微复杂一些。</p>
+<ul>
+<li><p>两个集合的交集：</p>
+<p>&emsp;&emsp;|A_{ij}∩A_{mn}|的具体情况数需要讨论i，j，k和l四个数字中的重复数。如果是四个不同的数字，那么交集就相当于A_{1234}，我们知道对应的情况数为24。如果是三个不同的数字，那么交集也依旧是A_{1234}。当有两个数字时，也就退化为了A_{ij}。</p>
+<p>&emsp;&emsp;6个人员选择的方案中，4个下标互不相同的取法有3种。剩下的12种取法中，必须选择两个不同的方案，也就不可能是仅有两个数字，即剩余的全为3个不同数字的情况。这样以来，很好的事情是15个集合均对应4！种情况。15*4!&#x3D;360种情况。</p>
+</li>
+<li><p>三个集合的交集：</p>
+<p>&emsp;&emsp;在6个人员选择方案中，任意取三个。共C_6^3&#x3D;20种取法。我们容易发现，无论是哪一种情况，都至少会取出三个不同的下标，也就意味着四个人都拿到了一手花色相同的牌。这样，总计数对应了20*24&#x3D;480种情况。</p>
+</li>
+<li><p>四个集合的交集：</p>
+<p>&emsp;&emsp;选择方案数有：C_6^4&#x3D;15种情况，计数为15*24&#x3D;360种</p>
+</li>
+<li><p>五个集合的交集：</p>
+<p>&emsp;&emsp;方案数有6种，计数为6*24&#x3D;144种</p>
+</li>
+<li><p>六个集合的交集：</p>
+<p>&emsp;&emsp;方案仅有一种，计数为24种。</p>
+</li>
+</ul>
+<p>&emsp;&emsp;综上所述，以容斥原理的形式写出：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/T5dfQckb"><img src="https://i.postimg.cc/5yvy47Ls/dcfb66ff025884d2e08f02c34a3b3e8.png" alt="dcfb66ff025884d2e08f02c34a3b3e8.png"></a></p>
+<p>&emsp;&emsp;这样，我们用上面求得的至少有一个人拿到了一手同花色牌的牌局数减去上面求得的有两个人以上拿到一手同花色牌的情况数，得到的就是要求的有且仅有一个人拿到一手同花色牌的情况数。</p>
+<h1 id="5-3-错排"><a href="#5-3-错排" class="headerlink" title="5.3 错排"></a>5.3 错排</h1><p>&emsp;&emsp;如果有n个物体，那么把它们有序地排成一列共有n！种方法。在大量问题中，我们关注的焦点是一些特殊排列。例如，假设有n个人，我们要处理n个信封和对应的n封信件。打包的同学很马虎，只将每个信件塞入了一个信封中。那么，所有信件都没有放入正确信封的放法有多少种？这种情境称为<strong>错排</strong>。我们容易想象，这种情境非常糟糕，并不好处理。我们也会发现这个问题的答案与“至少放对一封信件”的情况数是紧密相关的。</p>
+<p>&emsp;&emsp;在计算概率时，我们会用情况数除以情况总数，而情况总数通常是n！。当n→∞时，这个分数的极限会很漂亮。</p>
+<h2 id="5-3-1-错排的个数"><a href="#5-3-1-错排的个数" class="headerlink" title="5.3.1 错排的个数"></a>5.3.1 错排的个数</h2><p>&emsp;&emsp;将问题表达得简单一些，我们想知道在n！个排列中，所有元素都不在初始位置的排列有多少个？这意味着第1个元素不能在第1个位置上，第2个位置也不能在第2个位置上，依次类推。譬如，（2,3,4,1）是一个错排，而（3,2,4,1）却不是。</p>
+<p>&emsp;&emsp;有了前面的容斥原理，我们可以尝试求，至少一个元素在其初始位置上的排列方法有多少种。</p>
 
         
       </div>
