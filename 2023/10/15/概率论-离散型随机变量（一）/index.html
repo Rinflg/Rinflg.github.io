@@ -11,15 +11,25 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2023 | Sunoarslan&#39;s blog</title>
+  <title>概率论-离散型随机变量（一） | Sunoarslan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunoarslan&#39;s blog">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="试验结果数值化 有些随机试验的结果本身就是数值  抛一枚骰子的点数：1，2，…，6 某国一年出生的婴儿数：1,2，…，n   有些试验结果虽然看起来与数值无关，但可以用数值来表示  抛硬币：用1表示正面朝上，用0表示正面朝下  针对一般事件A，可以定义 X&#x3D; 1，事件A发生；0，事件A不发生    事件驱动的   随机变量试验结果用数值表示，引入变量来表示随机事件——随机变量 定义：随机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论-离散型随机变量（一）">
+<meta property="og:url" content="http://example.com/2023/10/15/%E6%A6%82%E7%8E%87%E8%AE%BA-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Sunoarslan&#39;s blog">
+<meta property="og:description" content="试验结果数值化 有些随机试验的结果本身就是数值  抛一枚骰子的点数：1，2，…，6 某国一年出生的婴儿数：1,2，…，n   有些试验结果虽然看起来与数值无关，但可以用数值来表示  抛硬币：用1表示正面朝上，用0表示正面朝下  针对一般事件A，可以定义 X&#x3D; 1，事件A发生；0，事件A不发生    事件驱动的   随机变量试验结果用数值表示，引入变量来表示随机事件——随机变量 定义：随机">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/pddwtGBm/307932f693559e9dc9704de36ba411e.png">
+<meta property="og:image" content="https://i.postimg.cc/fyrPDmMY/ce62c1dc4bb34912931a4379063f226.png">
+<meta property="og:image" content="https://i.postimg.cc/jS99nGnP/77ac3911cd015f00d1df169f9f2e511.png">
+<meta property="og:image" content="https://i.postimg.cc/28MG4KfD/c10fc0955ce9e46e9e96d41aca7f676.png">
+<meta property="article:published_time" content="2023-10-15T10:44:31.000Z">
+<meta property="article:modified_time" content="2023-10-15T16:48:25.194Z">
 <meta property="article:author" content="Sunoarslan">
+<meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/pddwtGBm/307932f693559e9dc9704de36ba411e.png">
   
     <link rel="alternate" href="/atom.xml" title="Sunoarslan's blog" type="application/atom+xml">
   
@@ -282,215 +292,167 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archive</h1>
-      </div>    
+<article id="post-概率论-离散型随机变量（一）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        概率论-离散型随机变量（一）
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-15T10:44:31.000Z" itemprop="datePublished">2023-10-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Math/">Math</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            853 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="试验结果数值化"><a href="#试验结果数值化" class="headerlink" title="试验结果数值化"></a>试验结果数值化</h1><ul>
+<li><p>有些随机试验的结果本身就是数值</p>
+<ul>
+<li>抛一枚骰子的点数：1，2，…，6</li>
+<li>某国一年出生的婴儿数：1,2，…，n</li>
+</ul>
+</li>
+<li><p>有些试验结果虽然看起来与数值无关，但可以用数值来表示</p>
+<ul>
+<li><p>抛硬币：用1表示正面朝上，用0表示正面朝下</p>
+</li>
+<li><p>针对一般事件A，可以定义</p>
+<p>X&#x3D; 1，事件A发生；0，事件A不发生</p>
+</li>
+</ul>
+</li>
+<li><p>事件驱动的</p>
+</li>
+</ul>
+<h1 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h1><p>试验结果用数值表示，引入变量来表示随机事件——随机变量</p>
+<h3 id="定义：随机变量"><a href="#定义：随机变量" class="headerlink" title="定义：随机变量"></a>定义：随机变量</h3><p>&emsp;&emsp;设 Ω 是一个样本空间，如果对每个基本事件ω∈Ω，都对应于一个实数X（ω），称这样的单射实值函数X：Ω→R为随机变量，一般简写为X</p>
+<p>随机变量与普通函数存在着本质的不同：</p>
+<ul>
+<li>X（ω）随样本点ω的不同而取不同的值，具有一定的随机性</li>
+<li>各试验结果的出现均有一定的概率，X的取值具有统计规律性</li>
+</ul>
+<p>&emsp;&emsp;通过随机变量来描述随机现象或随机事件，可以利用各种数学分析工具，通过对随机变量的研究来揭示随机现象。</p>
+<p>根据取值类型，可以将随机变量进行分类</p>
+<ul>
+<li>离散型随机变量：X的取值是有限的、无限可列的<ul>
+<li>抛一枚骰子的点数：1,2，…，6——有限的</li>
+<li>国家一年出生的婴儿数：1,2，…，n——无限可列的</li>
+</ul>
+</li>
+<li>非离散型随机变量：X的取值是无限不可列的</li>
+</ul>
+<h1 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h1><h3 id="分布列"><a href="#分布列" class="headerlink" title="分布列"></a>分布列</h3><p>分布列包含随机变量的取值和概率，可以完全刻画其概率属性</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/yDwQmTtK"><img src="https://i.postimg.cc/pddwtGBm/307932f693559e9dc9704de36ba411e.png" alt="307932f693559e9dc9704de36ba411e.png"></a></p>
+<ul>
+<li>分布列：对于X所有的取值xk，其概率为pk&#x3D;P（X&#x3D;xk）</li>
+<li>性质：<ul>
+<li>对于任意的k都有pk≥0</li>
+<li>∑k pk&#x3D;1</li>
+</ul>
+</li>
+</ul>
+<h3 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h3><p>通过一些指标，可以描述离散随机变量的总体特征，这些指标也被称为统计量</p>
+<ul>
+<li>期望、方差、相关系数、矩等</li>
+</ul>
+<h3 id="离散型随机变量：期望"><a href="#离散型随机变量：期望" class="headerlink" title="离散型随机变量：期望"></a>离散型随机变量：期望</h3><p>&emsp;&emsp;设随机变量X的分布列为P（X&#x3D;xk）&#x3D;pk（k≥1）。若级数∑k pkxk<strong>绝对收敛</strong>，则称级数∑k xkpk为随机变量X的期望，记为E（X）</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/rR5j9d0p"><img src="https://i.postimg.cc/fyrPDmMY/ce62c1dc4bb34912931a4379063f226.png" alt="ce62c1dc4bb34912931a4379063f226.png"></a></p>
+<h4 id="性质：期望"><a href="#性质：期望" class="headerlink" title="性质：期望"></a>性质：期望</h4><ul>
+<li>期望是常量不是变量</li>
+<li>期望反映随机变量X的平均值</li>
+<li>期望的性质<ul>
+<li>设c∈R，若随机变量X≡c，则E（X）&#x3D;c，无论其分布列的情况</li>
+<li>线性：对随机变量X及常数a、b∈R，E（aX+b）&#x3D;aE（X）+b</li>
+</ul>
+</li>
+<li>除非特别说明，通常直接利用定义计算期望，而不考虑其绝对收敛性</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/G4FzZgQm"><img src="https://i.postimg.cc/jS99nGnP/77ac3911cd015f00d1df169f9f2e511.png" alt="77ac3911cd015f00d1df169f9f2e511.png"></a></p>
+<h3 id="离散型随机变量：方差"><a href="#离散型随机变量：方差" class="headerlink" title="离散型随机变量：方差"></a>离散型随机变量：方差</h3><p>&emsp;&emsp;设随机变量X的分布列为P（X&#x3D;x_k）&#x3D;p_k＞0（k≥1）。若期望E（X）和</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/nCKqxTzR"><img src="https://i.postimg.cc/28MG4KfD/c10fc0955ce9e46e9e96d41aca7f676.png" alt="c10fc0955ce9e46e9e96d41aca7f676.png"></a></p>
+<h3 id="性质：离散型随机变量方差"><a href="#性质：离散型随机变量方差" class="headerlink" title="性质：离散型随机变量方差"></a>性质：离散型随机变量方差</h3><ul>
+<li><p>VAR（X）&#x3D;E（X^2）-[E(X)]^2</p>
+</li>
+<li><p>设c∈R是常数，若随机变量X≡c，则VAR（X）&#x3D;0</p>
+</li>
+<li><p>对随机变量X和常数a，b∈R，有VAR（aX+b）&#x3D;a^2 VAR（X）</p>
+</li>
+<li><p>方差不具有线性性：</p>
+<p>VAR（f（x）+g（x））≠VAR（f（X））+VAR（g（X）），for f，g∈C</p>
+</li>
+<li><p>对随机变量X和常数a，有VAR（X）&#x3D;E（X-E（X））^2≤E（X-a）^2</p>
+</li>
+<li><p>Bhatia-Davis不等式：对随机变量X∈[a,b]，有</p>
+<p>VAR（X）≤（b-E（X））（E（X）-a）≤（b-a）^2 &#x2F;4</p>
+</li>
+</ul>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">10 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/10/15/%E6%A6%82%E7%8E%87%E8%AE%BA-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%EF%BC%88%E4%B8%80%EF%BC%89/" title="概率论-离散型随机变量（一）">
-        <div class="date">10-15</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    概率论-离散型随机变量（一）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #概率论
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/10/15/%E6%A6%82%E7%8E%87%E8%AE%BA-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%EF%BC%88%E4%BA%8C%EF%BC%89/" title="概率论-离散型随机变量（二）">
-        <div class="date">10-15</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    概率论-离散型随机变量（二）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #概率论
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/10/07/%E5%87%B8%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89%E5%87%B8%E9%9B%86/" title="凸优化（一）凸集">
-        <div class="date">10-07</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    凸优化（一）凸集
-                
-            </div>
-        </div>
-        <div class="tags">
-            #凸优化
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%A7%88/" title="机器学习概览">
-        <div class="date">09-27</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    机器学习概览
-                
-            </div>
-        </div>
-        <div class="tags">
-            #Machine Learning
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/25/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%E6%A6%82%E7%8E%87%E8%AE%BA%E8%AF%BB%E6%9C%AC%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/" title="普林斯顿概率论读本学习（五）">
-        <div class="date">09-25</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    普林斯顿概率论读本学习（五）
-                
-            </div>
-        </div>
-        <div class="tags">
-            #概率论
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/22/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" title="知识表示">
-        <div class="date">09-22</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    知识表示
-                
-            </div>
-        </div>
-        <div class="tags">
-            #Machine Learning
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Lesson-3/" title="数据结构-Lesson 3">
-        <div class="date">09-22</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    数据结构-Lesson 3
-                
-            </div>
-        </div>
-        <div class="tags">
-            #数据结构
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/21/Dijkstra-s-%E7%AE%97%E6%B3%95/" title="Dijkstra's 算法">
-        <div class="date">09-21</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    Dijkstra's 算法
-                
-            </div>
-        </div>
-        <div class="tags">
-            #图算法
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/20/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%B8%89%EF%BC%89%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/" title="搜索算法（三）对抗搜索">
-        <div class="date">09-20</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    搜索算法（三）对抗搜索
-                
-            </div>
-        </div>
-        <div class="tags">
-            #搜索算法
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2023/09/19/%E6%90%9C%E7%B4%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9C%89%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/" title="搜索算法（二）有信息搜索">
-        <div class="date">09-19</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    搜索算法（二）有信息搜索
-                
-            </div>
-        </div>
-        <div class="tags">
-            #搜索算法
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/10/15/%E6%A6%82%E7%8E%87%E8%AE%BA-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%EF%BC%88%E4%BA%8C%EF%BC%89/"
+      title="概率论-离散型随机变量（二）"
+     >
+
+    <p class="title-text">
+      
+        概率论-离散型随机变量（二）
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
